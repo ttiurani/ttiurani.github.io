@@ -1,0 +1,23 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: #ffffff;
+    color: #262626;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1d1d1d;
+        color: #ffffff;
+    }
+    a {
+        color: #58A6FF
+    }
+}
+
+#svelte {
+    /* Center the whole site the old-fashioned way */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
