@@ -6,7 +6,12 @@ const config = {
     preprocess: preprocess(),
 
     kit: {
-        adapter: adapter(),
+        adapter: adapter({
+            pages: 'dist/html',
+            assets: 'dist/html',
+            fallback: null,
+            precompress: false,
+        }),
     },
 };
 

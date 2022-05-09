@@ -20,8 +20,6 @@
     </nav>
 </header>
 
-
-
 <main>
     <slot />
 </main>
