@@ -1,5 +1,25 @@
-= Title
+= Site Setup
+Timo Tiuraniemi
+1.0, 2022-05-10: (originally published on 2022-05-10)
+:keywords: smalltech, technology
+:figure-caption!:
+
+Body text, *strong text* and then _cursive text_ both here.
+
+Second paragraph
 
 == Section 1
 
+1 body text
+
+.A mountain sunset
+image::/static/setup.jpg[Sunset]
+
+Second 1 body text
+
 == Section 2
+
+More here
+
+* Unordered list
+* of two items

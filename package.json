@@ -4,7 +4,7 @@
     "licence": "AGPL-3.0",
     "private": true,
     "scripts": {
-        "asciidoc": "asciidoctor --require asciidoctorjs-gemini-converter --backend gemini blog/*.adoc --destination-dir=dist/gemini/blog",
+        "asciidoc": "asciidoctor --require asciidoctorjs-gemini-converter -a image-base-url=https://tiuraniemi.io -a author-prefix=by -a keywords-prefix=Under: --backend gemini blog/*.adoc --destination-dir=dist/gemini/blog",
         "dev": "svelte-kit dev",
         "build": "svelte-kit build",
         "package": "svelte-kit package",
