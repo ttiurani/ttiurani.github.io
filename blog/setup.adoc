@@ -4,9 +4,9 @@ Timo Tiuraniemi
 :keywords: smalltech, technology
 :figure-caption!:
 
-Body text, *strong text* and then _cursive text_ both here.
+Body text, *strong text* and then _cursive text_ both herefootnote:[Adding extra info to footnote].
 
-Second paragraph
+Second extrafootnote:[Second footnote] paragraph
 
 == Section 1
 
@@ -15,7 +15,7 @@ Second paragraph
 .A mountain sunset
 image::/static/setup.jpg[Sunset]
 
-Second 1 body text
+Second 1 body text and then https://www.wikipedia.org[embedded external link,title=Wikipedia] and then https://www.duckduckgo.com as a standalone link.
 
 == Section 2
 
