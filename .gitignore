@@ -1,3 +1,7 @@
+# Generated
+static/images/generated/
+src/svelte/routes/blog
+
 .DS_Store
 node_modules
 /dist

@@ -1,6 +1,7 @@
 = Site Setup
 Timo Tiuraniemi
 1.0, 2022-05-10: (originally published on 2022-05-10)
+:description: tiuraniemi.io is an experiment in small tech. This is a break down of how it is works.
 :keywords: smalltech, technology
 :figure-caption!:
 
@@ -12,8 +13,8 @@ Second extrafootnote:[Second footnote] paragraph
 
 1 body text
 
-.A mountain sunset
-image::/static/setup.jpg[Sunset]
+.Testing conversions
+image::/images/generated/0001_setup.jpg[just testing]
 
 Second 1 body text and then https://www.wikipedia.org[embedded external link,title=Wikipedia] and then https://www.duckduckgo.com as a standalone link.
 

@@ -14,7 +14,7 @@
     <h1>Timo Tiuraniemi</h1>
     <p>
         Husband and father, activist for the commons (digital &amp; environmental), programmer and
-        philosopher. He/him
+        philosopher. He/him.
     </p>
     <p><a href="https://fosstodon.org/web/@ttiurani">Find me on Mastodon</a></p>
     <p>

@@ -11,11 +11,14 @@
 </svelte:head>
 
 <div id="blog">
-    <h1>Blog</h1>
-    <p>
-        Normal text and then a <a href="https://www.wikipedia.org/">outside link text</a> for what
-        the link is, and then some other text and <a href="/work">internal link</a>.
-    </p>
+    <h1>Posts</h1>
+
+    __BLOG_POST_START__
+    <div class="blog-posts-item">
+        <h2>__BLOG_POST_TITLE__</h2>
+        <span>__BLOG_POST_DATE__</span>
+    </div>
+    __BLOG_POST_END__
 </div>
 
 <style>

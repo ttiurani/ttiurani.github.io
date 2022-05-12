@@ -1,0 +1,6 @@
+# Work
+## Navigation
+=> / Home
+=> /blog Blog
+## Extended Mind
+WiP experiment in small tech.
