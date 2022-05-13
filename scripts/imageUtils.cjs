@@ -158,8 +158,9 @@ const createPictureTagFromImageTag = async (imageTag, imagesMetadata) => {
         const imageData = await fs.readFile(__dirname + '/../static' + imageMetadata.avif);
         if (imageData.byteLength < 30000) {
            pictureTag += `<source type="image/avif" srcset="data:image/avif;base64,${imageData.toString('base64')}"/>`;
+        } else {
+           pictureTag += `<source type="image/avif" srcset="${imageMetadata.avif}"/>`;
         }
-        pictureTag += `<source type="image/avif" srcset="${imageMetadata.avif}"/>`;
     }
     if (imageMetadata.webp) {
         pictureTag += `<source type="image/webp" srcset="${imageMetadata.webp}"/>`;
