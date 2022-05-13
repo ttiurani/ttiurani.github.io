@@ -3,4 +3,4 @@
 => / Home
 => /work Work
 ## Posts
-__BLOG_POSTS
+__BLOG_POSTS__

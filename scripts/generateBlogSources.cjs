@@ -80,6 +80,7 @@ const { generateOgImageFromText, transcodeImage, createPictureTagFromImageTag } 
         return {fileName, content, metadata}
     });
     const partialsContents = await Promise.all(htmlPartialsContentPromises);
+    partialsContents.reverse();
 
     // Generate svelte blog posts
     const svelteRoutesDir = srcDir + '/svelte/routes';
@@ -109,6 +110,25 @@ const { generateOgImageFromText, transcodeImage, createPictureTagFromImageTag } 
     const svelteBlogPostResults = await Promise.all(svelteBlogPostPromises);
 
     // Generate blog index
-    // TODO
-    await fs.writeFile(svelteRoutesDir + '/blog/index.svelte', svelteBlogIndexTemplate);
+    const svelteBlogIndexPrefix = svelteBlogIndexTemplate.substring(0, svelteBlogIndexTemplate.indexOf('__BLOG_POST_START__'));
+    const svelteBlogIndexPostfix = svelteBlogIndexTemplate.substring(svelteBlogIndexTemplate.indexOf('__BLOG_POST_END__') + 17);
+    const svelteBlogIndexPostTemplate = svelteBlogIndexTemplate.substring(svelteBlogIndexTemplate.indexOf('__BLOG_POST_START__')+19, svelteBlogIndexTemplate.indexOf('__BLOG_POST_END__'));
+    let svelteBlogIndex = svelteBlogIndexPrefix;
+    for (const partial of partialsContents) {
+        svelteBlogIndexPost = svelteBlogIndexPostTemplate;
+        svelteBlogIndex += svelteBlogIndexPost.replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+            .replaceAll(/__BLOG_POST_DATE__/g, partial.metadata.revdate)
+            .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path);
+    }
+    svelteBlogIndex += svelteBlogIndexPostfix;
+    await fs.writeFile(svelteRoutesDir + '/blog/index.svelte', svelteBlogIndex);
+
+    // Generate Gemini index
+    let geminiBlogPosts = '';
+    for (const partial of partialsContents) {
+        geminiBlogPosts += `=> ${partial.metadata.path} ${partial.metadata.revdate}: ${partial.metadata.doctitle}\n`
+    }
+    let geminiBlogIndex = geminiBlogIndexTemplate.replace(/__BLOG_POSTS__/g, geminiBlogPosts);
+    await fs.writeFile(__dirname + '/../dist/gemini/blog/index.gmi', geminiBlogIndex);
+
 })();

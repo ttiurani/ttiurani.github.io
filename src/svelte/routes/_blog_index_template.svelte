@@ -15,8 +15,10 @@
 
     __BLOG_POST_START__
     <div class="blog-posts-item">
-        <h2>__BLOG_POST_TITLE__</h2>
-        <span>__BLOG_POST_DATE__</span>
+        <a href="__BLOG_POST_PATH__">
+            <span>__BLOG_POST_TITLE__</span><br/>
+            <span>__BLOG_POST_DATE__</span>
+        </a>
     </div>
     __BLOG_POST_END__
 </div>
