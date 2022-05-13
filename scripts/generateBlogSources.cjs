@@ -1,16 +1,16 @@
 const fs = require('fs').promises;
 const fsSync = require('fs');
-const { generateOgImageFromText, transcodeImage } = require('./imageUtils.cjs');
+const { generateOgImageFromText, transcodeImage, createPictureTagFromImageTag } = require('./imageUtils.cjs');
 
 (async () => {
     // Read all of the blog metadata files, they are in order by name
     const metadataDir = __dirname + '/../.svelte-kit/blog/metadata/';
-    const files = await fs.readdir(metadataDir);
-    const contentPromises = files.map((file) => {
+    const metadataFiles = await fs.readdir(metadataDir);
+    const metadataContentPromises = metadataFiles.map((file) => {
         return fs.readFile(metadataDir + file, 'utf8');
     });
-    const contents = await Promise.all(contentPromises);
-    const blogPostMetadata = contents.map((content) => JSON.parse(content));
+    const metadataContents = await Promise.all(metadataContentPromises);
+    const blogPostMetadata = metadataContents.map((content) => JSON.parse(content));
 
     // Generate OpenGraph images
     const staticDir = __dirname + '/../static';
@@ -61,10 +61,54 @@ const { generateOgImageFromText, transcodeImage } = require('./imageUtils.cjs');
             }
         }
     }
-    const generatedTranscodedImages = (await Promise.all(ogImageGenerationPromises)).filter(
+    const generatedTranscodedImages = (await Promise.all(transcodeImagePromises)).filter(
         (value) => value
     );
 
     // Read in blog templates
-    //
+    const srcDir = __dirname + '/../src';
+    const svelteBlogPostTemplate = await fs.readFile(srcDir + '/svelte/routes/_blog_post_template.svelte', 'utf8');
+    const svelteBlogIndexTemplate = await fs.readFile(srcDir + '/svelte/routes/_blog_index_template.svelte', 'utf8');
+    const geminiBlogIndexTemplate = await fs.readFile(srcDir + '/gemini/blog.gmi.tpl', 'utf8');
+
+    // Read in HTML partials and pair them with metadata
+    const htmlPartialsDir = __dirname + '/../.svelte-kit/blog/partials/';
+    const htmlBlogPartialFiles = await fs.readdir(htmlPartialsDir);
+    const htmlPartialsContentPromises = htmlBlogPartialFiles.map(async (fileName) => {
+        const content = await fs.readFile(htmlPartialsDir + fileName, 'utf8');
+        const metadata = blogPostMetadata.find((metadata) => fileName.startsWith(metadata.docname));
+        return {fileName, content, metadata}
+    });
+    const partialsContents = await Promise.all(htmlPartialsContentPromises);
+
+    // Generate svelte blog posts
+    const svelteRoutesDir = srcDir + '/svelte/routes';
+    if (!fsSync.existsSync(svelteRoutesDir + '/blog')) {
+        await fs.mkdir(svelteRoutesDir + '/blog', { recursive: true });
+    }
+    const svelteBlogPostPromises = partialsContents.map(async partial => {
+        let fileContent = svelteBlogPostTemplate;
+        fileContent = fileContent.replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+            .replaceAll(/__BLOG_POST_CONTENT__/g, partial.content)
+            .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description)
+            .replaceAll(/__BLOG_POST_URL__/g, 'https://tiuraniemi.io' + partial.metadata.path)
+            .replaceAll(/__BLOG_POST_IMAGE__/g, 'https://tiuraniemi.io' + partial.metadata.ogImage);
+
+        const fileContentLines = fileContent.split(/\n/);
+        let finalFileContent = '';
+        for (const fileContentLine of fileContentLines){
+            if (fileContentLine.trim().startsWith('<img')) {
+                finalFileContent += await createPictureTagFromImageTag(fileContentLine, partial.metadata.images) + '\n';
+            } else {
+                finalFileContent += fileContentLine + '\n';
+            }
+        }
+        const filePath = svelteRoutesDir + partial.metadata.path + '.svelte';
+        return await fs.writeFile(filePath, finalFileContent);
+    });
+    const svelteBlogPostResults = await Promise.all(svelteBlogPostPromises);
+
+    // Generate blog index
+    // TODO
+    await fs.writeFile(svelteRoutesDir + '/blog/index.svelte', svelteBlogIndexTemplate);
 })();

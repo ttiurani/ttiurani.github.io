@@ -7,10 +7,17 @@
 
 <svelte:head>
     <title>__BLOG_POST_TITLE__ | Blog | Timo Tiuraniemi</title>
-    <meta name="description" content="'__BLOG_POST_TITLE__' by Timo Tiuraniemi" />
+    <meta name="description" content="__BLOG_POST_DESCRIPTION__" />
+    <meta property="og:title" content="__BLOG_POST_TITLE__" />
+    <meta property="og:description" content="__BLOG_POST_DESCRIPTION__" />
+    <meta property="og:url" content="__BLOG_POST_URL__" />
+    <meta property="og:image" content="__BLOG_POST_IMAGE__" />
+    <meta property="og:type" content="article" />
 </svelte:head>
 
-<div id="post">__BLOG_POST_CONTENT__</div>
+<div id="post">
+    __BLOG_POST_CONTENT__
+</div>
 
 <style>
 </style>

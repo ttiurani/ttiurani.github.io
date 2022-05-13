@@ -1,4 +1,5 @@
-const fs = require('fs');
+const fs = require('fs').promises;
+const fsSync = require('fs');
 const gd = require('node-gd');
 const sharp = require('sharp');
 
@@ -13,7 +14,7 @@ const generateOgImageFromText = (
 ) => {
     return new Promise((resolve, reject) => {
         const jpgOutputFilePath = outputDirectory + fileName;
-        fs.access(jpgOutputFilePath, (readErr) => {
+        fsSync.access(jpgOutputFilePath, (readErr) => {
             if (!readErr) {
                 // We already have this file, don't regenerate
                 metadata['ogImage'] = urlPathPrefix + fileName;
@@ -149,7 +150,26 @@ const transcodeImage = async (
     return outputFile;
 };
 
+const createPictureTagFromImageTag = async (imageTag, imagesMetadata) => {
+    const imageMetadata = imagesMetadata.find(meta => imageTag.includes(meta.target));
+    let pictureTag = '<picture>';
+    if (imageMetadata.avif) {
+        // For avif, if the file is small enough, let's inline it
+        const imageData = await fs.readFile(__dirname + '/../static' + imageMetadata.avif);
+        if (imageData.byteLength < 30000) {
+           pictureTag += `<source type="image/avif" srcset="data:image/avif;base64,${imageData.toString('base64')}"/>`;
+        }
+        pictureTag += `<source type="image/avif" srcset="${imageMetadata.avif}"/>`;
+    }
+    if (imageMetadata.webp) {
+        pictureTag += `<source type="image/webp" srcset="${imageMetadata.webp}"/>`;
+    }
+    pictureTag += `${imageTag}</picture>`
+    return pictureTag;
+}
+
 module.exports = {
     generateOgImageFromText,
     transcodeImage,
+    createPictureTagFromImageTag,
 };
