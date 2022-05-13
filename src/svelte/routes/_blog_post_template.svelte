@@ -15,9 +15,7 @@
     <meta property="og:type" content="article" />
 </svelte:head>
 
-<div id="post">
-    __BLOG_POST_CONTENT__
-</div>
+<div id="post">__BLOG_POST_CONTENT__</div>
 
 <style>
 </style>

@@ -16,7 +16,7 @@
     __BLOG_POST_START__
     <div class="blog-posts-item">
         <a href="__BLOG_POST_PATH__">
-            <span>__BLOG_POST_TITLE__</span><br/>
+            <span>__BLOG_POST_TITLE__</span><br />
             <span>__BLOG_POST_DATE__</span>
         </a>
     </div>

@@ -151,23 +151,25 @@ const transcodeImage = async (
 };
 
 const createPictureTagFromImageTag = async (imageTag, imagesMetadata) => {
-    const imageMetadata = imagesMetadata.find(meta => imageTag.includes(meta.target));
+    const imageMetadata = imagesMetadata.find((meta) => imageTag.includes(meta.target));
     let pictureTag = '<picture>';
     if (imageMetadata.avif) {
         // For avif, if the file is small enough, let's inline it
         const imageData = await fs.readFile(__dirname + '/../static' + imageMetadata.avif);
         if (imageData.byteLength < 30000) {
-           pictureTag += `<source type="image/avif" srcset="data:image/avif;base64,${imageData.toString('base64')}"/>`;
+            pictureTag += `<source type="image/avif" srcset="data:image/avif;base64,${imageData.toString(
+                'base64'
+            )}"/>`;
         } else {
-           pictureTag += `<source type="image/avif" srcset="${imageMetadata.avif}"/>`;
+            pictureTag += `<source type="image/avif" srcset="${imageMetadata.avif}"/>`;
         }
     }
     if (imageMetadata.webp) {
         pictureTag += `<source type="image/webp" srcset="${imageMetadata.webp}"/>`;
     }
-    pictureTag += `${imageTag}</picture>`
+    pictureTag += `${imageTag}</picture>`;
     return pictureTag;
-}
+};
 
 module.exports = {
     generateOgImageFromText,
