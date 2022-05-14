@@ -8,6 +8,12 @@ jobs:
     name: Build ande deploy site
     runs-on: ubuntu-latest
     steps:
+      - name: Remove nginx for libgd problems
+        run: sudo apt-get remove nginx
+      - name: Remove too new libgd
+        run: sudo apt-get remove libgd3
+      - name: Add correct libgd
+        run: sudo apt-get install -yq libgd-dev
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node
