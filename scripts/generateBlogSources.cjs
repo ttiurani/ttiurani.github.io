@@ -29,6 +29,7 @@ const {
             generatedImagesDir,
             metadata.docname + '.jpg',
             __dirname + '/veteran_typewriter.ttf',
+            __dirname + '/NotoSans-Regular.ttf',
             metadata.doctitle,
             'tiuraniemi.io' + path,
             '/images/generated/',

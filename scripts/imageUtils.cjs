@@ -6,7 +6,8 @@ const sharp = require('sharp');
 const generateOgImageFromText = (
     outputDirectory,
     fileName,
-    fontPath,
+    titleFontPath,
+    headerFontPath,
     printText,
     headerText,
     urlPathPrefix,
@@ -40,7 +41,7 @@ const generateOgImageFromText = (
                 // Write header, always in the same place
                 img.stringFT(
                     txtColor,
-                    fontPath,
+                    headerFontPath,
                     HEADER_FONT_SIZE,
                     0,
                     SIZE_PADDING,
@@ -107,7 +108,7 @@ const generateOgImageFromText = (
                     const yCoord = padding + i * distanceBetweenLines;
                     img.stringFT(
                         txtColor,
-                        fontPath,
+                        titleFontPath,
                         fontSize,
                         0,
                         SIZE_PADDING,
