@@ -12,7 +12,11 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         const path = inputDirectory + '/' + fileName;
         const stats = await fs.stat(path);
         if (stats.isDirectory()) {
-           await copyFilesRecursive(inputDirectory + '/' + fileName, outputDirectory + '/' + fileName, allowedExtension);
+            await copyFilesRecursive(
+                inputDirectory + '/' + fileName,
+                outputDirectory + '/' + fileName,
+                allowedExtension
+            );
         } else if (stats.isFile() && fileName.endsWith(allowedExtension)) {
             if (!fsSync.existsSync(outputDirectory)) {
                 await fs.mkdir(outputDirectory, { recursive: true });
@@ -21,8 +25,7 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
             await fs.writeFile(outputDirectory + '/' + fileName, content);
         }
     }
-}
-
+};
 
 (async () => {
     // Read all of the blog metadata files, they are in order by name
@@ -182,10 +185,13 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         if (!fsSync.existsSync(geminiBlogPostDir)) {
             await fs.mkdir(geminiBlogPostDir, { recursive: true });
         }
-        const geminiBlogPost = geminiBlogPostTemplate.replace('__BLOG_POST_CONTENT__', partial.content);
+        const geminiBlogPost = geminiBlogPostTemplate.replace(
+            '__BLOG_POST_CONTENT__',
+            partial.content
+        );
         await fs.writeFile(geminiBlogPostDir + '/index.gmi', geminiBlogPost);
     }
-    
+
     // Generate Gemini index
     let geminiBlogPosts = '';
     const geminiBlogIndexTemplate = await fs.readFile(srcDir + '/gemini/blog.gmi.tpl', 'utf8');
@@ -198,4 +204,8 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     // Move other gemini source files and directories to the right places
     await copyFilesRecursive(srcDir + '/gemini', geminiDistDir, '.gmi');
 
+    // Print results
+    console.info(
+        `Generated:\n* ${generatedOgImages.length} OpenGraphImages\n* ${generatedTranscodedImages.length} transcoded images\n* from ${svelteBlogPostResults.length} blog posts`
+    );
 })();
