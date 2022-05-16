@@ -6,6 +6,24 @@ const {
     createPictureTagFromImageTag,
 } = require('./imageUtils.cjs');
 
+const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtension) => {
+    const files = await fs.readdir(inputDirectory);
+    for (const fileName of files) {
+        const path = inputDirectory + '/' + fileName;
+        const stats = await fs.stat(path);
+        if (stats.isDirectory()) {
+           await copyFilesRecursive(inputDirectory + '/' + fileName, outputDirectory + '/' + fileName, allowedExtension);
+        } else if (stats.isFile() && fileName.endsWith(allowedExtension)) {
+            if (!fsSync.existsSync(outputDirectory)) {
+                await fs.mkdir(outputDirectory, { recursive: true });
+            }
+            const content = await fs.readFile(path, 'utf8');
+            await fs.writeFile(outputDirectory + '/' + fileName, content);
+        }
+    }
+}
+
+
 (async () => {
     // Read all of the blog metadata files, they are in order by name
     const metadataDir = __dirname + '/../.svelte-kit/blog/metadata/';
@@ -70,7 +88,7 @@ const {
         (value) => value
     );
 
-    // Read in blog templates
+    // Read in HTML blog templates
     const srcDir = __dirname + '/../src';
     const svelteBlogPostTemplate = await fs.readFile(
         srcDir + '/svelte/routes/_blog_post_template.svelte',
@@ -80,7 +98,6 @@ const {
         srcDir + '/svelte/routes/_blog_index_template.svelte',
         'utf8'
     );
-    const geminiBlogIndexTemplate = await fs.readFile(srcDir + '/gemini/blog.gmi.tpl', 'utf8');
 
     // Read in HTML partials and pair them with metadata
     const htmlPartialsDir = __dirname + '/../.svelte-kit/blog/partials/';
@@ -90,15 +107,15 @@ const {
         const metadata = blogPostMetadata.find((metadata) => fileName.startsWith(metadata.docname));
         return { fileName, content, metadata };
     });
-    const partialsContents = await Promise.all(htmlPartialsContentPromises);
-    partialsContents.reverse();
+    const htmlPartialsContents = await Promise.all(htmlPartialsContentPromises);
+    htmlPartialsContents.reverse();
 
     // Generate svelte blog posts
     const svelteRoutesDir = srcDir + '/svelte/routes';
     if (!fsSync.existsSync(svelteRoutesDir + '/blog')) {
         await fs.mkdir(svelteRoutesDir + '/blog', { recursive: true });
     }
-    const svelteBlogPostPromises = partialsContents.map(async (partial) => {
+    const svelteBlogPostPromises = htmlPartialsContents.map(async (partial) => {
         let fileContent = svelteBlogPostTemplate;
         fileContent = fileContent
             .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
@@ -136,7 +153,7 @@ const {
         svelteBlogIndexTemplate.indexOf('__BLOG_POST_END__')
     );
     let svelteBlogIndex = svelteBlogIndexPrefix;
-    for (const partial of partialsContents) {
+    for (const partial of htmlPartialsContents) {
         svelteBlogIndexPost = svelteBlogIndexPostTemplate;
         svelteBlogIndex += svelteBlogIndexPost
             .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
@@ -146,11 +163,39 @@ const {
     svelteBlogIndex += svelteBlogIndexPostfix;
     await fs.writeFile(svelteRoutesDir + '/blog/index.svelte', svelteBlogIndex);
 
+    // Read in Gemini posts and pair them with metadata
+    const geminiPostsDir = __dirname + '/../.svelte-kit/blog/gemini/';
+    const geminiDistDir = __dirname + '/../dist/gemini';
+    const geminiPostsFiles = await fs.readdir(geminiPostsDir);
+    const geminiPostsContentPromises = geminiPostsFiles.map(async (fileName) => {
+        const content = await fs.readFile(geminiPostsDir + fileName, 'utf8');
+        const metadata = blogPostMetadata.find((metadata) => fileName.startsWith(metadata.docname));
+        return { fileName, content, metadata };
+    });
+    const geminiPartialsContents = await Promise.all(geminiPostsContentPromises);
+    geminiPartialsContents.reverse();
+
+    // Generate Gemini blog posts to the right sub-directories and add navigation to the bottom
+    const geminiBlogPostTemplate = await fs.readFile(srcDir + '/gemini/blog-post.gmi.tpl', 'utf8');
+    for (const partial of geminiPartialsContents) {
+        const geminiBlogPostDir = geminiDistDir + partial.metadata.path;
+        if (!fsSync.existsSync(geminiBlogPostDir)) {
+            await fs.mkdir(geminiBlogPostDir, { recursive: true });
+        }
+        const geminiBlogPost = geminiBlogPostTemplate.replace('__BLOG_POST_CONTENT__', partial.content);
+        await fs.writeFile(geminiBlogPostDir + '/index.gmi', geminiBlogPost);
+    }
+    
     // Generate Gemini index
     let geminiBlogPosts = '';
-    for (const partial of partialsContents) {
+    const geminiBlogIndexTemplate = await fs.readFile(srcDir + '/gemini/blog.gmi.tpl', 'utf8');
+    for (const partial of geminiPartialsContents) {
         geminiBlogPosts += `=> ${partial.metadata.path} ${partial.metadata.revdate}: ${partial.metadata.doctitle}\n`;
     }
     let geminiBlogIndex = geminiBlogIndexTemplate.replace(/__BLOG_POSTS__/g, geminiBlogPosts);
-    await fs.writeFile(__dirname + '/../dist/gemini/blog/index.gmi', geminiBlogIndex);
+    await fs.writeFile(geminiDistDir + '/blog/index.gmi', geminiBlogIndex);
+
+    // Move other gemini source files and directories to the right places
+    await copyFilesRecursive(srcDir + '/gemini', geminiDistDir, '.gmi');
+
 })();
