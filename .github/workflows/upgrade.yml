@@ -1,7 +1,10 @@
 name: Upgrade
 on:
-    schedule:
-        - cron: '20 13 * * *'
+    # schedule:
+    #     - cron: '00 14 * * *'
+    push:
+        branches:
+            - main
 jobs:
     upgrade:
         name: Upgrade the server via Ansible
