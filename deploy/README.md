@@ -51,7 +51,7 @@ to access the Raspberry Pi from the outside.
 Create new SSH keys to `~/.ssh/id_rsa_pi` with:
 
 ```
-ssh-keygen 
+ssh-keygen
 ```
 
 and then copy the file to the Raspberry Pi with:
@@ -83,6 +83,6 @@ This playbook upgrades the debian packages on the Raspberry Pi. If kernel update
 
 ### setup_services.yml
 
-TODO: 
+TODO:
 
 https://github.com/timothymiller/cloudflare-ddns
