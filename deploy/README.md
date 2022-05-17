@@ -77,12 +77,14 @@ and you should be able to `ssh [your domain]` to log in.
 
 Once there is a way to access the Raspberry Pi with SSH keys from the internet, use the following playbooks to configure it.
 
-### upgrade.yml
+### [Initialize](./initialize.yml)
 
-This playbook upgrades the debian packages on the Raspberry Pi. If kernel updates, reboot is issued.
+This playbook installs the needed prerequisite dependecies to Raspberry Pi OS Lite that aren't there. Needs to be run once.
 
-### setup_services.yml
+### [Setup Services](./setup_services.yml)
 
-TODO:
+Sets up all of the custom systemd services to the Rasperry Pi OS.
 
-https://github.com/timothymiller/cloudflare-ddns
+### [Upgrade](./upgrade.yml)
+
+This playbook upgrades the debian packages on the Raspberry Pi. If kernel updates, reboot is issued. [Scheduled to run nightly](../.github/workflows/upgrade.yml).

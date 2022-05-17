@@ -1,0 +1,11 @@
+[Unit]
+Description=Checks and updates Cloudflare DDNS
+Wants=cloudflare-ddns.timer
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}
+ExecStart=/usr/bin/python3 cloudflare-ddns.py
+
+[Install]
+WantedBy=multi-user.target

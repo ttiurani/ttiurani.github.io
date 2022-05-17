@@ -1,0 +1,42 @@
+---
+- hosts: tiuraniemi.io
+  become: true
+  become_user: root
+  tasks:
+      - name: Create output directory
+        ansible.builtin.file:
+            path: '{{ playbook_dir }}/.output'
+            state: directory
+        become: false
+        register: local_dir
+        delegate_to: localhost
+      - name: Download Cloudflare DDNS
+        local_action: 'get_url url="https://github.com/timothymiller/cloudflare-ddns/archive/{{ cloudflare_ddns_commit }}.tar.gz" dest="{{ playbook_dir }}/.output/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz" checksum="sha256:{{ cloudflare_ddns_checksum }}"'
+        become: false
+      - name: Copy Cloudflare DDNS 
+        ansible.builtin.copy:
+            src: '{{ playbook_dir }}/.output/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
+            dest: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
+            owner: root
+            group: root
+            mode: '0644'
+        register: cloudflare_ddns
+      - name: Unpack Cloudflare DDNS 
+        ansible.builtin.unarchive:
+            src: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
+            dest: '/opt'
+            remote_src: yes
+        when: cloudflare_ddns.changed
+      - name: Install Cloudflare DDNS Python requirements in virtualenv
+        pip:
+            requirements: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/requirements.txt'
+            virtualenv: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/venv'
+        when: cloudflare_ddns.changed
+      - name: Generate config file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/cloudflare-ddns.json.j2'
+            dest: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/config.json'
+            owner: root
+            group: root
+            mode: '0644'
+        register: cloudflare_ddns_config

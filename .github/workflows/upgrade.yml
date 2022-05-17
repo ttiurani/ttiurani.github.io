@@ -17,4 +17,4 @@ jobs:
                   playbook: upgrade.yml
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-                  options: --inventory hosts
+                  options: --inventory hosts.yml

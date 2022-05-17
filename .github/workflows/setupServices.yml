@@ -1,0 +1,26 @@
+name: Setup Services
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - 'deploy/hosts.yml'
+            - 'deploy/setup_services.yml'
+            - 'deploy/services/**'
+jobs:
+    setupServices:
+        name: Sets up services on the server with Ansible
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Run ansible
+              uses: dawidd6/action-ansible-playbook@v2
+              with:
+                  directory: deploy
+                  playbook: setup_services.yml
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+                  options: |
+                      --inventory hosts.yml
+                      --extra-vars cloudflare_api_token=${{ secrets.CLOUDFLARE_API_TOKEN }}
