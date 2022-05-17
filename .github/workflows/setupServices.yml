@@ -24,3 +24,4 @@ jobs:
                   options: |
                       --inventory hosts.yml
                       --extra-vars cloudflare_api_token=${{ secrets.CLOUDFLARE_API_TOKEN }}
+                      --extra-vars cloudflare_zone_id=${{ secrets.CLOUDFLARE_ZONE_ID }}
