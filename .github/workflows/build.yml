@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
     push:
         branches:
-            - mainREMOVEME # FIXME: comment out for a second
+            - main
 jobs:
     build:
         name: Build ande deploy site
