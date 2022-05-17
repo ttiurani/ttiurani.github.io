@@ -32,7 +32,7 @@
             requirements: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/requirements.txt'
             virtualenv: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/venv'
         when: cloudflare_ddns.changed
-      - name: Copy config file
+      - name: Copy Cloudflare DDNS config file
         ansible.builtin.template:
             src: '{{ playbook_dir }}/services/cloudflare-ddns.json.j2'
             dest: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/config.json'
@@ -40,7 +40,7 @@
             group: root
             mode: '0644'
         register: cloudflare_ddns_config
-      - name: Copy service file
+      - name: Copy Cloudflare DDNS service file
         ansible.builtin.template:
             src: '{{ playbook_dir }}/services/cloudflare-ddns.service.j2'
             dest: '/etc/systemd/system/cloudflare-ddns.service'
@@ -48,3 +48,11 @@
             group: root
             mode: '0644'
         register: cloudflare_ddns_service
+      - name: Copy Cloudflare DDNS timer file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/cloudflare-ddns.timer.j2'
+            dest: '/etc/systemd/system/cloudflare-ddns.timer'
+            owner: root
+            group: root
+            mode: '0644'
+        register: cloudflare_ddns_timer

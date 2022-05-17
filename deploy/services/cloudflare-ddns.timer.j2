@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for Cloudflare DDNS
+Requires=cloudflare-ddns.service
+
+[Timer]
+Unit=cloudflare-ddns.service
+OnUnitInactiveSec=300
+
+[Install]
+WantedBy=timers.target
