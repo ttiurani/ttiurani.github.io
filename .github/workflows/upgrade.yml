@@ -7,7 +7,7 @@ on:
             - main
 jobs:
     upgrade:
-        name: Upgrade the server via Ansible
+        name: Upgrade the server with Ansible
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
