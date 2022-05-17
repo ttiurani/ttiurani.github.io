@@ -56,6 +56,11 @@
             group: root
             mode: '0644'
         register: cloudflare_ddns_timer
+      - name: Make sure Cloudflare DDNS timer is running
+        ansible.builtin.systemd:
+          state: started
+          name: cloudflare-ddns.timer
+        when: cloudflare_ddns_timer.changed
       - name: Enable Cloudflare DDNS timer
         ansible.builtin.systemd:
           name: cloudflare-ddns.timer
@@ -66,8 +71,4 @@
           state: restarted
           daemon_reload: yes
           name: cloudflare-ddns.timer
-        when: cloudflare_ddns.changed or cloudflare_ddns_timer.changed or cloudflare_ddns_service.changed
-      - name: Make sure Cloudflare DDNS timer is running
-        ansible.builtin.systemd:
-          state: started
-          name: cloudflare-ddns.timer
+        when: cloudflare_ddns.changed or cloudflare_ddns_service.changed
