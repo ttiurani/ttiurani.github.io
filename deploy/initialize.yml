@@ -9,3 +9,15 @@
       - name: Install virtualenv
         pip:
             name: virtualenv
+      - name: Create HTML directory
+        file:
+          path: /srv/www/content
+          state: directory
+      - name: Create Gemini directory
+        file:
+          path: /srv/gemini/content
+          state: directory
+      - name: Create hypercore-protocol directory
+        file:
+          path: /srv/hyper/content
+          state: directory

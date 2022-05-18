@@ -79,7 +79,7 @@ Once there is a way to access the Raspberry Pi with SSH keys from the internet, 
 
 ### [Initialize](./initialize.yml)
 
-This playbook installs the needed prerequisite dependecies to Raspberry Pi OS Lite that aren't there. Needs to be run once.
+This playbook installs the needed prerequisite dependecies to Raspberry Pi OS Lite that aren't there, and sets up directories. Needs to be run once.
 
 ### [Setup Services](./setup_services.yml)
 

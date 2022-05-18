@@ -10,6 +10,8 @@
         become: false
         register: local_dir
         delegate_to: localhost
+
+      # CLOUDFLARE DDNS
       - name: Download Cloudflare DDNS
         local_action: 'get_url url="https://github.com/timothymiller/cloudflare-ddns/archive/{{ cloudflare_ddns_commit }}.tar.gz" dest="{{ playbook_dir }}/.output/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz" checksum="sha256:{{ cloudflare_ddns_checksum }}"'
         become: false
@@ -72,3 +74,48 @@
           daemon_reload: yes
           name: cloudflare-ddns.timer
         when: cloudflare_ddns.changed or cloudflare_ddns_service.changed
+
+      # AGATE GEMINI SERVER
+      - name: Download Agate
+        local_action: 'get_url url="https://github.com/mbrubeck/agate/releases/download/{{ agate_version }}/agate.aarch64-unknown-linux-gnu.gz" dest="{{ playbook_dir }}/.output/agate-{{ agate_version }}.gz" checksum="sha256:{{ agate_checksum }}"'
+        become: false
+      - name: Copy Agate
+        ansible.builtin.copy:
+            src: '{{ playbook_dir }}/.output/agate-{{ agate_version }}.gz'
+            dest: '/opt/agate-{{ agate_version }}.gz'
+            owner: root
+            group: root
+            mode: '0644'
+        register: agate
+      - name: Unpack Agate
+        command: 'gunzip -k /opt/agate-{{ agate_version }}.gz'
+        when: agate.changed
+      - name: Set Agate executable
+        ansible.builtin.file:
+          path: /opt/agate-{{ agate_version }}
+          mode: '0744'
+        when: agate.changed
+      - name: Copy Agate service file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/agate.service.j2'
+            dest: '/etc/systemd/system/agate.service'
+            owner: root
+            group: root
+            mode: '0644'
+        register: agate_service
+      - name: Make sure Agate is running
+        ansible.builtin.systemd:
+          state: started
+          name: agate
+        when: agate_service.changed
+      - name: Enable Agate
+        ansible.builtin.systemd:
+          name: agate
+          enabled: yes
+        when: agate_service.changed
+      - name: Restart Agate when configs change, and also issue daemon-reload to pick up config changes
+        ansible.builtin.systemd:
+          state: restarted
+          daemon_reload: yes
+          name: agate
+        when: agate.changed or agate_service.changed
