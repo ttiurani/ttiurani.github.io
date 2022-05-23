@@ -1,0 +1,19 @@
+---
+- hosts: tiuraniemi.io
+  become: true
+  become_user: root
+  tasks:
+      - name: Synchronize HTML files
+        ansible.posix.synchronize:
+            src: ../dist/html/
+            dest: /srv/www/content/
+            delete: yes
+            rsync_opts:
+              - "--chown=root:root"
+      - name: Synchronize Gemini files
+        ansible.posix.synchronize:
+            src: ../dist/gemini/
+            dest: /srv/gemini/content/
+            delete: yes
+            rsync_opts:
+              - "--chown=root:root"             

@@ -26,3 +26,11 @@ jobs:
                   cache: 'npm'
             - run: npm install
             - run: npm run build
+            - name: Deploy site to live
+              uses: dawidd6/action-ansible-playbook@v2
+              with:
+                  directory: deploy
+                  playbook: sync_site.yml
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+                  options: --inventory hosts.yml
