@@ -1,5 +1,7 @@
 [Unit]
 Description=Cloudflare DDNS
+After=network-online.target
+Wants=network-online.target
 Wants=cloudflare-ddns.timer
 
 [Service]

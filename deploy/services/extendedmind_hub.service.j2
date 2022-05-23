@@ -1,0 +1,17 @@
+[Unit]
+Description=Extendedmind Hub Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} --data-root-dir /srv/hyper/content --static-root-dir /srv/www/content --http-port 80
+
+Restart=always
+RestartSec=1
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=extendedmind_hub
+
+[Install]
+WantedBy=multi-user.target

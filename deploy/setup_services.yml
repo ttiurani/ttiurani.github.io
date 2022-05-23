@@ -75,6 +75,44 @@
           name: cloudflare-ddns.timer
         when: cloudflare_ddns.changed or cloudflare_ddns_service.changed
 
+      # EXTENDEDMIND HUB
+      - name: Download extendedmind_hub
+        local_action: 'get_url url="https://github.com/extendedmind/extendedmind/releases/download/{{ extendedmind_hub_version }}/extendedmind_hub" dest="{{ playbook_dir }}/.output/extendedmind_hub-{{ extendedmind_hub_version }}" checksum="sha256:{{ extendedmind_hub_checksum }}"'
+        become: false
+      - name: Copy extendedmind_hub
+        ansible.builtin.copy:
+            src: '{{ playbook_dir }}/.output/extendedmind_hub-{{ extendedmind_hub_version }}'
+            # TODO: After real releases start to happen, start using version here instead of checksum
+            dest: '/opt/extendedmind_hub-{{ extendedmind_hub_checksum }}'
+            owner: root
+            group: root
+            mode: '0644'
+        register: extendedmind_hub
+      - name: Set extendedmind_hub executable
+        ansible.builtin.file:
+          path: /opt/extendedmind_hub-{{ extendedmind_hub_checksum }}
+          mode: '0744'
+        when: extendedmind_hub.changed
+      - name: Copy extendedmind_hub service file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/extendedmind_hub.service.j2'
+            dest: '/etc/systemd/system/extendedmind_hub.service'
+            owner: root
+            group: root
+            mode: '0644'
+        register: extendedmind_hub_service
+      - name: Enable extendedmind_hub
+        ansible.builtin.systemd:
+          name: extendedmind_hub
+          enabled: yes
+        when: extendedmind_hub_service.changed
+      - name: Restart extendedmind_hub when configs change, and also issue daemon-reload to pick up config changes
+        ansible.builtin.systemd:
+          state: restarted
+          daemon_reload: yes
+          name: extendedmind_hub
+        when: extendedmind_hub.changed or extendedmind_hub_service.changed
+
       # AGATE GEMINI SERVER
       - name: Download Agate
         local_action: 'get_url url="https://github.com/mbrubeck/agate/releases/download/{{ agate_version }}/agate.aarch64-unknown-linux-gnu.gz" dest="{{ playbook_dir }}/.output/agate-{{ agate_version }}.gz" checksum="sha256:{{ agate_checksum }}"'

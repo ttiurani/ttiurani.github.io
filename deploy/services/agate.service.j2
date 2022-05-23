@@ -1,5 +1,7 @@
 [Unit]
 Description=Agate gemini server
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 WorkingDirectory=/srv/gemini/
