@@ -13,6 +13,10 @@
         file:
           path: /srv/www/content
           state: directory
+      - name: Create directory for ACME certificates
+        file:
+          path: /srv/www/.certificates
+          state: directory
       - name: Create Gemini directory
         file:
           path: /srv/gemini/content
