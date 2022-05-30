@@ -4,7 +4,19 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} --data-root-dir /srv/hyper/content --static-root-dir /srv/www/content --http-port 80
+ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
+--data-root-dir /srv/hyper/content \
+--static-root-dir /srv/www/content \
+--http-port 80 \
+--https-port 443 \
+--domain tiuraniemi.io \
+--acme-email timo.tiuraniemi@iki.fi \
+--acme-dir /srv/www/.certificates \
+--cache-ttl-sec 300 \
+--cache-tti-sec 60 \
+--inline-css-path /blog/* \
+--immutable-path /_app/*.css \
+--immutable-path /_app/*.js
 
 Restart=always
 RestartSec=1

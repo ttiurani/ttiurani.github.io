@@ -36,6 +36,8 @@ In Cloudflare DNS settings, set A record to your domain to point to the IP addre
 
 Your router probably isn't forwarding SSH by default to to the Raspberry pi, so set up forwarding of port 22 to Raspberry Pi port 22.
 
+Also port forward HTTP port 80 and HTTPS port 443.
+
 ### 6. Log In to Your Domain
 
 Run:
@@ -73,9 +75,27 @@ Host [your domain]
 
 and you should be able to `ssh [your domain]` to log in.
 
+### 8. Upgrade to Debian Bookworm
+
+If Rasperry OS is still using Debian Bullseye, it has a too old glibc v2.31 when at least v2.32 is needed. To fix this edit:
+
+```
+/etc/apt/sources.list
+```
+
+and change `bullseye` to `bookworm`. After that run:
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt dist-upgrade
+```
+
+and reboot.
+
 ## Ansible Setup
 
-Once there is a way to access the Raspberry Pi with SSH keys from the internet, use the following playbooks to configure it.
+Once there is a way to access the Raspberry Pi with SSH keys from the internet, and glibc version is new enough, use the following playbooks to configure it.
 
 ### [Initialize](./initialize.yml)
 
