@@ -12,6 +12,9 @@ ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
 --domain tiuraniemi.io \
 --acme-email timo.tiuraniemi@iki.fi \
 --acme-dir /srv/www/.certificates \
+--acme-production \
+--hsts-max-age 300 \
+--hsts-permanent_redirect \
 --cache-ttl-sec 300 \
 --cache-tti-sec 60 \
 --inline-css-path /blog/* \
