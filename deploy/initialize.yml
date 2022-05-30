@@ -13,6 +13,10 @@
         file:
           path: /srv/www/content
           state: directory
+      - name: Create HTML logs directory
+        file:
+          path: /srv/www/logs
+          state: directory
       - name: Create directory for ACME certificates
         file:
           path: /srv/www/.certificates
