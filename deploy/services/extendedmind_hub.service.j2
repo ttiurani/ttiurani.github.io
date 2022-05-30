@@ -14,7 +14,7 @@ ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
 --acme-dir /srv/www/.certificates \
 --acme-production \
 --hsts-max-age 300 \
---hsts-permanent_redirect \
+--hsts-permanent-redirect \
 --cache-ttl-sec 300 \
 --cache-tti-sec 60 \
 --inline-css-path /blog/* \
@@ -24,7 +24,6 @@ ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
 Restart=always
 RestartSec=1
 
-StandardError=syslog
 SyslogIdentifier=extendedmind_hub
 
 [Install]
