@@ -17,6 +17,10 @@
         file:
           path: /srv/www/logs
           state: directory
+      - name: Create HTML metrics directory
+        file:
+          path: /srv/www/metrics
+          state: directory
       - name: Create directory for ACME certificates
         file:
           path: /srv/www/.certificates

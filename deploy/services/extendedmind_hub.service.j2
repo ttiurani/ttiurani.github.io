@@ -10,6 +10,7 @@ ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
 --http-port 80 \
 --https-port 443 \
 --log-dir /srv/www/logs \
+--metrics-dir /srv/www/metrics \
 --domain tiuraniemi.io \
 --acme-email timo.tiuraniemi@iki.fi \
 --acme-dir /srv/www/.certificates \
