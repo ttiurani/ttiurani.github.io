@@ -6,6 +6,8 @@ Timo Tiuraniemi
 :figure-caption!:
 
 Body text, *strong text* and then _cursive text_ both herefootnote:[Adding extra info to footnote].
+Second sentence of first paragraph on a new line.
+And a third.
 
 Second extrafootnote:[Second footnote] paragraph
 
