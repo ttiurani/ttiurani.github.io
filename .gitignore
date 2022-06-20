@@ -1,5 +1,6 @@
 # Generated
 static/images/generated/
+static/feed.atom
 src/svelte/routes/blog
 
 .DS_Store

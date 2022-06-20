@@ -166,6 +166,48 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     svelteBlogIndex += svelteBlogIndexPostfix;
     await fs.writeFile(svelteRoutesDir + '/blog/index.svelte', svelteBlogIndex);
 
+    // Generate Atom feed
+    const atomFeedTemplate = await fs.readFile(
+        srcDir + '/atom/feed.atom.tpl',
+        'utf8'
+    );
+    const atomFeedPrefix = atomFeedTemplate.substring(
+        0,
+        atomFeedTemplate.indexOf('__BLOG_POST_START__')
+    );
+    const atomFeedPostfix = atomFeedTemplate.substring(
+        atomFeedTemplate.indexOf('__BLOG_POST_END__') + 17
+    );
+    const atomFeedEntryTemplate = atomFeedTemplate.substring(
+        atomFeedTemplate.indexOf('__BLOG_POST_START__') + 19,
+        atomFeedTemplate.indexOf('__BLOG_POST_END__')
+    );
+    let atomFeed = atomFeedPrefix;
+    let latestUpdated = "";
+    for (const partial of htmlPartialsContents) {
+        atomFeedEntry = atomFeedEntryTemplate;
+        const updated = partial.metadata.revdate + "T00:00:00Z";
+        if (updated > latestUpdated) {
+            latestUpdated = updated;
+        }
+        let published = updated;
+        if (partial.metadata.revremark) {
+            let historyDates = partial.metadata.revremark.match(/\d{4}-\d\d-\d\d/g);
+            if (historyDates.length) {
+                published = historyDates[0] + "T00:00:00Z";
+            }
+        }
+        atomFeed += atomFeedEntryTemplate
+            .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+            .replaceAll(/__BLOG_POST_UPDATED_DATE_TIME__/g, updated)
+            .replaceAll(/__BLOG_POST_PUBLISHED_DATE_TIME__/g, published)
+            .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path)
+            .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description);
+    }
+    atomFeed = atomFeed.replace("__LATEST_BLOG_POST_UPDATED_DATE_TIME__", latestUpdated);
+    atomFeed += atomFeedPostfix;
+    await fs.writeFile(staticDir + '/feed.atom', atomFeed);
+
     // Read in Gemini posts and pair them with metadata
     const geminiPostsDir = __dirname + '/../.svelte-kit/blog/gemini/';
     const geminiDistDir = __dirname + '/../dist/gemini';
