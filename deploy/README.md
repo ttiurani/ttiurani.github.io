@@ -93,6 +93,39 @@ sudo apt dist-upgrade
 
 and reboot.
 
+### 9. Lower Energy Consumption
+
+There are a few unnecessary services running, which waste energy. Following
+[this guide](https://www.cnx-software.com/2021/12/09/raspberry-pi-zero-2-w-power-consumption)
+run `sudo vi /boot/config.txt` and change the following lines:
+
+```
+dtparam=audio=off
+camera_auto_detect=0
+display_auto_detect=0
+```
+
+and add the following lines:
+
+```
+dtoverlay=disable-bt
+dtoverlay=disable-wifi
+```
+
+If running `/usr/bin/tvservice -o` errors with `/usr/bin/tvservice is not supported when using the vc4-kms-v3d driver`, also change:
+
+```
+dtoverlay=vc4-fkms-v3d
+```
+
+and reboot after which the command should succeed with `Powering off HDMI`. To make it permanent, run `sudo vi /etc/rc.local` and add:
+
+```
+/usr/bin/tvservice -o
+```
+
+there before `exit 0`.
+
 ## Ansible Setup
 
 Once there is a way to access the Raspberry Pi with SSH keys from the internet, and glibc version is new enough, use the following playbooks to configure it.
