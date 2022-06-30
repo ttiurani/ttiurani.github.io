@@ -78,6 +78,9 @@
         </h1>
         <nav class="main-nav" id="main-nav" aria-label="Main">
             <ul class="main-nav__list">
+                <li id="about" class="main-nav__item" class:active={$page.url.pathname === '/'}>
+                    <a href="/">About</a>
+                </li>
                 <li class="main-nav__item" class:active={$page.url.pathname === '/work'}>
                     <a href="/work">Work</a>
                 </li>
@@ -216,5 +219,15 @@
         footer {
             border-top-color: #5f5f5f;
         }
+    }
+
+    #about {
+        display: none;
+    }
+
+    @media only screen and (min-width: 450px) {
+      #about {
+          display: inherit;
+      }
     }
 </style>

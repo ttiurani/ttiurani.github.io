@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-    <title>Home</title>
+    <title>Timo Tiuraniemi</title>
     <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
