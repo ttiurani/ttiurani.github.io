@@ -11,18 +11,21 @@ ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
 --https-port 443 \
 --log-dir /srv/www/logs \
 --metrics-dir /srv/www/metrics \
---metrics-endpoint /metrics \
+--metrics-endpoint /api/metrics \
+--metrics-secret {{ extendedmind_hub_metrics_secret }} \
 --domain tiuraniemi.io \
 --acme-email timo.tiuraniemi@iki.fi \
 --acme-dir /srv/www/.certificates \
 --acme-production true \
---hsts-max-age 300 \
+--hsts-max-age 31536000 \
 --hsts-permanent-redirect true \
+--hsts_preload true \
 --cache-ttl-sec 300 \
 --cache-tti-sec 60 \
 --inline-css-path /blog/* \
---immutable-path /_app/*.css \
---immutable-path /_app/*.js
+--immutable-path /_app/immutable/*.css \
+--immutable-path /_app/immutable/*.js \
+
 
 Restart=always
 RestartSec=1
