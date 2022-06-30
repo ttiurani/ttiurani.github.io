@@ -45,10 +45,6 @@ a:hover {
     text-decoration: none;
 }
 
-svg {
-    fill: var(--color-text);
-}
-
 img, picture {
     max-width: 100%
 }
