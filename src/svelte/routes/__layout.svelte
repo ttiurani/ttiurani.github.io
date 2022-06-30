@@ -78,9 +78,6 @@
         </h1>
         <nav class="main-nav" id="main-nav" aria-label="Main">
             <ul class="main-nav__list">
-                <li class="main-nav__item" class:active={$page.url.pathname === '/'}>
-                    <a href="/">Home</a>
-                </li>
                 <li class="main-nav__item" class:active={$page.url.pathname === '/work'}>
                     <a href="/work">Work</a>
                 </li>
@@ -92,19 +89,15 @@
     </div>
 </header>
 
-<main>
+<main class="main-content">
     <slot />
 </main>
 
 <footer>
     <div id="siteinfo">
-        tiuraniemi dot io by <a href="https://tiuraniemi.io" rel="cc:attributionURL"
-            >Timo Tiuraniemi</a
-        >
+        tiuraniemi dot io by <a href="https://tiuraniemi.io" rel="cc:attributionURL">Timo Tiuraniemi</a>
         is licensed under a
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US"
-            >Creative Commons Attribution-ShareAlike 4.0 International License</a
-        >.
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
     </div>
 </footer>
 
@@ -129,7 +122,7 @@
         border-bottom: 2px solid;
     }
     header .nav-wrapper #logo {
-        max-height: 40px;
+        max-height: 38px;
     }
     header .nav-wrapper .main-nav {
         flex: 1;
@@ -141,7 +134,7 @@
         text-align: right;
     }
     header .nav-wrapper .main-nav .main-nav__list .main-nav__item {
-        margin-right: 1.5rem;
+        margin-left: 1.5rem;
         position: relative;
         list-style: none;
     }
@@ -207,9 +200,15 @@
         animation-delay: 0.86s;
     }
 
+    .main-content {
+        flex-grow: 1;
+        padding-bottom: 100px;
+        max-width: 1000px;
+    }
+
     footer {
         border-top: 1px solid #bfbfbf;
-        padding-top: 10px;
+        padding: 20px;
         text-align: center;
         font-size: 12px;
     }

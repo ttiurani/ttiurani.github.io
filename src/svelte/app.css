@@ -17,8 +17,15 @@
     }
 }
 
+html {
+    overflow-y: overlay;
+}
+
+html, body {
+    height:100%;
+}
+
 body {
-    min-height: 100vh;
     margin: 0;
     background: var(--color-background);
     color: var(--color-text);
@@ -27,8 +34,7 @@ body {
 
 a {
     color: var(--color-link);
-    text-decoration: none;
-    border-bottom: 1px dashed;
+    text-decoration: underline;
 }
 
 a:visited {
@@ -36,11 +42,15 @@ a:visited {
 }
 
 a:hover {
-    border-bottom: 0;
+    text-decoration: none;
 }
 
 svg {
     fill: var(--color-text);
+}
+
+img, picture {
+    max-width: 100%
 }
 
 #svelte {
@@ -48,4 +58,8 @@ svg {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 30px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
