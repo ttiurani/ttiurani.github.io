@@ -1,5 +1,5 @@
 <script lang="ts">
-    /* import Logo from '$lib/Logo.svelte'; */
+    import Logo from '$lib/Logo.svelte';
     import { page } from '$app/stores';
     import '../normalize.css';
     import '../app.css';
@@ -9,7 +9,7 @@
     <div class="nav-wrapper">
        <h1 class="logo">
            <a href="/" title="tiuraniemi.io">
-               <!--Logo/-->
+               <Logo/>
             </a>
         </h1>
         <nav class="main-nav" id="main-nav" aria-label="Main">
