@@ -17,3 +17,5 @@
             delete: yes
             rsync_opts:
               - "--chown=root:root"             
+      - name: Bust extendedmind hub cache
+        ansible.builtin.command: /opt/extendedmind_hub-{{ extendedmind_hub_checksum }} bust-cache
