@@ -20,8 +20,8 @@ ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
 --hsts-max-age 31536000 \
 --hsts-permanent-redirect true \
 --hsts-preload true \
---cache-ttl-sec 300 \
---cache-tti-sec 60 \
+--cache-ttl-sec 31556952 \
+--cache-tti-sec 31556952 \
 --inline-css-path /blog/* \
 --immutable-path /_app/immutable/*.css \
 --immutable-path /_app/immutable/*.js \
