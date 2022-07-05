@@ -115,10 +115,8 @@
           name: extendedmind_hub
         when: extendedmind_hub_service.changed
       - name: Restart extendedmind_hub
-        ansible.builtin.systemd:
-          state: restarted
-          name: extendedmind_hub
-        when: extendedmind_hub.changed and not extendedmind_hub_service.changed
+        ansible.builtin.command: systemctl restart extendedmind_hub.service
+        # when: extendedmind_hub.changed and not extendedmind_hub_service.changed
 
       # AGATE GEMINI SERVER
       - name: Download Agate
