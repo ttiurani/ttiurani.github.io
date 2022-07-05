@@ -4,7 +4,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
+ExecStart=/opt/extendedmind_hub \
 --data-root-dir /srv/hyper/content \
 --static-root-dir /srv/www/content \
 --http-port 80 \

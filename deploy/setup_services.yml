@@ -86,12 +86,13 @@
             dest: '/opt/extendedmind_hub-{{ extendedmind_hub_checksum }}'
             owner: root
             group: root
-            mode: '0644'
+            mode: '0744'
         register: extendedmind_hub
-      - name: Set extendedmind_hub executable
-        ansible.builtin.file:
-          path: /opt/extendedmind_hub-{{ extendedmind_hub_checksum }}
-          mode: '0744'
+      - name: Create symbolic link for extendedmind_hub
+        file:
+            src: '/opt/extendedmind_hub-{{ extendedmind_hub_checksum }}'
+            dest: '/opt/extendedmind_hub'
+            state: link
         when: extendedmind_hub.changed
       - name: Copy extendedmind_hub service file
         ansible.builtin.template:
@@ -106,12 +107,17 @@
           name: extendedmind_hub
           enabled: yes
         when: extendedmind_hub_service.changed
-      - name: Restart extendedmind_hub when configs change, and also issue daemon-reload to pick up config changes
+      - name: Restart extendedmind_hub and issue daemon-reload
         ansible.builtin.systemd:
           state: restarted
           daemon_reload: yes
           name: extendedmind_hub
-        when: extendedmind_hub.changed or extendedmind_hub_service.changed
+        when: extendedmind_hub_service.changed
+      - name: Restart extendedmind_hub
+        ansible.builtin.systemd:
+          state: restarted
+          name: extendedmind_hub
+        when: extendedmind_hub.changed and not extendedmind_hub_service.changed
 
       # AGATE GEMINI SERVER
       - name: Download Agate
