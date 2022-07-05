@@ -95,7 +95,6 @@
             owner: root
             group: root
             state: link
-        when: extendedmind_hub.changed
       - name: Copy extendedmind_hub service file
         ansible.builtin.template:
             src: '{{ playbook_dir }}/services/extendedmind_hub.service.j2'
