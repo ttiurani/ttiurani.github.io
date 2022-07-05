@@ -64,7 +64,6 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         const splitIndex = metadata.docname.indexOf('_');
         const orderNumber = parseInt(metadata.docname.substring(0, splitIndex).replaceAll(/0/g, ''));
         const darkTheme = orderNumber % 2 === 0;
-        console.log("IS DIVISABLE BY 2", darkTheme)
         const path = '/blog/' + metadata.docname.substring(splitIndex + 1);
         metadata.path = path;
         return generateOgImageFromText(
@@ -267,6 +266,24 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
 
     // Move other gemini source files and directories to the right places
     await copyFilesRecursive(srcDir + '/gemini', geminiDistDir, '.gmi');
+
+    // Generate cache pre-warm script
+    const scriptDistDir = __dirname + '/../dist/scripts';
+    if (!fsSync.existsSync(scriptDistDir)) {
+        await fs.mkdir(scriptDistDir);
+    }
+    let warmCacheScriptContent = '#!/bin/bash\n';
+    warmCacheScriptContent += 'set -euo pipefail\n';
+    const curlCommandPrefix = 'curl --fail-with-body -H \'Accept-Encoding: br\' --output /dev/null --silent --show-error https://tiuraniemi.io';
+    warmCacheScriptContent += `${curlCommandPrefix}\n`;
+    warmCacheScriptContent += `${curlCommandPrefix}/work\n`;
+    warmCacheScriptContent += `${curlCommandPrefix}/stats\n`;
+    warmCacheScriptContent += `${curlCommandPrefix}/blog\n`;
+    warmCacheScriptContent += `${curlCommandPrefix}/feed.atom\n`;
+    for (const metadata of blogPostMetadata) {
+        warmCacheScriptContent += `${curlCommandPrefix}${metadata.path}\n`;
+    }
+    await fs.writeFile(scriptDistDir + '/warm-cache.sh', warmCacheScriptContent);
 
     // Print results
     console.info(
