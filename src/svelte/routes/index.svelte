@@ -7,7 +7,7 @@
 
 <svelte:head>
     <title>Timo Tiuraniemi</title>
-    <meta name="description" content="Svelte demo app" />
+    <meta name="description" content="Timo Tiuraniemi" />
 </svelte:head>
 
 <section>
