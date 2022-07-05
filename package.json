@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "asciidoc": "npm run asciidoc:json && npm run asciidoc:html && npm run asciidoc:gemini",
-        "asciidoc:json": "asciidoctor --require asciidoctorjs-json-converter --backend json src/asciidoc/blog/*.adoc --destination-dir=.svelte-kit/blog/metadata",
+        "asciidoc:json": "asciidoctor --require asciidoctorjs-json-converter -a extract-id=highlighted --backend json src/asciidoc/blog/*.adoc --destination-dir=.svelte-kit/blog/metadata",
         "asciidoc:html": "asciidoctor --backend html5 src/asciidoc/blog/*.adoc --embedded --destination-dir=.svelte-kit/blog/partials",
         "asciidoc:gemini": "asciidoctor --require asciidoctorjs-gemini-converter -a image-base-url=https://tiuraniemi.io -a author-prefix=by -a keywords-prefix=Under: -a links-heading=Links -a footnotes-heading=Notes --backend gemini src/asciidoc/blog/*.adoc --destination-dir=.svelte-kit/blog/gemini",
         "generate-blog-sources": "node scripts/generateBlogSources.cjs",

@@ -37,23 +37,45 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     const metadataContents = await Promise.all(metadataContentPromises);
     const blogPostMetadata = metadataContents.map((content) => JSON.parse(content));
 
+    // Validate the documents
+    let isError = false;
+    for (const metadata of blogPostMetadata) {
+        if (metadata['highlighted'].length !== 1) {
+           console.error('Could not find exactly one highlighted inline quote from document', metadata);
+           isError = true;
+        }
+        if (!metadata.description && !metadata.description.length) {
+           console.error('Could not find valid description from document', metadata);
+           isError = true;
+        }
+    }
+    if (isError)  {
+        throw new Error('Errors found in AsciiDocs');
+    }
+
     // Generate OpenGraph images
     const staticDir = __dirname + '/../static';
     const generatedImagesDir = staticDir + '/images/generated/';
     if (!fsSync.existsSync(generatedImagesDir)) {
         await fs.mkdir(generatedImagesDir, { recursive: true });
     }
+
     const ogImageGenerationPromises = blogPostMetadata.map((metadata) => {
-        const path = '/blog/' + metadata.docname.substring(metadata.docname.indexOf('_') + 1);
+        const splitIndex = metadata.docname.indexOf('_');
+        const orderNumber = parseInt(metadata.docname.substring(0, splitIndex).replaceAll(/0/g, ''));
+        const darkTheme = orderNumber % 2 === 0;
+        console.log("IS DIVISABLE BY 2", darkTheme)
+        const path = '/blog/' + metadata.docname.substring(splitIndex + 1);
         metadata.path = path;
         return generateOgImageFromText(
             generatedImagesDir,
             metadata.docname + '.jpg',
             __dirname + '/veteran_typewriter.ttf',
             __dirname + '/NotoSans-Regular.ttf',
-            metadata.doctitle,
+            '“' + metadata['highlighted'][0] + '”',
             'tiuraniemi.io' + path,
             '/images/generated/',
+            darkTheme,
             metadata
         );
     });

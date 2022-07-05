@@ -32,3 +32,7 @@ And a quote:
 > I hold it that a little rebellion now and then is a good thing,
 > and as necessary in the political world as storms in the physical.
 > -- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+
+A chapter that will contain a text to be put in the opengraph image.
+[#highlighted]#This is the sentence that should go in the image; even if it is an especially long sentence, with many twists and turns, deadends and detours, it should still fit into the image because of clever font sizing.#
+It has the right id.

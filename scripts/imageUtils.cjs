@@ -11,6 +11,7 @@ const generateOgImageFromText = (
     printText,
     headerText,
     urlPathPrefix,
+    darkTheme,
     metadata
 ) => {
     return new Promise((resolve, reject) => {
@@ -22,21 +23,27 @@ const generateOgImageFromText = (
                 resolve();
             } else {
                 const SIZE_HORIZONTAL = 1200;
-                const SIZE_VERTICAL = 630;
+                const SIZE_VERTICAL = 600;
                 const SIZE_PADDING = 100;
                 const MAX_FONT_SIZE = 120;
                 const HEADER_FONT_SIZE = 15;
                 const HEADER_VERTICAL_PADDING = 50;
-                const FONT_PIXEL_COEFFICIENT = 1.2;
+                const FONT_PIXEL_COEFFICIENT = 1.3;
 
                 // Create blank new image in memory
                 const img = gd.createSync(SIZE_HORIZONTAL, SIZE_VERTICAL);
 
                 // Set background color
-                img.colorAllocate(255, 255, 255);
+                if (darkTheme) {
+                   // #282c35
+                   img.colorAllocate(40, 44, 53);
+                } else {
+                   // #ffffff
+                   img.colorAllocate(255, 255, 255);
+                }
 
-                // Set text color
-                const txtColor = img.colorAllocate(0, 0, 0);
+                // Set text color (#ffffff vs #262626)
+                const txtColor = darkTheme ? img.colorAllocate(255, 255, 255) : img.colorAllocate(38, 38, 38);
 
                 // Write header, always in the same place
                 img.stringFT(
@@ -56,7 +63,7 @@ const generateOgImageFromText = (
                 const printLines = [printTextWords[0]];
                 let startIndex = 1;
                 const longestAllowedLineLength = Math.max(
-                    Math.floor(printText.length * (SIZE_VERTICAL / (SIZE_HORIZONTAL * 1.3))),
+                    Math.floor(printText.length * (SIZE_VERTICAL / (SIZE_HORIZONTAL * 1.7))),
                     25
                 );
 
