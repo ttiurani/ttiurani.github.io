@@ -82,15 +82,14 @@
       - name: Copy extendedmind_hub
         ansible.builtin.copy:
             src: '{{ playbook_dir }}/.output/extendedmind_hub-{{ extendedmind_hub_version }}'
-            # TODO: After real releases start to happen, start using version here instead of checksum
-            dest: '/opt/extendedmind_hub-{{ extendedmind_hub_checksum }}'
+            dest: '/opt/extendedmind_hub-{{ extendedmind_hub_version }}'
             owner: root
             group: root
             mode: '0744'
         register: extendedmind_hub
       - name: Create symbolic link for extendedmind_hub
         file:
-            src: '/opt/extendedmind_hub-{{ extendedmind_hub_checksum }}'
+            src: '/opt/extendedmind_hub-{{ extendedmind_hub_version }}'
             dest: '/opt/extendedmind_hub'
             owner: root
             group: root
