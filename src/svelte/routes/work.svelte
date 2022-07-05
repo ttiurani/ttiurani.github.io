@@ -7,7 +7,7 @@
 
 <svelte:head>
     <title>Work | Timo Tiuraniemi</title>
-    <meta name="description" content="Work by Timo Tiuraniemi" />
+    <meta name="description" content="What I'm working on currently" />
 </svelte:head>
 
 <div class="content">
