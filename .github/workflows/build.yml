@@ -4,7 +4,9 @@ on:
         branches:
             - main
         paths-ignore:
-            - 'deploy/**'
+            - 'deploy/upgrade.yml'
+            - 'deploy/setup_services.yml'
+            - 'deploy/services/*'
             - '**.md'
 jobs:
     build:

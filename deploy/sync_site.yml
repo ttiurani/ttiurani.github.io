@@ -25,6 +25,6 @@
             dest: '/opt/warm-cache.sh'
             owner: root
             group: root
-            mode: '0644'
+            mode: '0744'
       - name: Warm cache
         ansible.builtin.command: /opt/warm-cache.sh
