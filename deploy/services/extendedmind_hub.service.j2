@@ -23,6 +23,7 @@ ExecStart=/opt/extendedmind_hub-{{ extendedmind_hub_checksum }} \
 --cache-ttl-sec 31556952 \
 --cache-tti-sec 31556952 \
 --inline-css-path /blog/* \
+--inline-css-skip-referer https://tiuraniemi.io* \
 --immutable-path /_app/immutable/*.css \
 --immutable-path /_app/immutable/*.js \
 

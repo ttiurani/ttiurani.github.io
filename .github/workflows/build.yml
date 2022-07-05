@@ -4,6 +4,7 @@ on:
         branches:
             - main
         paths-ignore:
+            - 'deploy/hosts.yml'
             - 'deploy/upgrade.yml'
             - 'deploy/setup_services.yml'
             - 'deploy/services/*'
