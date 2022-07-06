@@ -33,3 +33,7 @@
         file:
           path: /srv/hyper/content
           state: directory
+      - name: Create backup directory
+        file:
+          path: /srv/backup
+          state: directory

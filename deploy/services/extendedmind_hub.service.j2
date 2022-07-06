@@ -26,7 +26,8 @@ ExecStart=/opt/extendedmind_hub \
 --inline-css-skip-referer https://tiuraniemi.io* \
 --immutable-path /_app/immutable/*.css \
 --immutable-path /_app/immutable/*.js \
-
+--backup-dir /srv/backup \
+--backup-ssh-recipients-file /home/pi/.ssh/authorized_keys
 
 Restart=always
 RestartSec=1
