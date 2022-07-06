@@ -109,7 +109,10 @@
           enabled: yes
         when: extendedmind_hub_service.changed
       - name: Restart extendedmind_hub
-        ansible.builtin.command: systemctl restart extendedmind_hub.service
+        ansible.builtin.systemd:
+          state: restarted
+          daemon_reload: yes
+          name: extendedmind_hub.service
         when: extendedmind_hub.changed or extendedmind_hub_service.changed
 
       # AGATE GEMINI SERVER
@@ -151,5 +154,8 @@
           enabled: yes
         when: agate_service.changed
       - name: Restart Agate when configs change
-        ansible.builtin.command: systemctl restart agate.service
+        ansible.builtin.systemd:
+          state: restarted
+          daemon_reload: yes
+          name: agate.service
         when: agate.changed or agate_service.changed

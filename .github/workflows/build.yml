@@ -6,6 +6,7 @@ on:
         paths-ignore:
             - 'deploy/hosts.yml'
             - 'deploy/upgrade.yml'
+            - 'deploy/initialize.yml'
             - 'deploy/setup_services.yml'
             - 'deploy/services/*'
             - '**.md'
