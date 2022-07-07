@@ -15,10 +15,14 @@
     <meta property="og:type" content="article" />
 </svelte:head>
 
-<div id="post">
-    <h1>__BLOG_POST_TITLE__</h1>
-    __BLOG_POST_CONTENT__
-</div>
+<article>
+    <div class="hero">
+        <h1>__BLOG_POST_TITLE__</h1>
+    </div>
+    <div class="content">
+        __BLOG_POST_CONTENT__
+    </div>
+</article>
 
 <style>
 </style>

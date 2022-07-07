@@ -67,7 +67,7 @@
 <style>
     svg {
         fill: var(--color-text);
-        max-height: 38px;
+        max-height: calc(1.5rem + 1vw);
     }
 
     svg path {
