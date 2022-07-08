@@ -6,6 +6,6 @@
 
 <style>
     #siteinfo {
-       line-height: var(--line-height-small);
+        line-height: 50%;
     }
 </style>

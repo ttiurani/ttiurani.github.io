@@ -1,4 +1,6 @@
 <script context="module" lang="ts">
+    import Hero  from '$lib/Hero.svelte';
+    import Content  from '$lib/Content.svelte';
     import { browser, dev } from '$app/env';
     export const hydrate = dev;
     export const router = browser;
@@ -10,14 +12,16 @@
     <meta name="description" content="What I'm working on currently" />
 </svelte:head>
 
-<div class="content">
-    <h1>Work</h1>
-    <h2>Current</h2>
-    <p>
-        Building the digital commons. Protecting the environmental commons. Volunteering full-time
-        to fight for the health our planet and for global social justice.
-    </p>
-</div>
+<section>
+    <Hero>
+        <h1>Work</h1>
+    </Hero>
 
-<style>
-</style>
+    <Content>
+        <h2>Current</h2>
+        <p>
+            Building the digital commons. Protecting the environmental commons. Volunteering full-time
+            to fight for the health our planet and for global social justice.
+        </p>
+    </Content>
+</section>
