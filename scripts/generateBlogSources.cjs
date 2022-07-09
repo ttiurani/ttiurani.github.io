@@ -82,6 +82,21 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         (value) => value
     );
 
+    // await transcodeImage(
+    //     staticDir,
+    //     staticDir + '/images/',
+    //     'webp',
+    //     '/images/',
+    //     {target: '/images/profile.jpg'}
+    // );
+    // await transcodeImage(
+    //     staticDir,
+    //     staticDir + '/images/',
+    //     'avif',
+    //     '/images/',
+    //     {target: '/images/profile.jpg'}
+    // );
+
     // Generate alternative images from sources
     const transcodeImagePromises = [];
     for (const metadata of blogPostMetadata) {

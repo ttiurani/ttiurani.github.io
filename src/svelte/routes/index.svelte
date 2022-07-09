@@ -16,13 +16,24 @@
 <section bind:clientWidth={layoutWidth}>
 
     <Hero>
-        <h1>Timo Tiuraniemi</h1>
-        <p>
-            Husband and father, activist for the commons (digital &amp; environmental), programmer and
-            philosopher. He/him.
-        </p>
+        <div class="hero-row">
+            <div id="hero-text" class="hero-column">
+                <h1>Hi, I'm Timo</h1>
+                <p>I'm a <a href="https://www.opendemocracy.net/en/transformation/husbandry-feminist-reclamation-of-men-s-responsibility-to-care/">husband and father</a>. My craft is programming, but I have a <a href="https://www.helsinki.fi/en/faculty-arts/research/disciplines/philosophy-history-and-art/philosophy">background in philosophy</a>.</p>
+                <p>I'm currenty a full-time activist fighting for <a href="https://en.wikipedia.org/wiki/Commons">the commons</a>. I do that by building the digital commons with <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">free and open source software</a>, and by protecting the environmental commons with demands for <a href="https://en.wikipedia.org/wiki/Climate_justice">climate justice</a> and <a href="https://degrowth.info">degrowth</a>.</p>
+                <p>&mdash;</p>
+                <p id="contact">Subscribe to the <a href="/feed.atom">Atom feed</a> of <a href="/blog">the blog</a> to get notified of new posts. You're also welcome to <a href="https://fosstodon.org/web/@ttiurani">follow me on Mastodon</a> or reach me <a href="mailto:timo.tiuraniemi@iki.fi">by email</a>.</p>
+            </div>
+            <div id="hero-image" class="hero-column">
+                <picture>
+                    <source type="image/avif" srcset="/images/profile.avif"/>
+                    <source type="image/webp" srcset="/images/profile.webp"/>
+                    <img src="/images/profile.jpg" alt="profile"></picture>
+            </div>
+        </div>
     </Hero>
     <Content>
+        <h2>Latest toots</h2>
         <p>
             <iframe
                 title="Recent Mastodon toots by Timo Tiuraniemi"
@@ -37,4 +48,20 @@
 </section>
 
 <style>
+    #hero-image {
+        display: none;
+    }
+    @media (min-width: 45rem)  {
+        .hero-row  {
+            display: flex;
+        }
+        .hero-column  {
+            flex: 50%;
+        }
+        #hero-image {
+            display: inherit;
+            padding-top: 1em;
+            padding-left: calc(1em + 5vw);
+        }
+    }
 </style>
