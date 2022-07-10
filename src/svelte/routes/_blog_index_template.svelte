@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-    import Hero  from '$lib/Hero.svelte';
-    import Content  from '$lib/Content.svelte';
+    import Hero from '$lib/Hero.svelte';
+    import Content from '$lib/Content.svelte';
     import { browser, dev } from '$app/env';
     export const hydrate = dev;
     export const router = browser;
@@ -17,7 +17,10 @@
         <h1>Blog</h1>
     </Hero>
     <Content>
-        <p>Subscribe to the <a href="/feed.atom">blog's Atom feed</a> to get notified of new posts.</p> <h2>Latest Posts</h2>
+        <p>
+            Subscribe to the <a href="/feed.atom">blog's Atom feed</a> to get notified of new posts.
+        </p>
+        <h2>Latest Posts</h2>
         __BLOG_POST_START__
         <div class="blog-posts-item">
             <a href="__BLOG_POST_PATH__">

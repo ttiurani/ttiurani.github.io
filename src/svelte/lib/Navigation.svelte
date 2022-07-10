@@ -5,7 +5,7 @@
 
 <div class="nav-wrapper">
     <a href="/" title="tiuraniemi.io">
-       <Logo/>
+        <Logo />
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
         <ul class="main-nav__list">
@@ -42,7 +42,7 @@
     }
     .nav-wrapper .main-nav {
         font-size: calc(0.8rem + 0.4vw);
-        line-height: calc(1.0rem + 0.4vw);
+        line-height: calc(1rem + 0.4vw);
         flex: 1;
     }
     .nav-wrapper .main-nav .main-nav__list {

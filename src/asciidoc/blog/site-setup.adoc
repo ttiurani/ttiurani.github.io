@@ -1,0 +1,52 @@
+= Hosting My Personal Site On a Raspberry Pi In My Livingroom
+Timo Tiuraniemi
+1.0, 2022-07-17
+:description: tiuraniemi.io is convivial technology. This post breaks down of how it is works.
+:keywords: convivial technology, rust
+:figure-caption!:
+
+I've been meaning to set up my own site for ages, but haven't ever found the the time to actually do it.
+So why now?
+Bluntly, I only now have something important enought to say.
+During a year of https://fosstodon.org/web/@ttiurani[occasional microblogging ons on Mastodon] I've come up with almost two dozen ideas for posts, that can't be squeezed into toots.
+Also I wanted to finally become https://indieweb.org/[self-reliant with the technology I use], and especially never https://theoatmeal.com/comics/reaching_people[rely on corporations for reaching people].
+
+This posts breaks down how this little place on the internet works.
+It's, well, a little unconventional.
+
+== Principles, Requirements and Resources
+
+When I decided to go ahead with the project, I wanted to do it in a princpiled way.
+It's my site, so it should reflect my values and principles, namely:
+
+* No tracking and private by default.
+* Only send to people's browsers data that provides value.
+* ecological,
+
+What do I need from my own place on the internet?
+
+Functional requirements:
+
+* hosts a blog,
+* easy for me to write new posts,
+
+Cross functional requirements:
+
+* cheap,
+* low bandwidth,
+
+Resources:
+
+* I can write software.
+* I own a Raspberry Pi 3Bfootnote:[Thank you to my wonderful collegues at Filosofian Akatemia for this very thoughtful gift.], that's been sitting in my shelf.
+* My apartment building has a very good internet connection.
+* I have https://posteo.de/en[a green email provider that gives me 2GB of storage].
+
+== Technical
+
+If you don't care for, you can skip to conclusions.
+
+
+== Conclusion
+
+What do you stand for and how does that show in what you build?

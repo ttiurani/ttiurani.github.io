@@ -9,14 +9,14 @@
             dest: /srv/www/content/
             delete: yes
             rsync_opts:
-              - "--chown=root:root"
+                - '--chown=root:root'
       - name: Synchronize Gemini files
         ansible.posix.synchronize:
             src: ../dist/gemini/
             dest: /srv/gemini/content/
             delete: yes
             rsync_opts:
-              - "--chown=root:root"             
+                - '--chown=root:root'
       - name: Bust extendedmind hub cache
         ansible.builtin.command: /opt/extendedmind_hub-{{ extendedmind_hub_version }} bust-cache
       - name: Copy cache warm script

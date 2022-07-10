@@ -35,21 +35,40 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         return fs.readFile(metadataDir + file, 'utf8');
     });
     const metadataContents = await Promise.all(metadataContentPromises);
-    const blogPostMetadata = metadataContents.map((content) => JSON.parse(content));
+    const blogPostMetadata = metadataContents.map((content) => {
+        const metadata = JSON.parse(content);
+        let path = '/blog/' + metadata.docname;
+        const preview = path.indexOf('_') === -1;
+        let orderNumber = 0;
+        if (!preview) {
+            const splitIndex = path.indexOf('_');
+            orderNumber = parseInt(path.substring(0, splitIndex).replaceAll(/0/g, ''));
+            path = '/blog/' + path.substring(splitIndex + 1);
+        }
+        metadata.preview = preview;
+        metadata.orderNumber = orderNumber;
+        metadata.path = path;
+        return metadata;
+    });
 
     // Validate the documents
     let isError = false;
     for (const metadata of blogPostMetadata) {
-        if (metadata['highlighted'].length !== 1) {
-           console.error('Could not find exactly one highlighted inline quote from document', metadata);
-           isError = true;
-        }
-        if (!metadata.description && !metadata.description.length) {
-           console.error('Could not find valid description from document', metadata);
-           isError = true;
+        if (!metadata.preview) {
+            if (metadata['highlighted'].length !== 1) {
+                console.error(
+                    'Could not find exactly one highlighted inline quote from document',
+                    metadata
+                );
+                isError = true;
+            }
+            if (!metadata.description && !metadata.description.length) {
+                console.error('Could not find valid description from document', metadata);
+                isError = true;
+            }
         }
     }
-    if (isError)  {
+    if (isError) {
         throw new Error('Errors found in AsciiDocs');
     }
 
@@ -60,24 +79,22 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         await fs.mkdir(generatedImagesDir, { recursive: true });
     }
 
-    const ogImageGenerationPromises = blogPostMetadata.map((metadata) => {
-        const splitIndex = metadata.docname.indexOf('_');
-        const orderNumber = parseInt(metadata.docname.substring(0, splitIndex).replaceAll(/0/g, ''));
-        const darkTheme = orderNumber % 2 === 0;
-        const path = '/blog/' + metadata.docname.substring(splitIndex + 1);
-        metadata.path = path;
-        return generateOgImageFromText(
-            generatedImagesDir,
-            metadata.docname + '.jpg',
-            __dirname + '/veteran_typewriter.ttf',
-            __dirname + '/NotoSans-Regular.ttf',
-            '“' + metadata['highlighted'][0] + '”',
-            'tiuraniemi.io' + path,
-            '/images/generated/',
-            darkTheme,
-            metadata
-        );
-    });
+    const ogImageGenerationPromises = blogPostMetadata
+        .filter((metadata) => !metadata.preview)
+        .map((metadata) => {
+            const darkTheme = metadata.orderNumber % 2 === 0;
+            return generateOgImageFromText(
+                generatedImagesDir,
+                metadata.docname + '.jpg',
+                __dirname + '/veteran_typewriter.ttf',
+                __dirname + '/NotoSans-Regular.ttf',
+                '“' + metadata['highlighted'][0] + '”',
+                'tiuraniemi.io' + metadata.path,
+                '/images/generated/',
+                darkTheme,
+                metadata
+            );
+        });
     const generatedOgImages = (await Promise.all(ogImageGenerationPromises)).filter(
         (value) => value
     );
@@ -100,7 +117,7 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     // Generate alternative images from sources
     const transcodeImagePromises = [];
     for (const metadata of blogPostMetadata) {
-        if (metadata.images) {
+        if (!metadata.preview && metadata.images) {
             for (const image of metadata.images) {
                 transcodeImagePromises.push(
                     transcodeImage(
@@ -166,7 +183,7 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         const fileContentLines = fileContent.split(/\n/);
         let finalFileContent = '';
         for (const fileContentLine of fileContentLines) {
-            if (fileContentLine.trim().startsWith('<img')) {
+            if (!partial.metadata.preview && fileContentLine.trim().startsWith('<img')) {
                 finalFileContent +=
                     (await createPictureTagFromImageTag(fileContentLine, partial.metadata.images)) +
                     '\n';
@@ -193,20 +210,19 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     );
     let svelteBlogIndex = svelteBlogIndexPrefix;
     for (const partial of htmlPartialsContents) {
-        svelteBlogIndexPost = svelteBlogIndexPostTemplate;
-        svelteBlogIndex += svelteBlogIndexPost
-            .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
-            .replaceAll(/__BLOG_POST_DATE__/g, partial.metadata.revdate)
-            .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path);
+        if (!partial.metadata.preview) {
+            svelteBlogIndexPost = svelteBlogIndexPostTemplate;
+            svelteBlogIndex += svelteBlogIndexPost
+                .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+                .replaceAll(/__BLOG_POST_DATE__/g, partial.metadata.revdate)
+                .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path);
+        }
     }
     svelteBlogIndex += svelteBlogIndexPostfix;
     await fs.writeFile(svelteRoutesDir + '/blog/index.svelte', svelteBlogIndex);
 
     // Generate Atom feed
-    const atomFeedTemplate = await fs.readFile(
-        srcDir + '/atom/feed.atom.tpl',
-        'utf8'
-    );
+    const atomFeedTemplate = await fs.readFile(srcDir + '/atom/feed.atom.tpl', 'utf8');
     const atomFeedPrefix = atomFeedTemplate.substring(
         0,
         atomFeedTemplate.indexOf('__BLOG_POST_START__')
@@ -219,28 +235,30 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         atomFeedTemplate.indexOf('__BLOG_POST_END__')
     );
     let atomFeed = atomFeedPrefix;
-    let latestUpdated = "";
+    let latestUpdated = '';
     for (const partial of htmlPartialsContents) {
-        atomFeedEntry = atomFeedEntryTemplate;
-        const updated = partial.metadata.revdate + "T00:00:00Z";
-        if (updated > latestUpdated) {
-            latestUpdated = updated;
-        }
-        let published = updated;
-        if (partial.metadata.revremark) {
-            let historyDates = partial.metadata.revremark.match(/\d{4}-\d\d-\d\d/g);
-            if (historyDates.length) {
-                published = historyDates[0] + "T00:00:00Z";
+        if (!partial.metadata.preview) {
+            atomFeedEntry = atomFeedEntryTemplate;
+            const updated = partial.metadata.revdate + 'T00:00:00Z';
+            if (updated > latestUpdated) {
+                latestUpdated = updated;
             }
+            let published = updated;
+            if (partial.metadata.revremark) {
+                let historyDates = partial.metadata.revremark.match(/\d{4}-\d\d-\d\d/g);
+                if (historyDates.length) {
+                    published = historyDates[0] + 'T00:00:00Z';
+                }
+            }
+            atomFeed += atomFeedEntryTemplate
+                .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+                .replaceAll(/__BLOG_POST_UPDATED_DATE_TIME__/g, updated)
+                .replaceAll(/__BLOG_POST_PUBLISHED_DATE_TIME__/g, published)
+                .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path)
+                .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description);
         }
-        atomFeed += atomFeedEntryTemplate
-            .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
-            .replaceAll(/__BLOG_POST_UPDATED_DATE_TIME__/g, updated)
-            .replaceAll(/__BLOG_POST_PUBLISHED_DATE_TIME__/g, published)
-            .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path)
-            .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description);
     }
-    atomFeed = atomFeed.replace("__LATEST_BLOG_POST_UPDATED_DATE_TIME__", latestUpdated);
+    atomFeed = atomFeed.replace('__LATEST_BLOG_POST_UPDATED_DATE_TIME__', latestUpdated);
     atomFeed += atomFeedPostfix;
     await fs.writeFile(staticDir + '/feed.atom', atomFeed);
 
@@ -274,7 +292,9 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     let geminiBlogPosts = '';
     const geminiBlogIndexTemplate = await fs.readFile(srcDir + '/gemini/blog.gmi.tpl', 'utf8');
     for (const partial of geminiPartialsContents) {
-        geminiBlogPosts += `=> ${partial.metadata.path} ${partial.metadata.revdate}: ${partial.metadata.doctitle}\n`;
+        if (!partial.metadata.preview) {
+            geminiBlogPosts += `=> ${partial.metadata.path} ${partial.metadata.revdate}: ${partial.metadata.doctitle}\n`;
+        }
     }
     let geminiBlogIndex = geminiBlogIndexTemplate.replace(/__BLOG_POSTS__/g, geminiBlogPosts);
     await fs.writeFile(geminiDistDir + '/blog/index.gmi', geminiBlogIndex);
@@ -289,7 +309,8 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     }
     let warmCacheScriptContent = '#!/bin/bash\n';
     warmCacheScriptContent += 'set -euo pipefail\n';
-    const curlCommandPrefix = 'curl --fail-with-body -H \'Accept-Encoding: br\' --output /dev/null --silent --show-error https://tiuraniemi.io';
+    const curlCommandPrefix =
+        "curl --fail-with-body -H 'Accept-Encoding: br' --output /dev/null --silent --show-error https://tiuraniemi.io";
     warmCacheScriptContent += `${curlCommandPrefix}\n`;
     warmCacheScriptContent += `${curlCommandPrefix}/work\n`;
     warmCacheScriptContent += `${curlCommandPrefix}/stats\n`;

@@ -4,36 +4,36 @@
   become_user: root
   tasks:
       - name: Install pip3
-        apt: 
+        apt:
             name: python3-pip
       - name: Install virtualenv
         pip:
             name: virtualenv
       - name: Create HTML directory
         file:
-          path: /srv/www/content
-          state: directory
+            path: /srv/www/content
+            state: directory
       - name: Create HTML logs directory
         file:
-          path: /srv/www/logs
-          state: directory
+            path: /srv/www/logs
+            state: directory
       - name: Create HTML metrics directory
         file:
-          path: /srv/www/metrics
-          state: directory
+            path: /srv/www/metrics
+            state: directory
       - name: Create directory for ACME certificates
         file:
-          path: /srv/www/.certificates
-          state: directory
+            path: /srv/www/.certificates
+            state: directory
       - name: Create Gemini directory
         file:
-          path: /srv/gemini/content
-          state: directory
+            path: /srv/gemini/content
+            state: directory
       - name: Create hypercore-protocol directory
         file:
-          path: /srv/hyper/content
-          state: directory
+            path: /srv/hyper/content
+            state: directory
       - name: Create backup directory
         file:
-          path: /srv/backup
-          state: directory
+            path: /srv/backup
+            state: directory

@@ -15,7 +15,7 @@
       - name: Download Cloudflare DDNS
         local_action: 'get_url url="https://github.com/timothymiller/cloudflare-ddns/archive/{{ cloudflare_ddns_commit }}.tar.gz" dest="{{ playbook_dir }}/.output/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz" checksum="sha256:{{ cloudflare_ddns_checksum }}"'
         become: false
-      - name: Copy Cloudflare DDNS 
+      - name: Copy Cloudflare DDNS
         ansible.builtin.copy:
             src: '{{ playbook_dir }}/.output/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
             dest: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
@@ -23,7 +23,7 @@
             group: root
             mode: '0644'
         register: cloudflare_ddns
-      - name: Unpack Cloudflare DDNS 
+      - name: Unpack Cloudflare DDNS
         ansible.builtin.unarchive:
             src: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
             dest: '/opt'
@@ -60,19 +60,19 @@
         register: cloudflare_ddns_timer
       - name: Make sure Cloudflare DDNS timer is running
         ansible.builtin.systemd:
-          state: started
-          name: cloudflare-ddns.timer
+            state: started
+            name: cloudflare-ddns.timer
         when: cloudflare_ddns_timer.changed
       - name: Enable Cloudflare DDNS timer
         ansible.builtin.systemd:
-          name: cloudflare-ddns.timer
-          enabled: yes
+            name: cloudflare-ddns.timer
+            enabled: yes
         when: cloudflare_ddns_timer.changed
       - name: Restart Cloudflare DDNS timer when configs change, and also issue daemon-reload to pick up config changes
         ansible.builtin.systemd:
-          state: restarted
-          daemon_reload: yes
-          name: cloudflare-ddns.timer
+            state: restarted
+            daemon_reload: yes
+            name: cloudflare-ddns.timer
         when: cloudflare_ddns.changed or cloudflare_ddns_service.changed
 
       # EXTENDEDMIND HUB
@@ -105,14 +105,14 @@
         register: extendedmind_hub_service
       - name: Enable extendedmind_hub
         ansible.builtin.systemd:
-          name: extendedmind_hub
-          enabled: yes
+            name: extendedmind_hub
+            enabled: yes
         when: extendedmind_hub_service.changed
       - name: Restart extendedmind_hub
         ansible.builtin.systemd:
-          state: restarted
-          daemon_reload: yes
-          name: extendedmind_hub.service
+            state: restarted
+            daemon_reload: yes
+            name: extendedmind_hub.service
         when: extendedmind_hub.changed or extendedmind_hub_service.changed
 
       # AGATE GEMINI SERVER
@@ -132,8 +132,8 @@
         when: agate.changed
       - name: Set Agate executable
         ansible.builtin.file:
-          path: /opt/agate-{{ agate_version }}
-          mode: '0744'
+            path: /opt/agate-{{ agate_version }}
+            mode: '0744'
         when: agate.changed
       - name: Copy Agate service file
         ansible.builtin.template:
@@ -145,17 +145,17 @@
         register: agate_service
       - name: Make sure Agate is running
         ansible.builtin.systemd:
-          state: started
-          name: agate
+            state: started
+            name: agate
         when: agate_service.changed
       - name: Enable Agate
         ansible.builtin.systemd:
-          name: agate
-          enabled: yes
+            name: agate
+            enabled: yes
         when: agate_service.changed
       - name: Restart Agate when configs change
         ansible.builtin.systemd:
-          state: restarted
-          daemon_reload: yes
-          name: agate.service
+            state: restarted
+            daemon_reload: yes
+            name: agate.service
         when: agate.changed or agate_service.changed

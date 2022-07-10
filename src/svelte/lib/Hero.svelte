@@ -1,5 +1,5 @@
 <div class="hero">
-    <slot/>
+    <slot />
 </div>
 
 <style>
@@ -8,9 +8,9 @@
         margin-bottom: calc(5rem + 2vw);
     }
 
-    @media (min-width: 100rem)  {
+    @media (min-width: 100rem) {
         .hero {
-           margin-bottom: 7rem;
+            margin-bottom: 7rem;
         }
     }
 </style>

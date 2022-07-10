@@ -21,8 +21,8 @@ const config = {
             fallback: null,
             precompress: false,
         }),
-        prerender:  {
-            default: true
+        prerender: {
+            default: true,
         },
         vite: {
             server: {

@@ -10,7 +10,7 @@
         apt: upgrade=dist force_apt_get=yes
 
       - name: Upgrade virtualenv
-        pip: 
+        pip:
             name: virtualenv
             extra_args: --upgrade
 

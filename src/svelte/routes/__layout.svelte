@@ -6,7 +6,7 @@
 </script>
 
 <header>
-    <Navigation/>
+    <Navigation />
 </header>
 
 <main>
@@ -14,7 +14,7 @@
 </main>
 
 <footer>
-    <SiteInfo/>
+    <SiteInfo />
 </footer>
 
 <style>
@@ -28,18 +28,18 @@
         margin-top: calc(1rem + 2vw);
     }
 
-    @media (min-width: 80rem)  {
+    @media (min-width: 80rem) {
         main {
             margin-left: calc(0.1rem + 5vw);
         }
     }
 
-    @media (min-width: 100rem)  {
+    @media (min-width: 100rem) {
         main {
             margin-left: calc(0.3rem + 10vw);
         }
     }
- 
+
     footer {
         border-top: 1px solid #bfbfbf;
         padding: 1.2rem;

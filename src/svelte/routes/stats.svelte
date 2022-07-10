@@ -9,9 +9,7 @@
 
 <div class="content">
     <h1>Statististics</h1>
-    <p>
-        Below are statistics about visits to the site.
-    </p>
+    <p>Below are statistics about visits to the site.</p>
 
     <Metrics />
 </div>

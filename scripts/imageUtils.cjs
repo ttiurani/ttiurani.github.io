@@ -35,15 +35,17 @@ const generateOgImageFromText = (
 
                 // Set background color
                 if (darkTheme) {
-                   // #282c35
-                   img.colorAllocate(40, 44, 53);
+                    // #282c35
+                    img.colorAllocate(40, 44, 53);
                 } else {
-                   // #ffffff
-                   img.colorAllocate(255, 255, 255);
+                    // #ffffff
+                    img.colorAllocate(255, 255, 255);
                 }
 
                 // Set text color (#ffffff vs #262626)
-                const txtColor = darkTheme ? img.colorAllocate(255, 255, 255) : img.colorAllocate(38, 38, 38);
+                const txtColor = darkTheme
+                    ? img.colorAllocate(255, 255, 255)
+                    : img.colorAllocate(38, 38, 38);
 
                 // Write header, always in the same place
                 img.stringFT(
