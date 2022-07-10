@@ -1,4 +1,4 @@
-= Hosting My Personal Site On a Raspberry Pi In My Livingroom
+= Hosting On a Raspberry Pi In My Livingroom
 Timo Tiuraniemi
 1.0, 2022-07-17
 :description: tiuraniemi.io is convivial technology. This post breaks down of how it is works.
@@ -45,7 +45,6 @@ Resources:
 == Technical
 
 If you don't care for, you can skip to conclusions.
-
 
 == Conclusion
 

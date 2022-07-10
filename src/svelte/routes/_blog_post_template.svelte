@@ -17,7 +17,13 @@
 </svelte:head>
 <BlogPost>
     <svelte:fragment slot="hero">
-        <h1>__BLOG_POST_TITLE__</h1>
+        <header>
+            <h1>__BLOG_POST_TITLE__</h1>
+            <p class="entry-meta">
+                <span>__BLOG_POST_TIME_META__</span><br />
+                <span>Under: __BLOG_POST_KEYWORDS__</span>
+            </p>
+        </header>
     </svelte:fragment>
     <svelte:fragment slot="content">__BLOG_POST_CONTENT__</svelte:fragment>
 </BlogPost>

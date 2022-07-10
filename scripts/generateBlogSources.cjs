@@ -48,6 +48,25 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         metadata.preview = preview;
         metadata.orderNumber = orderNumber;
         metadata.path = path;
+        const updated = metadata.revdate + 'T00:00:00Z';
+        let published = updated;
+        if (metadata.revremark) {
+            let historyDates = metadata.revremark.match(/\d{4}-\d\d-\d\d/g);
+            if (historyDates.length) {
+                published = historyDates[0] + 'T00:00:00Z';
+            }
+        }
+        const timeMeta =
+            updated === published
+                ? `Published <time datetime="${updated}">${updated.substring(0, 10)}</time>`
+                : `Updated <time datetime="${updated}">${updated.substring(0, 10)}</time>, ` +
+                  `originally published <time datetime="${published}">${published.substring(
+                      0,
+                      10
+                  )}</time>`;
+        metadata.updated = updated;
+        metadata.published = published;
+        metadata.timeMeta = timeMeta;
         return metadata;
     });
 
@@ -175,6 +194,8 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         let fileContent = svelteBlogPostTemplate;
         fileContent = fileContent
             .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+            .replaceAll(/__BLOG_POST_TIME_META__/g, partial.metadata.timeMeta)
+            .replaceAll(/__BLOG_POST_KEYWORDS__/g, partial.metadata.keywords)
             .replaceAll(/__BLOG_POST_CONTENT__/g, partial.content)
             .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description)
             .replaceAll(/__BLOG_POST_URL__/g, 'https://tiuraniemi.io' + partial.metadata.path)
@@ -214,7 +235,8 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
             svelteBlogIndexPost = svelteBlogIndexPostTemplate;
             svelteBlogIndex += svelteBlogIndexPost
                 .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
-                .replaceAll(/__BLOG_POST_DATE__/g, partial.metadata.revdate)
+                .replaceAll(/__BLOG_POST_TIME_META__/g, partial.metadata.timeMeta)
+                .replaceAll(/__BLOG_POST_KEYWORDS__/g, partial.metadata.keywords)
                 .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path);
         }
     }
@@ -239,21 +261,13 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     for (const partial of htmlPartialsContents) {
         if (!partial.metadata.preview) {
             atomFeedEntry = atomFeedEntryTemplate;
-            const updated = partial.metadata.revdate + 'T00:00:00Z';
-            if (updated > latestUpdated) {
-                latestUpdated = updated;
-            }
-            let published = updated;
-            if (partial.metadata.revremark) {
-                let historyDates = partial.metadata.revremark.match(/\d{4}-\d\d-\d\d/g);
-                if (historyDates.length) {
-                    published = historyDates[0] + 'T00:00:00Z';
-                }
+            if (partial.metadata.updated > latestUpdated) {
+                latestUpdated = partial.metadata.updated;
             }
             atomFeed += atomFeedEntryTemplate
                 .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
-                .replaceAll(/__BLOG_POST_UPDATED_DATE_TIME__/g, updated)
-                .replaceAll(/__BLOG_POST_PUBLISHED_DATE_TIME__/g, published)
+                .replaceAll(/__BLOG_POST_UPDATED_DATE_TIME__/g, partial.metadata.updated)
+                .replaceAll(/__BLOG_POST_PUBLISHED_DATE_TIME__/g, partial.metadata.published)
                 .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path)
                 .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description);
         }

@@ -1,6 +1,6 @@
 = Site Setup
 Timo Tiuraniemi
-1.0, 2022-05-10: (originally published on 2022-05-10)
+1.0, 2022-06-10: (originally published on 2022-05-10)
 :description: tiuraniemi.io is an experiment in small tech. This is a break down of how it is works.
 :keywords: smalltech, technology
 :figure-caption!:

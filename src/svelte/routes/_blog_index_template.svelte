@@ -23,10 +23,11 @@
         <h2>Latest Posts</h2>
         __BLOG_POST_START__
         <div class="blog-posts-item">
-            <a href="__BLOG_POST_PATH__">
-                <span>__BLOG_POST_TITLE__</span><br />
-                <span>__BLOG_POST_DATE__</span>
-            </a>
+            <p>
+                <a href="__BLOG_POST_PATH__"> __BLOG_POST_TITLE__ </a><br />
+                <span class="entry-meta"> __BLOG_POST_TIME_META__ </span><br />
+                <span class="entry-meta"> Under: __BLOG_POST_KEYWORDS__ </span>
+            </p>
         </div>
         __BLOG_POST_END__
     </Content>

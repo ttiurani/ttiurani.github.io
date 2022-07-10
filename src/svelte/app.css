@@ -72,6 +72,24 @@ small {
     font-size: calc(0.5rem + 0.5vw);
 }
 
+#footnotes::before {
+    content: 'Notes';
+    font-weight: bold;
+    font-size: 120%;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+hr {
+    display: none;
+}
+
+.footnote,
+.entry-meta {
+    font-size: 75%;
+}
+
 /* Upper limit */
 @media (min-width: 100rem) {
     body {
