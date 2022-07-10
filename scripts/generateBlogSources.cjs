@@ -37,13 +37,15 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     const metadataContents = await Promise.all(metadataContentPromises);
     const blogPostMetadata = metadataContents.map((content) => {
         const metadata = JSON.parse(content);
-        let path = '/blog/' + metadata.docname;
-        const preview = path.indexOf('_') === -1;
+        const preview = metadata.docname.indexOf('_') === -1;
         let orderNumber = 0;
-        if (!preview) {
-            const splitIndex = path.indexOf('_');
-            orderNumber = parseInt(path.substring(0, splitIndex).replaceAll(/0/g, ''));
-            path = '/blog/' + path.substring(splitIndex + 1);
+        let path = '';
+        if (preview) {
+            path = '/blog/preview-' + metadata.docname;
+        } else {
+            const splitIndex = metadata.docname.indexOf('_');
+            orderNumber = parseInt(metadata.docname.substring(0, splitIndex).replaceAll(/0/g, ''));
+            path = '/blog/' + metadata.docname.substring(splitIndex + 1);
         }
         metadata.preview = preview;
         metadata.orderNumber = orderNumber;
