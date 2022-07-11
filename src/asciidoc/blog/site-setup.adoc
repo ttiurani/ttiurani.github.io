@@ -1,50 +1,77 @@
-= Hosting On a Raspberry Pi In My Livingroom
+= This Site Runs On a Raspberry Pi In My Living Room
 Timo Tiuraniemi
 1.0, 2022-07-17
-:description: tiuraniemi.io is convivial technology. This post breaks down of how it is works.
-:keywords: convivial technology, rust
+:description: This site is built with convivial technology principles. Here I break down how it is works.
+:keywords: meta, convivial technology, rust
 :figure-caption!:
 
-I've been meaning to set up my own site for ages, but haven't ever found the the time to actually do it.
+Here's a lovely picture of this site.
+
+This posts breaks down how this little place on the internet works and why I ended up making some unconventional choices.
+But first some background.
+
+== Why Do I Need My Own Site?
+
+I've been meaning to set up my own site for ages, but haven't ever found the time to actually do it.
+
 So why now?
-Bluntly, I only now have something important enought to say.
-During a year of https://fosstodon.org/web/@ttiurani[occasional microblogging ons on Mastodon] I've come up with almost two dozen ideas for posts, that can't be squeezed into toots.
-Also I wanted to finally become https://indieweb.org/[self-reliant with the technology I use], and especially never https://theoatmeal.com/comics/reaching_people[rely on corporations for reaching people].
+Honestly, I only now have something important enought to say.
 
-This posts breaks down how this little place on the internet works.
-It's, well, a little unconventional.
+During a year of https://fosstodon.org/web/@ttiurani[occasional microblogging on Mastodon] I've come up with almost two dozen ideas for posts, that can't be squeezed into toots.
+Also I wanted to finally become https://indieweb.org/[self-reliant with the technology I use], and especially never https://theoatmeal.com/comics/reaching_people_2021[rely on corporations for reaching people].
 
-== Principles, Requirements and Resources
+== What's the Site For?
 
-When I decided to go ahead with the project, I wanted to do it in a princpiled way.
-It's my site, so it should reflect my values and principles, namely:
+When I decided to go ahead with the project, I wanted to do it without compromises.
+This is my site, so it needs to reflect my values.
 
-* No tracking and private by default.
-* Only send to people's browsers data that provides value.
-* ecological,
+=== Values
 
-What do I need from my own place on the internet?
+The relevant values, many of which are listed also in the excellent https://small-tech.org/about/#small-technology[small technology], for this site are:
 
-Functional requirements:
+* *Share alike*. All source code is licenced with AGPLv3 and all text with CC By SA 4.0.
+* *Private by default*. No tracking and no storing nor logging of any personally identifiable information.
+* *Non-commercial*. There is no ulterior motive to make profit. What you see is all there is.
+* *Inclusive*. Accessibility is not an afterthoughtfootnote:[I am not proficient at accessibility, but I've tried my best. Please let me know of any accessibility issues on this site, and I'll make time to fix them!]. Low-power devices need to be supported.
+* *Ecological*. Natural resources must not be wasted, and energy use must be low.
 
-* hosts a blog,
-* easy for me to write new posts,
+=== Functional Requirements
 
-Cross functional requirements:
+The site needs to have these features:
 
-* cheap,
-* low bandwidth,
+* Three sections: about, work and blog.
+* Easy for me to write new posts.
+* Supports (nearly) all web browsers and https://gemini.circumlunar.space/[Gemini] clients.
+* Has an RSS/Atom feed.
+* There's a statistics page that shows how many visits have recently been to which paths, and these statistics are backed up.
+* Only I can see 404 requests and server errors.
+* Eventually I can use this site also for our family's P2P app backups (more on this in future blog posts).
 
-Resources:
+=== Cross Functional Requirements
 
-* I can write software.
-* I own a Raspberry Pi 3Bfootnote:[Thank you to my wonderful collegues at Filosofian Akatemia for this very thoughtful gift.], that's been sitting in my shelf.
-* My apartment building has a very good internet connection.
-* I have https://posteo.de/en[a green email provider that gives me 2GB of storage].
+All of the above features should be:
 
-== Technical
+* Cheap.
+* Fast.
+* Secure.
+* Low maintenance.
+* Reasonably good availability.
 
-If you don't care for, you can skip to conclusions.
+=== Resources
+
+Finally, I have these resources at my disposal:
+
+* I have a few weeks of time.
+* I can make web sites.
+* I have a lot of motivation to learn to program in Rust.
+* I own a Raspberry Pi 3Bfootnote:[Thank you to my wonderful collegues at Filosofian Akatemia for this thoughtful gift.], that's been sitting in a bookshelf since 2016.
+* Our apartment building has a very good internet connection.
+* I have https://posteo.de[a green email provider] that gives me 2GB of storage.
+
+== The Part Where I Explain How It Works
+
+With that out of the way, let's get down to the nitty-gritty. If you're not interested in the technical side of things, you can <<_conclusion,skip to conclusion>>.
+
 
 == Conclusion
 
