@@ -96,7 +96,8 @@ and reboot.
 ### 9. Lower Energy Consumption
 
 There are a few unnecessary services running, which waste energy. Following
-[this guide](https://www.cnx-software.com/2021/12/09/raspberry-pi-zero-2-w-power-consumption)
+[this](https://dev.to/nakullukan/power-consumption-per-raspberry-pi-model-3b)
+[and this guide](https://www.cnx-software.com/2021/12/09/raspberry-pi-zero-2-w-power-consumption)
 run `sudo vi /boot/config.txt` and change the following lines:
 
 ```

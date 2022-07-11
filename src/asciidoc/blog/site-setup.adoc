@@ -41,6 +41,7 @@ The site needs to have these features:
 
 * Three sections: about, work and blog.
 * Easy for me to write new posts.
+* Possible to send a preview link of unfinished posts to friends.
 * Supports (nearly) all web browsers and https://gemini.circumlunar.space/[Gemini] clients.
 * Has an RSS/Atom feed.
 * There's a statistics page that shows how many visits have recently been to which paths, and these statistics are backed up.
@@ -51,11 +52,11 @@ The site needs to have these features:
 
 All of the above features should be:
 
-* Cheap.
-* Fast.
-* Secure.
-* Low maintenance.
-* Reasonably good availability.
+* Cheap
+* Fast
+* Secure
+* Low maintenance
+* Reasonably good availability
 
 === Resources
 
@@ -86,18 +87,40 @@ Together that cost me 53€.
 === OS
 
 Because I only use the Pi as a server, a headless installation of https://www.raspberrypi.com/software/operating-systems/[Raspberry Pi OS Lite] was the obvious choice.
-After that https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#initial-setup[I documented] in Githubfootnote:[I'm in the process of moving to Codeberg, but unfortunately not there yet. The issue is that I rely on Github Actions quite a lot, and haven't had time to investigate how Codeberg's CI can be configured.] the steps needed to setup SSH, forward ports from my home router, and point Cloudflare's DNSfootnote:[I really don't want to use Cloudflare, but decided to compromise for now, because there's already a dynamic IP client for it. Do tell me if there is a more ethical DNS with an API!] to the IP address.
+After that https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#initial-setup[I documented] in Githubfootnote:[I'm in the process of moving to Codeberg, but unfortunately not there yet. The issue is that I rely on Github Actions quite a lot, and haven't had time to investigate how Codeberg's CI can be configured.] the steps needed to set up SSH, forward ports in my home router, and point Cloudflare's DNSfootnote:[I really don't want to use Cloudflare, but decided to compromise for now, because there's already a dynamic IP client for it. Do tell me if there is a more ethical DNS with an API!] to the IP address.
 
 For reasons I'll explain in a future blog post, I also needed a newer libc than was included in Debian stable ("bullseye"), which meant I had to upgrade to testing ("bookworm").
 Because I only use the essentials from the OS, everything luckily works just fine.
 
-To make sure I don't miss out on security patches, I run https://github.com/ttiurani/tiuraniemi.github.io/blob/main/.github/workflows/upgrade.yml[a nightly OS upgrade] in a CI using Ansible.
-I'm aware that this can break, which is why I have an Uptime Robot monitor pinging the site, so that I know when it broke.
+To make sure I don't miss out on security patches, I run https://github.com/ttiurani/tiuraniemi.github.io/blob/main/.github/workflows/upgrade.yml[a nightly OS upgrade] in a CI using Ansible, which also reboots the server if that's needed.
+I'm aware that this can cause the entire site to break horribly, which is why I set up an Uptime Robot monitor pinging the site, so that I know when it broke.
+(And yes, I know a monitor can't prevent downtime, keep on reading.)
 
-=== Server
+Finally, I https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#9-lower-energy-consumption[lowered the energy consumption] of the Pi by turning off all unnecessary services.
+With everything turned off, the board should use between 1W and 3W, costing me under 2€ per year in electricity.
 
+=== Web Content
 
+I knew I needed to output both https://gemini.circumlunar.space/docs/gemtext.gmi[Gemtext] and HTML from my blog posts.
+I thought about Markdown but ended up going with AsciiDoc because I will likely need the built-in bibliography support for some posts.
 
+There was no Gemini converter for AsciiDoctor.Js so https://github.com/ttiurani/asciidoctorjs-gemini-converter[I made my own].
+While I was at it, I also made https://github.com/ttiurani/asciidoctorjs-json-converter[a converter to get JSON metadata out of AsciiDocs].
+
+For CSS/JS I opted to go with https://kit.svelte.dev/[SvelteKit] using adapter-static, which has been a delight.
+Unfortunately I didn't yet figure out a way to wire up Asciidoctor.js to SvelteKit, so I use a hacky https://github.com/ttiurani/tiuraniemi.github.io/blob/main/scripts/generateBlogSources.cjs[pre-build script] to generate svelte filesfootnote:[This is something I'm planning to try and integrate directly into SvelteKit so that I'd immediately see changes I make to the AsciiDoc sources.], Gemtext files and OpenGraph images.
+
+=== HTTP and Gemini Servers
+
+For HTTP I decided to go with https://github.com/http-rs/tide[tide web framework for Rust].
+Now I can almost hear some of you thinking I should have just installed nginx/acme.sh or [insert your favorite web server here] and be done with it, but bear with me, I had my reasons.
+
+First of all, I many other plans for the HTTP server than just serving static files via HTTP.
+Second, I wanted an in-memory cache which is smart enough to inline CSS for cold loads, but not internal navigation (this has to do with how SvelteKit works).
+Third, I wanted to learn how to write Rust.
+
+For Gemini, I choosed to go with the very nice https://github.com/mbrubeck/agate[Agate server].
+It works as advertised, no complaints.
 
 == Conclusion
 
