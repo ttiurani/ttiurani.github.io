@@ -20,7 +20,7 @@
         <header>
             <h1>__BLOG_POST_TITLE__</h1>
             <p class="entry-meta">
-                <span>__BLOG_POST_TIME_META__</span><br />
+                <span>__BLOG_POST_TIME_META__ by Timo Tiuraniemi</span><br />
                 <span>Under: __BLOG_POST_KEYWORDS__</span>
             </p>
         </header>

@@ -1,4 +1,4 @@
-= This Site Runs On a Raspberry Pi In My Living Room
+= This Site Runs on a Raspberry Pi in My Living Room
 Timo Tiuraniemi
 1.0, 2022-07-17
 :description: This site is built with convivial technology principles. Here I break down how it is works.
@@ -20,10 +20,10 @@ Honestly, I only now have something important enought to say.
 During a year of https://fosstodon.org/web/@ttiurani[occasional microblogging on Mastodon] I've come up with almost two dozen ideas for posts, that can't be squeezed into toots.
 Also I wanted to finally become https://indieweb.org/[self-reliant with the technology I use], and especially never https://theoatmeal.com/comics/reaching_people_2021[rely on corporations for reaching people].
 
-== What's the Site For?
+== What's the Site for?
 
 When I decided to go ahead with the project, I wanted to do it without compromises.
-This is my site, so it needs to reflect my values.
+This is my site, so it needs to reflect what I think is important.
 
 === Values
 
@@ -71,6 +71,32 @@ Finally, I have these resources at my disposal:
 == The Part Where I Explain How It Works
 
 With that out of the way, let's get down to the nitty-gritty. If you're not interested in the technical side of things, you can <<_conclusion,skip to conclusion>>.
+
+=== Hardware
+
+As you should already know by now, I decided to use my Raspberry Pi 3 B for hosting.
+Because I'm a full-time activist, every euro I spend shortens the time I can use for activism before I need to find income.
+That means that especially recurring charges add up really fast.
+Even a modest 5€ per month for a VM is not nothing for me.
+Also for environmental reasons, I try my best to avoid being the reason new hardware gets made.
+
+Unfortunately the Pi didn't come with a charger, memory card nor heatsinks, so I did have to buy them new.
+Together that cost me 53€.
+
+=== OS
+
+Because I only use the Pi as a server, a headless installation of https://www.raspberrypi.com/software/operating-systems/[Raspberry Pi OS Lite] was the obvious choice.
+After that https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#initial-setup[I documented] in Githubfootnote:[I'm in the process of moving to Codeberg, but unfortunately not there yet. The issue is that I rely on Github Actions quite a lot, and haven't had time to investigate how Codeberg's CI can be configured.] the steps needed to setup SSH, forward ports from my home router, and point Cloudflare's DNSfootnote:[I really don't want to use Cloudflare, but decided to compromise for now, because there's already a dynamic IP client for it. Do tell me if there is a more ethical DNS with an API!] to the IP address.
+
+For reasons I'll explain in a future blog post, I also needed a newer libc than was included in Debian stable ("bullseye"), which meant I had to upgrade to testing ("bookworm").
+Because I only use the essentials from the OS, everything luckily works just fine.
+
+To make sure I don't miss out on security patches, I run https://github.com/ttiurani/tiuraniemi.github.io/blob/main/.github/workflows/upgrade.yml[a nightly OS upgrade] in a CI using Ansible.
+I'm aware that this can break, which is why I have an Uptime Robot monitor pinging the site, so that I know when it broke.
+
+=== Server
+
+
 
 
 == Conclusion
