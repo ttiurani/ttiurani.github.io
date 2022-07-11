@@ -27,6 +27,19 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
     }
 };
 
+const sortPartials = (partials) => {
+    partials.reverse();
+    partials.sort((a, b) => {
+        if (a.metadata.updated < b.metadata.updated) {
+            return 1;
+        }
+        if (a.metadata.updated > b.metadata.updated) {
+            return -1;
+        }
+        return 0;
+    });
+};
+
 (async () => {
     // Read all of the blog metadata files, they are in order by name
     const metadataDir = __dirname + '/../.svelte-kit/blog/metadata/';
@@ -185,7 +198,7 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         return { fileName, content, metadata };
     });
     const htmlPartialsContents = await Promise.all(htmlPartialsContentPromises);
-    htmlPartialsContents.reverse();
+    sortPartials(htmlPartialsContents);
 
     // Generate svelte blog posts
     const svelteRoutesDir = srcDir + '/svelte/routes';
@@ -288,7 +301,7 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
         return { fileName, content, metadata };
     });
     const geminiPartialsContents = await Promise.all(geminiPostsContentPromises);
-    geminiPartialsContents.reverse();
+    sortPartials(geminiPartialsContents);
 
     // Generate Gemini blog posts to the right sub-directories and add navigation to the bottom
     const geminiBlogPostTemplate = await fs.readFile(srcDir + '/gemini/blog-post.gmi.tpl', 'utf8');
