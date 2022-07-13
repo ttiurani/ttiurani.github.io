@@ -3,11 +3,66 @@ Timo Tiuraniemi
 1.0, 2022-06-10
 :description: The Ministry for the Future by Robinson is great, but not without flaws
 :keywords: review, earth breakdown
-:figure-caption!:
 
-Robinson wrote The Ministry for the Future in 2020.
-[#highlighted]#There are quite a few serious problems.#
+Robinson published The Ministry for the Future in 2020, and I picked it up in 2021 after many recommendations from people I respected.
+It has taken a while for me to get to writing these notes, and because I returned the book months ago back to the library, I can't check if all the facts about the book are accurate.
+
+Reading with that grain of salt, I hope I can still contribute a few important points to the discussion surrounding this novel.
+
+*SPOILER ALERT*
+
+This post assumes you read the book and will spoil many interesting parts of the book.
+Don't continue if you haven't finished it.
+
+So let's get down to it.
 
 == The Good
 
+First of all, I apload Robinson for writing a utopian, or at least non-dystopian, vision on how human kind can survive Earth breakdown.
+This is a genre of books that is sorely lacking voices and ideas.
+I call to every artist out there to find these kinds of creative ideas that can help defeat doomism that's rampart in especially the Global North.
+
+Robinson writes his vision based on an awe-inspiring breadth of research.
+Reading all those relevant ideas and discussions from so many fields of science, makes in itself this book remarkable.
+Furthermore while I'm definitely not an expert of much anything, I didn't spot any significant factual mistakes.
+
+I found especially impressive the parts on macroeconomics.
+The discussions surrounding the carbon coin and the role of central banks were eye-opening and insightful.
+Naturally coming from a degrowth background, I also enjoyed Robinson's analysis of capitalism and the story's end result of a kind of wide-spread eco-socialism.
+
+[#highlighted]#All in all, 90% of The Ministry for the Future is solid and makes the novel worth reading. However the remaining 10% has some serious issues.#
+
 == The Bad
+
+I want to preface this by pointing out that these problems would not really be that important to pick apart had the novel been interpreted only as fiction.
+What makes pointing out the problems of Robinson's work important is that I have seen some people advocate using this novel as an actual roadmap for the future.
+That's way too much to ask from a novel.
+For this reason, my criticism isn't so much targeted at Robinson, as it is to people misunderstanding the role of fiction.
+
+Without further ado, in order of severity from lowest to highest, here are my objections.
+
+=== 1) Spontaneously viral software
+
+The novel featured a non-commericial, decentralized Facebook alternative called YourLock, which suddenly got traction and everyone to migrated to it.
+The reasons given for the virality were essentially "blockchain" and "open source".
+
+Having been personally involved with the decentralized, non-commercial Twitter alternatiive https://joinmastodon.org/[Mastodon], I can safely say this is not how software gets popular.
+Overcoming the network effect of existing platforms is a monumental task.
+The only realistic way the kind of migration depicted in the book would happen, is with regulation of surveillance capitalism.
+
+=== 2) Blockchain enthusiasm
+
+Hindsight is easy here, but the enthusiasm for blockchains does not look good, especially in 2022.
+
+However what's especially worrying is the novel's support for complete public visibility of everyone's finances.
+
+This I feel shows total ignorance on how privilege plays into what a person can and can not keep to themselves.
+The most vulnerable in society are the ones who need privacy the most.
+To suggest removing privacy for the greater good, is to suggest sacrifising the weak to keep the masses contained.
+
+=== 3) Disregard for most planetary boundaries
+
+
+
+== Concolusion
+
