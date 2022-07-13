@@ -16,11 +16,13 @@
                 </thead>
                 <tbody>
                     {#each dayRange.entries as entry}
-                        <tr>
-                            <td>{entry.path}</td>
-                            <td class="row-status">{entry.status}</td>
-                            <td class="row-hits">{entry.count}</td>
-                        </tr>
+                        {#if !entry.path.startsWith('/blog/preview-')}
+                            <tr>
+                                <td>{entry.path}</td>
+                                <td class="row-status">{entry.status}</td>
+                                <td class="row-hits">{entry.count}</td>
+                            </tr>
+                        {/if}
                     {/each}
                 </tbody>
             </table>
