@@ -235,7 +235,7 @@ But for this site?
 I'm just not that important.
 If the site is down, it's down.
 I hope to have many important things to say, but at the end of the day, I'm just one voice.
-If the people reading my posts don't come back in the event of a downtime.
+If the people reading my posts don't come back if the site is down, I've done something else wrong.
 
 But what about DoS attacks, I hear someone thinking?
 
@@ -243,12 +243,12 @@ Well it would suck if someone did that.
 My Pi would suffocate and the site would go down.
 I'd have to try to rotate my IP, take the site offline, and hope my internet service provider doesn't get angry with me.
 
-I know the common practice is to just use e.g. Cloudflare's DDoS services, and hide my real IP, but that's not honest nor sustainable.
-I can't claim to be fighting for a more democratic internet and at the same time rely on freebies from corporations.
+I know the common practice is to just use e.g. Cloudflare's DDoS services and hide my real IP, but that's not honest nor sustainable.
+I can't claim to be fighting for a democratic, post-capitalist internet and at the same time rely on freebies from corporations.
 To put it in familiar terms: you might think you're Han Solo hiding the Millennium Falcon by parking it on the star destroyer, but in reality you're the younger Han Solo leading the empire to the rebel base because you have a homing beacon on your ship.
 
-I'm not perfect, because I do still use Github and Cloudflare's DNS, but I'm actively working on migrating to healthier options.
-I'm just not there yet.
+I'm not perfect, because I do still use Github and Cloudflare's DNS.
+But I am actively working on migrating to healthier options, I'm just not there yet.
 
 == Takeaways
 
