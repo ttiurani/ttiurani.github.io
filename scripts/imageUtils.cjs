@@ -166,7 +166,7 @@ const createPictureTagFromImageTag = async (imageTag, imagesMetadata) => {
     if (imageMetadata.avif) {
         // For avif, if the file is small enough, let's inline it
         const imageData = await fs.readFile(__dirname + '/../static' + imageMetadata.avif);
-        if (imageData.byteLength < 30000) {
+        if (imageData.byteLength < 40000) {
             pictureTag += `<source type="image/avif" srcset="data:image/avif;base64,${imageData.toString(
                 'base64'
             )}"/>`;

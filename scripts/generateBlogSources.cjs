@@ -151,7 +151,7 @@ const sortPartials = (partials) => {
     // Generate alternative images from sources
     const transcodeImagePromises = [];
     for (const metadata of blogPostMetadata) {
-        if (!metadata.preview && metadata.images) {
+        if (metadata.images) {
             for (const image of metadata.images) {
                 transcodeImagePromises.push(
                     transcodeImage(
@@ -219,7 +219,7 @@ const sortPartials = (partials) => {
         const fileContentLines = fileContent.split(/\n/);
         let finalFileContent = '';
         for (const fileContentLine of fileContentLines) {
-            if (!partial.metadata.preview && fileContentLine.trim().startsWith('<img')) {
+            if (fileContentLine.trim().startsWith('<img')) {
                 finalFileContent +=
                     (await createPictureTagFromImageTag(fileContentLine, partial.metadata.images)) +
                     '\n';

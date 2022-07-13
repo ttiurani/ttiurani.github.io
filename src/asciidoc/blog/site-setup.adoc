@@ -5,7 +5,8 @@ Timo Tiuraniemi
 :keywords: meta, convivial technology, rust
 :figure-caption!:
 
-Here's a lovely picture of this site.
+.I should probably make a case for the board. (My son chose the Lego figure.)
+image::/images/raspberry_pi.jpg[The Raspberry Pi board behind a router, next to a lot of chords. Sitting on top of it a Lego mini figure.]
 
 This posts breaks down how this little place on the internet works and why I ended up making some unconventional choices.
 But first some background.

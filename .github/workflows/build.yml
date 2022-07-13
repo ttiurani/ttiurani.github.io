@@ -12,7 +12,7 @@ on:
             - '**.md'
 jobs:
     build:
-        name: Build ande deploy site
+        name: Build and deploy site
         runs-on: ubuntu-latest
         steps:
             - name: Remove nginx for libgd problems
