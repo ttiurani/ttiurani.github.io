@@ -13,6 +13,7 @@ ExecStart=/opt/extendedmind_hub \
 --metrics-dir /srv/www/metrics \
 --metrics-endpoint /api/metrics \
 --metrics-secret {{ extendedmind_hub_metrics_secret }} \
+--skip-compress-mime application/json \
 --domain tiuraniemi.io \
 --acme-email timo.tiuraniemi@iki.fi \
 --acme-dir /srv/www/.certificates \
