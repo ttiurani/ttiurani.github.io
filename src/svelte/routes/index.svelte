@@ -10,33 +10,19 @@
 
 <svelte:head>
     <title>Timo Tiuraniemi</title>
-    <meta name="description" content="Timo Tiuraniemi" />
+    <meta name="description" content="Personal home page of Timo Tiuraniemi" />
 </svelte:head>
 
 <section bind:clientWidth={layoutWidth}>
     <Hero>
         <div class="hero-row">
             <div id="hero-text" class="hero-column">
-                <h1>Hi, I'm Timo</h1>
+                <h1>Timo Tiuraniemi</h1>
                 <p>
-                    I'm a <a
-                        href="https://www.opendemocracy.net/en/transformation/husbandry-feminist-reclamation-of-men-s-responsibility-to-care/"
-                        >husband and father</a
-                    >. My craft is programming, but I have a
-                    <a
-                        href="https://www.helsinki.fi/en/faculty-arts/research/disciplines/philosophy-history-and-art/philosophy"
-                        >background in philosophy</a
-                    >.
+                    I'm a husband and father. My craft is programming, but I have a background in philosophy.
                 </p>
                 <p>
-                    I'm currently a full-time activist fighting for <a
-                        href="https://en.wikipedia.org/wiki/Commons">the commons</a
-                    >. I do that by building the digital commons with
-                    <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software"
-                        >free and open source software</a
-                    >, and by protecting the environmental commons with demands for
-                    <a href="https://en.wikipedia.org/wiki/Climate_justice">climate justice</a>
-                    and <a href="https://degrowth.info">degrowth</a>.
+                    I'm currently a full-time activist fighting for the commons, splitting my time between building the digital commons and protecting the environmental commons.
                 </p>
                 <p>&mdash;</p>
                 <p id="contact">
