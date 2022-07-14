@@ -1,6 +1,6 @@
 = Notes On The Ministry for the Future
 Timo Tiuraniemi
-1.0, 2022-07-14
+1.0, 2022-07-15
 :description: The Ministry for the Future by Kim Stanley Robinson is a mixed bag. The positives are fantastic but the negatives crippling.
 :keywords: review, Earth breakdown
 

@@ -1,11 +1,11 @@
 = This Site Runs on a Raspberry Pi in My Living Room
 Timo Tiuraniemi
-1.0, 2022-07-17
-:description: This site is built with convivial technology principles. Here I break down how it is works.
-:keywords: meta, convivial technology, rust
+1.0, 2022-07-14
+:description: This site is built from the ground up based on moral principles to run on a Raspberry Pi. Here I break down how it works.
+:keywords: meta, technology, rust
 :figure-caption!:
 
-.I should probably make a case for the board. (My son chose the Lego figure.)
+.I should probably make a case for the board. My son chose the Lego figure.
 image::/images/raspberry_pi.jpg[The Raspberry Pi board behind a router, next to a lot of chords. Sitting on top of it a Lego mini figure.]
 
 Running a web site on a Raspberry Pi isn't anything new.
