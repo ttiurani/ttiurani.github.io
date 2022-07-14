@@ -19,7 +19,7 @@
             <div id="hero-text" class="hero-column">
                 <h1>Timo Tiuraniemi</h1>
                 <p>
-                    I'm a husband and father. My craft is programming, but I have a background in philosophy.
+                    I'm a husband and a father. My craft is programming and I have a background in philosophy.
                 </p>
                 <p>
                     I'm currently a full-time activist fighting for the commons, splitting my time between building the digital commons and protecting the environmental commons.
