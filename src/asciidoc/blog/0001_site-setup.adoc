@@ -237,7 +237,7 @@ That's why I now cache permanently and implemented a listener for a https://gith
 To add insult to injury, I whipped up a hacky brotli cache warm-up bash script that runs curl after cache busting.
 Now most of the time no real visitor has to wait.
 
-With all that in place, when I'm physically near the Pi, this post loads XXX kilobytes of brotli-compressed HTML in YYYms.
+With all that in place, this page (including the image) is *48kb* brotli-compressed, and when I'm physically near the Pi loads in *50ms*.
 
 Pretty cool if I say so myself!
 
