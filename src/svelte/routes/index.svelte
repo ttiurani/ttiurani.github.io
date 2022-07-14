@@ -29,7 +29,7 @@
                     >.
                 </p>
                 <p>
-                    I'm currenty a full-time activist fighting for <a
+                    I'm currently a full-time activist fighting for <a
                         href="https://en.wikipedia.org/wiki/Commons">the commons</a
                     >. I do that by building the digital commons with
                     <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software"

@@ -1,6 +1,16 @@
 # Timo Tiuraniemi
+## Hi, I'm Timo
+I'm a husband and father. My craft is programming, but I have a background in philosophy.
+I'm currently a full-time activist fighting for the commons. I do that by building the digital commons with free and open source software, and by protecting the environmental commons with demands for climate justice and degrowth.
+
+Subscribe to the
+=> /feed.atom Atom feed
+of
+=> /blog the blog
+to get notified of new posts. You're also welcome to
+=> https://fosstodon.org/web/@ttiurani follow me on Mastodon
+or reach me by email at timo.tiuraniemi@iki.fi.
+
 ## Navigation
 => /work Work
 => /blog Blog
-## About
-Husband and father, activist for the commons (digital & environmental), programmer and philosopher. He/him

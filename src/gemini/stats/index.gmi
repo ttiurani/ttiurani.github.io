@@ -1,0 +1,7 @@
+# Site Statistics
+=> https://tiuraniemi.io/stats live site statistics
+
+## Navigation
+=> / About
+=> /work Work
+=> /blog Blog

@@ -1,5 +1,6 @@
 __BLOG_POST_CONTENT__
+
 ## Navigation
-=> / Home
+=> / About
 => /work Work
 => /blog Blog

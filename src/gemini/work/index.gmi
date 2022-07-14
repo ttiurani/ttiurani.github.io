@@ -1,6 +1,10 @@
 # Work
+## Current
+Building the digital commons. Protecting the environmental commons. Volunteering full-time to fight for the health our planet and for global social justice.
+## Past
+20 years of programming. Business consulting.
+
 ## Navigation
-=> / Home
+=> / About
 => /blog Blog
-## Extended Mind
-WiP experiment in small tech.
+

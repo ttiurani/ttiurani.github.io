@@ -1,8 +1,11 @@
 # Blog
-## Navigation
-=> / Home
-=> /work Work
-## Posts
+Subscribe to the
+=> /feed.atom blog's Atom feed
+to get notified of new posts.
+
+## Latest
 __BLOG_POSTS__
-## Links
-=> https://tiuraniemi.io/feed.atom Atom feed for this blog
+
+## Navigation
+=> / About
+=> /work Work
