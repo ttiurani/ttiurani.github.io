@@ -8,25 +8,25 @@ Timo Tiuraniemi
 .I should probably make a case for the board. My son chose the Lego figure.
 image::/images/raspberry_pi.jpg[The Raspberry Pi board behind a router, next to a lot of chords. Sitting on top of it a Lego mini figure.]
 
-Running a web site on a Raspberry Pi isn't anything new.
+Running a website on a Raspberry Pi isn't anything new.
 There are dozens of tutorials on how to do it, and thousands of sites exactly like this.
 
 What _is_ hopefully new and worth saying are all of the tiny decisions I made to create the site from the ground up, and the values that guided those decisions.
 
-This posts breaks down how this little place on the internet works.
+This post breaks down how this little place on the internet works.
 
 But first some background.
 
-== Why Do I Need My Own Site?
+== Why Do I Need a Personal Site?
 
-I've been meaning to set up my own site for ages, but haven't ever found the time to actually do it.
+I've been meaning to set up a personal site for ages, but haven't ever found the time to get down to it.
 
 So why now?
 
 Honestly, I only now have something important enough to say.
 
 During a year of https://fosstodon.org/web/@ttiurani[occasional microblogging on Mastodon] I've come up with almost two dozen ideas for posts, that can't be squeezed into toots.
-Also I wanted to finally become https://indieweb.org/[self-reliant with the technology I use], and especially never https://theoatmeal.com/comics/reaching_people_2021[rely on corporations for reaching people].
+Also, I wanted to finally become https://indieweb.org/[self-reliant with the technology I use], and especially never https://theoatmeal.com/comics/reaching_people_2021[rely on corporations for reaching people].
 
 == What is the Site About?
 
@@ -39,7 +39,7 @@ Borrowing and extending from the excellent https://small-tech.org/about/#small-t
 
 * *Share alike*. All source code is licensed with AGPLv3 and all text content with CC BY-SA 4.0.
 * *Private by default*. No tracking and no storing nor logging of any personally identifiable information.
-* *Non-commercial*. There is no ulterior motive to make profit. What you see is all there is.
+* *Non-commercial*. There is no ulterior motive to make a profit. What you see is all there is.
 * *Inclusive*. Accessibility is not an afterthoughtfootnote:[I am not proficient at accessibility, but I've tried my best. Please let me know of any accessibility issues on this site, and I'll make time to fix them!]. Low-power devices need to be supported.
 * *Ecological*. Natural resources must not be wasted, and energy use must be low.
 
@@ -54,9 +54,9 @@ The site needs to have these features:
 * Has an RSS/Atom feed.
 * There's a statistics page that shows how many visits have recently been to which paths, and these statistics are backed up.
 * Only I can see 404 requests and server errors.
-* Eventually I can use this site also for our family's P2P app backups (more on this in future blog posts).
+* Eventually, I can use this site also for our family's P2P app backups (more on this in future blog posts).
 
-=== Cross Functional Requirements
+=== Cross-Functional Requirements
 
 All of the above features should:
 
@@ -64,17 +64,17 @@ All of the above features should:
 * be fast,
 * be secure,
 * survive a hug of death,
-* have low-maintenance, and
+* have low maintenance, and
 * have reasonably good availability.
 
 === Resources
 
 Finally, I have these resources at my disposal:
 
-* I have a few weeks of time.
+* I have a few weeks.
 * I can program.
 * I have a lot of motivation to learn Rust.
-* I own a Raspberry Pi 3Bfootnote:[Thank you to my wonderful collegues at Filosofian Akatemia for this thoughtful gift.], that's been sitting in a bookshelf since 2016.
+* I own a Raspberry Pi 3Bfootnote:[Thank you to my wonderful colleagues at Filosofian Akatemia for this thoughtful gift.], that's been sitting on a bookshelf since 2016.
 * Our apartment building has a very good internet connection.
 * I have https://posteo.de[a green email provider] that gives me 2GB of storage.
 
@@ -82,7 +82,7 @@ Finally, I have these resources at my disposal:
 
 With that out of the way, let's get down to the nitty-gritty. If you're not interested in the technical side of things you can <<_conclusion,skip to conclusions>>.
 
-*Disclaimer*: all of my code referenced below is pre-alpha and not meant to be used by anyone except me.
+*Disclaimer*: All of my code referenced below is pre-alpha and not meant to be used by anyone except me.
 Especially proper error handling and tests are completely missing.
 I'm testing in production.
 
@@ -90,23 +90,23 @@ I'm testing in production.
 
 As you should already know by now, I decided to use my Raspberry Pi 3 B for hosting.
 Because I'm a full-time activist, every euro I spend shortens the time I have left before I need to find income.
-That means that especially monthly recurring charges add up really fast.
+That means that especially monthly recurring charges add up fast.
 Even a modest 5€ per month for a VM is not nothing for me.
 Also for environmental reasons, I try my best to avoid being the reason new hardware gets made.
 
-Unfortunately the Pi didn't come with a charger, memory card nor heat sinks, so I did have to buy them new.
+Unfortunately, the Pi didn't come with a charger, memory card or heat sinks, so I did have to buy them new.
 Together that cost me 53€.
 
 === OS
 
 Because I only use the Pi as a server, a headless installation of https://www.raspberrypi.com/software/operating-systems/[Raspberry Pi OS Lite] was the obvious choice.
-After that https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#initial-setup[I documented] in Githubfootnote:[I'm in the process of moving to Codeberg, but unfortunately not there yet. The issue is that I rely on Github Actions quite a lot, and haven't had time to investigate how Codeberg's CI can be configured.] the steps needed to set up SSH, forward ports in my home router, and point Cloudflare's DNSfootnote:[I really don't want to use Cloudflare, but decided to compromise for now, because there's already a dynamic IP client for it. Do tell me if there is a more ethical DNS with an API!] to the IP address.
+After that, https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#initial-setup[I documented] on Githubfootnote:[I'm in the process of moving to Codeberg, but unfortunately not there yet. The issue is that I rely on Github Actions quite a lot, and haven't had time to investigate how Codeberg's CI can be configured.] the steps needed to set up SSH, forward ports in my home router, and point Cloudflare's DNSfootnote:[I don't want to use Cloudflare, but decided to compromise for now, because there's already a dynamic IP client for it. Do tell me if there is a more ethical DNS with an API!] to the IP address.
 
 For reasons I'll explain in a future blog post, I also needed a newer `libc` than was included in Debian stable ("bullseye"), which meant I had to upgrade to testing ("bookworm").
 Because I only use the essentials from the OS, everything luckily works just fine.
 
 To make sure I don't miss out on security patches, I run https://github.com/ttiurani/tiuraniemi.github.io/blob/main/.github/workflows/upgrade.yml[a nightly OS upgrade] that also reboots the server if that's needed.
-I'm aware that this can cause the entire site to break horribly, which is why I set up an Uptime Robot monitor pinging the site, so that I know when it broke.
+I'm aware that this can cause the entire site to break horribly, which is why I set up an Uptime Robot monitor pinging the site so that I know when it broke.
 (And yes, I know a monitor can't prevent downtime, keep on reading.)
 
 Finally, I https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#9-lower-energy-consumption[lowered the energy consumption] of the Pi by turning off all unnecessary services.
@@ -122,12 +122,12 @@ While I was at it, I also wrote https://github.com/ttiurani/asciidoctorjs-json-c
 
 For CSS/JS I opted to go with https://kit.svelte.dev/[SvelteKit] with adapter-static.
 It has been an absolute delight.
-Unfortunately I didn't yet figure out a way to wire up Asciidoctor.js to SvelteKit, so I use a hacky https://github.com/ttiurani/tiuraniemi.github.io/blob/main/scripts/generateBlogSources.cjs[pre-build script] to generate svelte filesfootnote:[This is something I'm planning to try and integrate directly into SvelteKit so that I'd immediately see changes I make to the adoc sources.], Gemtext files and OpenGraph images.
+Unfortunately, I didn't yet figure out a way to wire up Asciidoctor.js to SvelteKit, so I use a hacky https://github.com/ttiurani/tiuraniemi.github.io/blob/main/scripts/generateBlogSources.cjs[pre-build script] to generate svelte filesfootnote:[This is something I'm planning to try and integrate directly into SvelteKit so that I'd immediately see changes I make to the adoc sources.], Gemtext files and OpenGraph images.
 
 === HTTP and Gemini Servers
 
 For HTTP I decided to go with the https://github.com/http-rs/tide[tide web framework for Rust].
-Now I can almost hear some of you thinking I should have just installed nginx/acme.sh or [insert your favorite web server here] and be done with it, but bear with me.
+Now I can almost hear some of you thinking I should have just installed nginx/acme.sh or [insert your favourite web server here] and be done with it, but bear with me.
 I had my reasons.
 
 First, I have many other plans for the server than just serving static files (stay tuned for details in future posts).
@@ -137,7 +137,7 @@ Third, I wanted to get better at Rust.
 Because tide is rather bare-bones, I had to write https://github.com/extendedmind/extendedmind/blob/main/hub/src/http/html.rs[my own static file serving] to be able to serve Svelte files, return the appropriate headers and inline CSS for blog posts.
 
 ACME support came out of the box with https://github.com/http-rs/tide-acme[tide-acme] and compression from https://github.com/Fishrock123/tide-compress[tide-compress].
-Finally I made my own small HTTP to HTTPs redirect endpoint, and implemented support for HSTS.
+Finally, I made my own small HTTP to HTTPs redirect endpoint and implemented support for HSTS.
 
 For Gemini, I chose the https://github.com/mbrubeck/agate[Agate server].
 It works as advertised, no complaints.
@@ -146,14 +146,14 @@ It works as advertised, no complaints.
 
 Google Analytics is cancer and I'm very happy it's looking like it will get outlawed in the EU.
 It's a given I was not going to ever spy on you lovely people.
-But at the same time, I do want to know _something_ about what's going on in my site. Namely:
+But at the same time, I do want to know _something_ about what's going on with my site. Namely:
 
 * How many daily visits are there to my site and to what paths?
 * What requests are returning 404?
 * What are the biggest traffic sources?
 
 This is a common problem and there are many industry standard solutions.
-But when I started looking in to them, I realized they were all way overkill for my very modest needs.
+But when I started looking into them, I realized they were all way overkill for my very modest needs.
 I'm not going to host a time series database.
 I'll never need any fancy visualizations.
 I'm never going to analyze the data.
@@ -161,15 +161,15 @@ I'm never going to analyze the data.
 Because I also don't want to depend on too many external libraries, I just decided to do it myself.
 First, I do https://github.com/extendedmind/extendedmind/blob/main/hub/src/logging.rs[async access logging in a low priority thread] into UTC date formatted log files, which is also good for performance.
 The log files have space delimited lines, one per `GET` request, that contain just the path and the status code.
-I don't need log rotation, but I'll probably need to implement deleting of old log files later.
+I don't need log rotation, but I'll probably need to implement deleting old log files later.
 
 From this access log, I then https://github.com/extendedmind/extendedmind/blob/main/hub/src/metrics.rs[update every minute a UTC daily metric file].
 The metric files are then served as JSON from an HTTP endpoint and rendered in a Svelte page.
 
-If you feel like it you can link:/stats[visit the live statistics page yourself].
+If you want you can link:/stats[visit the live statistics page yourself].
 
-As for traffic sources, I was initially planning on adding them, but after a little research I realized that it's easy to leak unwanted data in the `Referer` header.
-This can happen for example if there is a link to my site from an internal forum and the forum accidentally has invalid configuration.
+As for traffic sources, I was initially planning on adding them, but after a little research, I realized that it's easy to leak unwanted data in the `Referer` header.
+This can happen for example if there is a link to my site from an internal forum and the forum accidentally has an invalid configuration.
 Just because the mistake is not technically mine, I still don't want to be responsible for storing the sensitive URL.
 
 For that reason, for my last requirement, if there is a spike in traffic, I can just do a DuckDuckGo search for the URL and hopefully find the traffic source.
@@ -177,7 +177,7 @@ For that reason, for my last requirement, if there is a spike in traffic, I can 
 And if I can't find the source, then I can't.
 That's fine.
 
-Finally I realized that because my public statistics page is rendering request paths, if it showed 404 responses that would make it possible for someone to overwhelm the stats page or write nasty things for everyone to see.
+Finally, I realized that because my public statistics page is rendering request paths if it showed 404 responses that would make it possible for someone to overwhelm the stats page or write nasty things for everyone to see.
 I don't want to start moderating any content on this site, which is why I added a simple `secret` query string I can use on the stats page to view the 404 requests.
 
 === Email Backups
@@ -185,44 +185,44 @@ I don't want to start moderating any content on this site, which is why I added 
 The biggest thing missing from a Pi compared to a VM are backups.
 If the Pi dies all data is lost.
 
-For the static site content this is not a problem, because all sources are in git, but those metrics files aren't.
-Also my plan is to store other personal data to the Pi at a later time so I really need a backup solution.
+For the static site content, this is not a problem, because all sources are in git, but those metrics files aren't.
+Also, I plan to store other personal data on the Pi at a later time so I need a backup solution.
 
 I talked recently with Holger from https://delta.chat[Delta Chat] and learned that there are many places in the world where international internet access costs more than national access.
 Nationally what almost certainly is available are email servers.
-Because I want to write inclusive software and keep my own expenses low, I realized that I can just use email as storage.
-Email can't realistically be used to backup pictures or videos, but for backing up text data, which is what I'm exclusively using it for, it's plenty good enough.
+Because I want to write inclusive software and keep my expenses low, I realized that I can just use email as storage.
+Email can't realistically be used to back up pictures or videos, but for backing up text data, which is what I'm exclusively using it for, it's plenty good enough.
 
-To make this happen, I wrote https://github.com/extendedmind/extendedmind/blob/main/hub/src/backup.rs[my own backup process] that creates a `tar.gz` file from the metrics files.
-It then encrypts the archive with https://github.com/str4d/rage[rage] using the same public key I use to SSH to the Pi, and lastly sends to archive with SMTP to myself.
-On the email provider side I have a rule which directs the backup email to a folder.
+To make this happen, I wrote https://github.com/extendedmind/extendedmind/blob/main/hub/src/backup.rs[a backup process] that creates a `tar.gz` file from the metrics files.
+It then encrypts the archive with https://github.com/str4d/rage[rage] using the same public key I use to SSH to the Pi, and lastly sends the archive with SMTP to myself.
+On the email provider side, I have a rule which directs the backup email to a folder.
 
 If I need to restore the content, I can decrypt the archive using the private SSH key, and unpack the content to a new Pi.
 
-At some point I'll need to do some automatic cleaning of old backups, but for now, it works great.
+At some point, I'll need to do some automatic cleaning of old backups, but for now, it works great.
 
-=== Devops
+=== DevOps
 
-For me the most stressful part about development is manual ops work.
+For me, the most stressful part about development is manual ops work.
 I just hate ssh'ing into a server and running ad hoc commands to get things to work.
 That's why I feel the effort to create ops configuration into version control is always worth it, no matter how small the project.
 
-I looked around for new devops tools, but came to the conclusion that Ansible is still the best tool for me.
-I'm really not a fan of Ansible, but what can you do.
+I looked around for new DevOps tools but concluded that Ansible is still the best tool for me.
+I'm still not a fan of Ansible, but can now appreciate its relative simplicity more.
 So I https://github.com/ttiurani/tiuraniemi.github.io/tree/main/deploy#ansible-setup[wrote a few playbooks] that GHA runs for me automatically when the right git push comes.
-This cost me maybe three work days of time, but I definitely think it was worth it.
+This cost me maybe three work days, but I think it was worth it.
 I now have (maybe illusionary) peace of mind that if my Pi breaks, I can initialize a new one relatively fast.
 
 === Performance
 
-By far the biggest reason web sites are slow and waste energy, is content bloat.
+By far the biggest reason websites are slow and waste energy is content bloat.
 Javascript bundles are huge, there's unnecessary CSS, custom fonts, videos and unoptimized images.
 That's why I decided that reading my blog post must be possible with just a TLS handshake followed by one HTTP/1.1 GET request.
 
 Svelte is great in that if I don't use javascript in some paths, there is also no javascript in the generated static files for those paths.
 Because I'm expecting almost all of the visits to be to a single blog post, inlining CSS makes sense, especially given that tide doesn't support HTTP/2.
 I don't plan on making it a habit of using images in my blog posts, but decided to inline `avif` files as Base64 if they are small enough.
-As a finishing touch, I use an empty image as faviconfootnote:[I actually spent a few hours in Inkscape making a logo from my initials, and as I was showing it to my friends, I noticed the logo was WAY too close to swastika. Oops.].
+As a finishing touch, I use an empty image as a faviconfootnote:[I spent a few hours in Inkscape making a logo from my initials, and as I was showing it to my friends, I noticed the logo was WAY too close to a swastika. Oops.].
 
 With all of that out of the way, it was time to find out how fast I could get the server to work.
 Given that I had no previous experience with a Pi, and because I'm an idiot, I first implemented an in-memory cache against the file system.
@@ -235,7 +235,7 @@ For this reason, I changed the file system cache to a https://github.com/extende
 Because that compression penalty was so high, I felt it had a significant negative impact on the site, which meant I didn't want to cache only based on time-to-time, say for five minutes.
 That's why I now cache permanently and implemented a listener for a https://github.com/extendedmind/extendedmind/blob/main/hub/src/admin.rs[unix socket that does cache busting on demand], which I call with Ansible when the site updates.
 To add insult to injury, I whipped up a hacky brotli cache warm-up bash script that runs curl after cache busting.
-Now most of the time no real visitor has to wait.
+Now, most of the time no real visitor has to wait.
 
 With all that in place, this page (including the image) is *48kb* brotli-compressed, and when I'm physically near the Pi loads in *50ms*.
 
@@ -245,8 +245,8 @@ Pretty cool if I say so myself!
 
 Finally a few words about the elephant in the room: availability.
 
-I feel like the reason why many of these kinds of Raspberry Pi hacks have only been demos or semi-private web sites is that developers value availability too high.
-I know I've spent months of my professional programming career working on redundancy, load balancers, auto-scaling and all that jazz to try to try to maximize uptime.
+I feel like the reason why many of these kinds of Raspberry Pi hacks have only been demos or semi-private websites is that developers value availability too high.
+I know I've spent months of my professional programming career working on redundancy, load balancers, auto-scaling and all that jazz to try to maximize uptime.
 
 And sometimes prioritizing availability is the right call.
 
@@ -260,23 +260,23 @@ If the people reading my posts don't come back if the site is down, I've done so
 
 But what about DoS attacks?
 
-Well it would suck if someone did that.
+Well, it would suck if someone did that.
 My Pi would suffocate and the site would go down.
 I'd have to try to rotate my IP, take the site offline, and hope my internet service provider doesn't get angry with me.
 
 I know the common practice for this is to just use e.g. Cloudflare's DDoS services and hide my real IP, but that's not honest nor sustainable.
 I can't claim to be fighting for a democratic, post-capitalist internet and at the same time rely on freebies from corporations.
 
-To put it in familiar terms: you might think you're Han Solo hiding the Millennium Falcon by parking it on the star destroyer, but in reality you're the younger Han Solo leading the empire to the rebel base because you have a homing beacon on your ship.
+To put it in familiar terms: you might think you're Han Solo hiding the Millennium Falcon by parking it on the star destroyer, but in reality, you're the younger Han Solo leading the empire to the rebel base because you have a homing beacon on your ship.
 
 == Conclusion
 
-It's baffling how much computing power you can cram to a small board nowadays.
-It gets even more baffling when you compare that to what the software industry is actually selling as best practices.
+It's baffling how much computing power you can cram into a small board nowadays.
+It gets even more baffling when you compare that to what the software industry is selling as best practices.
 
-Development grounded on moral principles and targeting low-power devices changes the development process fascinating ways and opens so many avenues for inventions.
+Development grounded on moral principles and targeting low-power devices changes the development process in fascinating ways and opens so many avenues for inventions.
 
 I urge every developer reading this to try.
-The end result might just be a better, more inclusive and more democratic internet.
+The result might just be a better, more inclusive and more democratic internet.
 
 [#highlighted]#What do you stand for and how does that show in what you build?#
