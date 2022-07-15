@@ -19,7 +19,7 @@
             <div id="hero-text" class="hero-column">
                 <h1>Timo Tiuraniemi</h1>
                 <p>
-                    I'm a husband and a father. My craft is programming and I have a background in
+                    I'm a husband and a father. My craft is programming, and I have a background in
                     philosophy.
                 </p>
                 <p>
