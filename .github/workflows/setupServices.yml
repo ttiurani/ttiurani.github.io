@@ -26,3 +26,8 @@ jobs:
                       --extra-vars cloudflare_api_token=${{ secrets.CLOUDFLARE_API_TOKEN }}
                       --extra-vars cloudflare_zone_id=${{ secrets.CLOUDFLARE_ZONE_ID }}
                       --extra-vars extendedmind_hub_metrics_secret=${{ secrets.EXTENDEDMIND_HUB_METRICS_SECRET }}
+                      --extra-vars backup_email_to=${{ secrets.BACKUP_EMAIL_TO }}
+                      --extra-vars backup_email_from=${{ secrets.BACKUP_EMAIL_FROM }}
+                      --extra-vars backup_email_smtp_host=${{ secrets.BACKUP_EMAIL_SMTP_HOST }}
+                      --extra-vars backup_email_smtp_username=${{ secrets.BACKUP_EMAIL_SMTP_USERNAME }}
+                      --extra-vars backup_email_smtp_password=${{ secrets.BACKUP_EMAIL_SMTP_PASSWORD }}

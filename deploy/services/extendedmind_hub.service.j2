@@ -28,7 +28,12 @@ ExecStart=/opt/extendedmind_hub \
 --immutable-path /_app/immutable/*.css \
 --immutable-path /_app/immutable/*.js \
 --backup-dir /srv/backup \
---backup-ssh-recipients-file /home/pi/.ssh/authorized_keys
+--backup-ssh-recipients-file /home/pi/.ssh/authorized_keys \
+--backup-email-from {{ backup_email_to }} \
+--backup-email-to {{ backup_email_from }} \
+--backup-email-smtp-host {{ backup_email_smtp_host }} \
+--backup-email-smtp-username {{ backup_email_smtp_username }} \
+--backup-email-smtp-password {{ backup_email_smtp_password }}
 
 Restart=always
 RestartSec=1
