@@ -9,7 +9,7 @@ Timo Tiuraniemi
 image::/images/raspberry_pi.jpg[The Raspberry Pi board behind a router, next to a lot of chords. Sitting on top of it a Lego mini figure.]
 
 Running a web site on a Raspberry Pi isn't anything new.
-There are dozens on tutorials on how to do it, and thousands of sites exactly like this.
+There are dozens of tutorials on how to do it, and thousands of sites exactly like this.
 
 What _is_ hopefully new and worth saying are all of the tiny decisions I made to create the site from the ground up, and the values that guided those decisions.
 
@@ -163,7 +163,7 @@ First, I do https://github.com/extendedmind/extendedmind/blob/main/hub/src/loggi
 The log files have space delimited lines, one per `GET` request, that contain just the path and the status code.
 I don't need log rotation, but I'll probably need to implement deleting of old log files later.
 
-From this access log, I then https://github.com/extendedmind/extendedmind/blob/main/hub/src/metrics.rs[update every 10 seconds a UTC daily metric file].
+From this access log, I then https://github.com/extendedmind/extendedmind/blob/main/hub/src/metrics.rs[update every minute a UTC daily metric file].
 The metric files are then served as JSON from an HTTP endpoint and rendered in a Svelte page.
 
 If you feel like it you can link:/stats[visit the live statistics page yourself].

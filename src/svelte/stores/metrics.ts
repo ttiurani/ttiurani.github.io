@@ -53,7 +53,7 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
             fetchMetrics(url);
             const metricsApiInterval = setInterval(() => {
                 fetchMetrics(url);
-            }, 10000);
+            }, 60000);
 
             return () => clearInterval(metricsApiInterval);
         } else {
