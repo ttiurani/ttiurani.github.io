@@ -3,5 +3,4 @@
 
 ## Navigation
 => / About
-=> /work Work
 => /blog Blog

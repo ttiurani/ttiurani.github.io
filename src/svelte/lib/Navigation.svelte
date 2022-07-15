@@ -12,9 +12,9 @@
             <li id="about" class="main-nav__item" class:active={$page.url.pathname === '/'}>
                 <a href="/">About</a>
             </li>
-            <li id="work" class="main-nav__item" class:active={$page.url.pathname === '/work'}>
+            <!--li id="work" class="main-nav__item" class:active={$page.url.pathname === '/work'}>
                 <a href="/work">Work</a>
-            </li>
+            </li-->
             <li class="main-nav__item" class:active={$page.url.pathname.startsWith('/blog')}>
                 <a href="/blog">Blog</a>
             </li>
@@ -41,7 +41,7 @@
         border-bottom: 2px solid;
     }
     .nav-wrapper .main-nav {
-        font-size: calc(0.8rem + 0.4vw);
+        font-size: calc(0.75rem + 0.4vw);
         line-height: calc(1rem + 0.4vw);
         flex: 1;
     }
@@ -63,6 +63,7 @@
         text-decoration: none;
         text-transform: uppercase;
     }
+    /*
     #about {
         display: none;
     }
@@ -76,5 +77,5 @@
         #work {
             margin-left: var(--column-gap-item);
         }
-    }
+    }*/
 </style>

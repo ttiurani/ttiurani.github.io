@@ -12,5 +12,4 @@ to get notified of new posts. You're also welcome to
 or reach me by email at timo.tiuraniemi@iki.fi.
 
 ## Navigation
-=> /work Work
 => /blog Blog
