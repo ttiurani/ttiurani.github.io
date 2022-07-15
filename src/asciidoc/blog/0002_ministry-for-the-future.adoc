@@ -4,7 +4,7 @@ Timo Tiuraniemi
 :description: The Ministry for the Future by Kim Stanley Robinson is a mixed bag. The positives are fantastic but the negatives crippling.
 :keywords: review, Earth breakdown
 
-Kim Stanley Robinson wrote https://en.wikipedia.org/wiki/The_Ministry_for_the_Future[The Ministry for the Future] in 2020, and I picked it up late 2021 after many recommendations from people I respected.
+Kim Stanley Robinson wrote https://en.wikipedia.org/wiki/The_Ministry_for_the_Future[The Ministry for the Future] in 2020, and I picked it up in late 2021 after many recommendations from people I respected.
 It has taken a while for me to get to writing these notesfootnote:[Finding a home for this text was one of the reasons I finally got around to setting up this site.], and because I returned the book months ago back to the library, I can't check if all the claims about the book are accurate.
 
 With that grain of salt, I hope I can still contribute a few important points to the discussion surrounding this novel.
@@ -16,60 +16,60 @@ Don't continue reading if you haven't finished the novel.
 
 == The Good
 
-First, I applaud Robinson for writing a utopian, or at least non-dystopian, vision on how human kind can survive Earth breakdown.
+First, I applaud Robinson for writing a utopian, or at least non-dystopian, vision of how humankind can survive Earth breakdown.
 This is a genre of books that is sorely lacking voices and ideas.
-I call to every artist out there to find these kinds of creative ideas that can help defeat doomism that's rampart in especially the Global North.
+I call on every artist out there to find these kinds of creative ideas that can help defeat doomism that's rampant in especially the Global North.
 
 Robinson writes his vision based on an awe-inspiring breadth of research.
-Reading all those results and discussions from so many fields of science alone make this novel a remarkable achievement.
-While I'm definitely not an expert on the topics, I also didn't spot any significant factual mistakes.
+Reading all those results and discussions from so many fields of science alone makes this novel a remarkable achievement.
+While I'm not an expert on the topics, I also didn't spot any significant factual mistakes.
 
 I found especially impressive the parts on macroeconomics.
 The discussions surrounding a "carbon coin" and the role of central banks were eye-opening and insightful.
-Coming from a degrowth background, I also enjoyed Robinson's analysis of capitalism and the story's end result of a kind of wide-spread eco-socialism.
+Coming from a degrowth background, I also enjoyed Robinson's analysis of capitalism and the story's result of a kind of widespread eco-socialism.
 
-[#highlighted]#All in all, 90% of The Ministry for the Future is solid and makes the novel worth reading. However the remaining 10% has some serious issues.#
+[#highlighted]#All in all, 90% of The Ministry for the Future is solid and makes the novel worth reading. However, the remaining 10% has some serious issues.#
 
 == The Bad
 
-I want to preface this by saying that these problems would not really be that important to pick apart had the novel been interpreted only as fiction.
+I want to preface this by saying that these problems would not be that important to pick apart had the novel been interpreted only as fiction.
 What makes pointing out the problems of Robinson's work worth it, is that I have seen people advocate using this novel as an actual roadmap for the future.
 That's way too much to ask from a novel.
-For this reason, my criticism isn't so much targeted at Robinson, as it is to the people misunderstanding the role of fiction.
+For this reason, my criticism isn't so much targeted at Robinson, as it is at the people misunderstanding the role of fiction.
 
 Here in order of severity from lowest to highest are my objections.
 
 === 1. Spontaneously Viral Software
 
 The novel features a non-commercial, decentralized Facebook alternative called YourLock, which suddenly gets traction and everyone migrates to it.
-The reasons given for the virality are essentially "blockchain" and "open source".
+The reasons given for the virality are, essentially, "blockchain" and "open source".
 
 Having been personally involved with the decentralized, non-commercial Twitter alternative https://joinmastodon.org/[Mastodon], I can safely say this is not how software gets popular.
 Overcoming the network effects of existing platforms is a monumental task.
-The only realistic way the kind of migration depicted in the book would happen, is with regulation of surveillance capitalism.
+The only realistic way the kind of migration depicted in the book would happen is with the regulation of surveillance capitalism.
 
 === 2. Blockchain Enthusiasm
 
 Hindsight is easy here, but the enthusiasm for blockchains does not look good, https://concerned.tech/[especially in 2022].
 
-However what's especially worrying is the novel's support for complete public visibility of everyone's finances.
+However, what's especially worrying is the novel's support for complete public visibility of everyone's finances.
 
-This I feel shows total ignorance on how privilege plays into what a person can and can not keep to themselves.
+This I feel shows total ignorance of how privilege plays into what a person can and can not keep to themselves.
 The most vulnerable in society are the ones who need privacy the most.
-To suggest removing privacy for the greater good, is to suggest sacrificing the weak to keep the masses contained.
+To suggest removing privacy for the greater good is to suggest sacrificing the weak to keep the masses contained.
 
 === 3. Disregard for Most Planetary Boundaries
 
 To Robinson's credit, the novel does not address only the climate crisis but also biodiversity loss.
 This alone makes the novel especially strong compared to many current narratives.
 
-However the transgression of other https://en.wikipedia.org/wiki/Planetary_boundaries[planetary boundaries] are suggested to be issues that can be delayed to the latter part of the century.
+However, the transgression of other https://en.wikipedia.org/wiki/Planetary_boundaries[planetary boundaries] is suggested to be an issue that can be delayed to the latter part of the century.
 This is not a future worth rooting for.
 
-It must be said that the some of the boundaries, like chemical pollution, was not established at the time of the writing.
+It must be said that some of the boundaries, like chemical pollution, were not established at the time of the writing.
 But many others were.
 
-Because of this neglect, many of the solutions offered in the book, like large scale geoengineering, only try to fix one planetary boundary at the expense of another.
+Because of this neglect, many of the solutions offered in the book, like large-scale geoengineering, only try to fix one planetary boundary at the expense of another.
 That's just shifting Earth breakdown, not stopping it.
 
 === 4. Absence of Climate Justice
@@ -81,38 +81,38 @@ The novel does touch upon this issue, but in the end, offers nothing to solve it
 
 The best the Global North can come up with are voluntary clubs of some people living within planetary boundaries, but the power dynamics of the Global North and South divide remain cemented.
 
-The story ends in a grotesque story line where hundreds of millions of people die but the hyper privileged protagonists fly around the world in airships.
+The story ends in a grotesque storyline where hundreds of millions of people die but the hyper-privileged protagonists fly around the world in airships.
 The big revelation is that it's possible to work in airships while travelling.
 
 No wonder The Ministry for the Future has been a hit among Western readers.
 
 === 5. Bleak Pessimism for a System Change in the Global North
 
-Despite the novel being creative and optimistic about many possibilities for big changes, political power of mass movements to induce a system change in the Global North is not one them.
-This is especially odd because the story does include large scale political changes brought about by ordinary people in India.
+Despite the novel being creative and optimistic about many possibilities for big changes, the political power of mass movements to induce a system change in the Global North is not one of them.
+This is especially odd because the story does include large-scale political changes brought about by ordinary people in India.
 
 What's the only thing that does create change in the North?
 
-The novel's answer? Terrorism.
+Terrorism.
 
 The ecofascist answer the novel offers on how to reduce the consumption habits of the Global North is killing thousands of people.
 
 === 6. Climate Delay
 
-Flat out climate denial is not anymore the main tactic of the people benefiting from Earth breakdown.
+Flat-out climate denial is not anymore the main tactic of the people benefiting from Earth breakdown.
 https://www.celinekeller.com/discourses-of-climate-delay[Climate delay] is.
 
-The worst part of The Ministry for the Future is that it advocates for climate delay by suggesting that nothing really needs to change in the 20s, and we'll still be fine.
+The worst part of The Ministry for the Future is that it advocates for climate delay by suggesting that nothing much needs to change in the 20s, and we'll still be fine.
 
 I understand that the reason for the timeline in the novel might have been to increase book sales by keeping the novel relevant for longer.
 But still, the "tumultuous 30s" of the novel needed to be "tumultuous 20s".
 
 == Conclusion
 
-In the end I'm left with very mixed feelings about The Ministry for the Future.
+In the end, I'm left with very mixed feelings about The Ministry for the Future.
 
 Is recommending the novel to people net-positive or net-negative?
-Would reading this cause people get encouraged to look for solutions and stop doomism?
+Would reading this cause people to get encouraged to look for solutions and stop doomism?
 Or will they come back with the ecofascist message that we can wait for one more decade and then use terrorism and a totalitarian economy to fix our problems?
 
 I don't know.
