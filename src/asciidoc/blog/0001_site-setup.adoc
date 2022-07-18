@@ -232,8 +232,8 @@ Wrong.
 Turns out brotli compression on the Pi takes over half a second per request.
 For this reason, I changed the file system cache to a https://github.com/extendedmind/extendedmind/blob/main/hub/src/http/cache.rs[cache middleware for tide], so that I cache the entire compressed HTTP response.
 
-Because that compression penalty was so high, I felt it had a significant negative impact on the site, which meant I didn't want to cache only based on time-to-time, say for five minutes.
-That's why I now cache permanently and implemented a listener for a https://github.com/extendedmind/extendedmind/blob/main/hub/src/admin.rs[unix socket that does cache busting on demand], which I call with Ansible when the site updates.
+Because that compression penalty was so high, I felt it had a significant negative impact on the site, which meant I didn't want to cache only based on time-to-live, e.g. for five minutes.
+That's why I now cache permanently and implemented a https://github.com/extendedmind/extendedmind/blob/main/hub/src/admin.rs[listener for a unix socket that does cache busting on demand], which I call with Ansible when the site updates.
 To add insult to injury, I whipped up a hacky brotli cache warm-up bash script that runs curl after cache busting.
 Now, most of the time no real visitor has to wait.
 
