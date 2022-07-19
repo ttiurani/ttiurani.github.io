@@ -41,7 +41,7 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
                     .then((response: MetricsResponse) => {
                         const ranges: MetricsRange[] = response.metrics;
                         ranges.reverse();
-                        ranges.forEach(range => {
+                        ranges.forEach((range) => {
                             range.entries.sort((a: MetricsEntry, b: MetricsEntry) => {
                                 if (a.count < b.count) {
                                     return 1;
@@ -51,7 +51,7 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
                                 }
                                 return 0;
                             });
-                        })
+                        });
                         set(ranges);
                     })
                     .catch((ex) => {
@@ -69,7 +69,7 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
             return () => clearInterval(metricsApiInterval);
         } else {
             set([]);
-            return () => { };
+            return () => {};
         }
     }
 );

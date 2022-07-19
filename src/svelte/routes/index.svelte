@@ -28,7 +28,7 @@
                 </p>
                 <p>&mdash;</p>
                 <p id="contact">
-                    Subscribe to the <a href="/feed.atom">Atom feed</a> of
+                    Subscribe to the <a href="/feed.atom">RSS feed</a> of
                     <a href="/blog">the blog</a>
                     to get notified of new posts. You're also welcome to
                     <a href="https://fosstodon.org/web/@ttiurani">follow me on Mastodon</a>
