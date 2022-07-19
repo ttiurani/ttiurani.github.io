@@ -47,7 +47,7 @@ Borrowing and extending from the excellent https://small-tech.org/about/#small-t
 
 The site needs to have these features:
 
-* Three sections: about, work and blog.
+* Three sections: about, work (coming later) and blog.
 * Easy for me to write new posts.
 * Possible to send a preview link of unfinished posts to friends.
 * Supports (nearly) all web browsers and https://gemini.circumlunar.space/[Gemini] clients.
@@ -63,7 +63,7 @@ All of the above features should:
 * be cheap,
 * be fast,
 * be secure,
-* survive a hug of death,
+* survive a small hug of death,
 * have low maintenance, and
 * have reasonably good availability.
 
