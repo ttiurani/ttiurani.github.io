@@ -24,6 +24,6 @@
             full-time to fight for the health our planet and for global social justice.
         </p>
         <h2>Past</h2>
-        <p>20 years of programming. Business consulting.</p>
+        <p>20 years of programming.</p>
     </Content>
 </section>
