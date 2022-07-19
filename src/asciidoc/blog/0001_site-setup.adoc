@@ -1,6 +1,6 @@
 = This Site Runs on a Raspberry Pi in My Living Room
 Timo Tiuraniemi
-1.0, 2022-07-14
+1.0, 2022-07-19
 :description: This site is built from the ground up based on moral principles to run on a Raspberry Pi. Here I break down how it works.
 :keywords: meta, technology, rust, svelte
 :figure-caption!:

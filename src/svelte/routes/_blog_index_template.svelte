@@ -9,7 +9,7 @@
 
 <svelte:head>
     <title>Blog | Timo Tiuraniemi</title>
-    <meta name="description" content="Blog entries by Timo Tiuraniemi" />
+    <meta name="description" content="Blog posts by Timo Tiuraniemi" />
 </svelte:head>
 
 <section>
@@ -18,7 +18,7 @@
     </Hero>
     <Content>
         <p>
-            Subscribe to the <a href="/feed.atom">blog's Atom feed</a> to get notified of new posts.
+            Subscribe to the <a href="/feed.atom">blog's RSS (or technically Atom) feed</a> to get notified of new posts.
         </p>
         <h2>Latest Posts</h2>
         __BLOG_POST_START__
