@@ -123,7 +123,7 @@ const sortPartials = (partials) => {
                 __dirname + '/veteran_typewriter.ttf',
                 __dirname + '/NotoSans-Regular.ttf',
                 '“' + metadata['highlighted'][0] + '”',
-                'tiuraniemi.io' + metadata.path,
+                'tiuraniemi.org' + metadata.path,
                 '/images/generated/',
                 darkTheme,
                 metadata
@@ -213,8 +213,8 @@ const sortPartials = (partials) => {
             .replaceAll(/__BLOG_POST_KEYWORDS__/g, partial.metadata.keywords)
             .replaceAll(/__BLOG_POST_CONTENT__/g, partial.content)
             .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description)
-            .replaceAll(/__BLOG_POST_URL__/g, 'https://tiuraniemi.io' + partial.metadata.path)
-            .replaceAll(/__BLOG_POST_IMAGE__/g, 'https://tiuraniemi.io' + partial.metadata.ogImage);
+            .replaceAll(/__BLOG_POST_URL__/g, 'https://tiuraniemi.org' + partial.metadata.path)
+            .replaceAll(/__BLOG_POST_IMAGE__/g, 'https://tiuraniemi.org' + partial.metadata.ogImage);
 
         const fileContentLines = fileContent.split(/\n/);
         let finalFileContent = '';
@@ -339,7 +339,7 @@ const sortPartials = (partials) => {
     let warmCacheScriptContent = '#!/bin/bash\n';
     warmCacheScriptContent += 'set -euo pipefail\n';
     const curlCommandPrefix =
-        "curl --fail-with-body -H 'Accept-Encoding: br' --output /dev/null --silent --show-error https://tiuraniemi.io";
+        "curl --fail-with-body -H 'Accept-Encoding: br' --output /dev/null --silent --show-error https://tiuraniemi.org";
     warmCacheScriptContent += `${curlCommandPrefix}\n`;
     warmCacheScriptContent += `${curlCommandPrefix}/work\n`;
     warmCacheScriptContent += `${curlCommandPrefix}/stats\n`;

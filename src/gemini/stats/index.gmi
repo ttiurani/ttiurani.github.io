@@ -1,5 +1,5 @@
 # Site Statistics
-=> https://tiuraniemi.io/stats live site statistics
+=> https://tiuraniemi.org/stats live site statistics
 
 ## Navigation
 => / About

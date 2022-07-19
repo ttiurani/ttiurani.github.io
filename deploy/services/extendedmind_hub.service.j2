@@ -14,7 +14,7 @@ ExecStart=/opt/extendedmind_hub \
 --metrics-endpoint /api/metrics \
 --metrics-secret {{ extendedmind_hub_metrics_secret }} \
 --metrics-skip-compress true \
---domain tiuraniemi.io \
+--domain tiuraniemi.org \
 --acme-email timo.tiuraniemi@iki.fi \
 --acme-dir /srv/www/.certificates \
 --acme-production true \
@@ -24,7 +24,7 @@ ExecStart=/opt/extendedmind_hub \
 --cache-ttl-sec 31556952 \
 --cache-tti-sec 31556952 \
 --inline-css-path /blog/* \
---inline-css-skip-referer https://tiuraniemi.io* \
+--inline-css-skip-referer https://tiuraniemi.org* \
 --immutable-path /_app/immutable/*.css \
 --immutable-path /_app/immutable/*.js \
 --backup-dir /srv/backup \

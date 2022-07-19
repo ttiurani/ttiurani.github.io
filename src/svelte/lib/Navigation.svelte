@@ -4,7 +4,7 @@
 </script>
 
 <div class="nav-wrapper">
-    <a href="/" title="tiuraniemi.io">
+    <a href="/" title="tiuraniemi.org">
         <Logo />
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Main Navigation">

@@ -1,3 +1,3 @@
-# tiuraniemi.io
+# tiuraniemi.org
 
-This repository contains the sources of tiuraniemi.io.
+This repository contains the sources of tiuraniemi.org.
