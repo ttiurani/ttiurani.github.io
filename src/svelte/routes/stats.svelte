@@ -8,8 +8,8 @@
 </svelte:head>
 
 <div class="content">
-    <h1>Statististics</h1>
-    <p>Below are statistics about visits to the site.</p>
+    <h1>Statistics</h1>
+    <p>Below are statistics about HTTP GET responses from the past 30 days.</p>
 
     <Metrics />
 </div>
