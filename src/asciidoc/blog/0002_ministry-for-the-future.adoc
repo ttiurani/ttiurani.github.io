@@ -4,7 +4,7 @@ Timo Tiuraniemi
 :description: The Ministry for the Future by Kim Stanley Robinson is a mixed bag. The positives are fantastic but the negatives crippling.
 :keywords: review, Earth breakdown
 
-After getting a lot of recommendations to read https://en.wikipedia.org/wiki/The_Ministry_for_the_Future[_The Ministry for the Future_], I finally read it late last year.
+After getting a lot of recommendations to read https://en.wikipedia.org/wiki/The_Ministry_for_the_Future[_The Ministry for the Future_] by Kim Stanley Robinson, I finally read it late last year.
 However, I haven't gotten around to writing my notesfootnote:[Finding a home for this text was one of the reasons I finally got around to setting up this site.] about the book until now and since I've already returned it to the library, I can't check if all my claims about the book are accurate.
 
 With that grain of salt, I hope I can still contribute a few important points to the discussion surrounding this novel.
