@@ -4,8 +4,8 @@ Timo Tiuraniemi
 :description: The Ministry for the Future by Kim Stanley Robinson is a mixed bag. The positives are fantastic but the negatives crippling.
 :keywords: review, Earth breakdown
 
-Kim Stanley Robinson wrote https://en.wikipedia.org/wiki/The_Ministry_for_the_Future[The Ministry for the Future] in 2020, and I picked it up in late 2021 after many recommendations from people I respected.
-It has taken a while for me to get to writing these notesfootnote:[Finding a home for this text was one of the reasons I finally got around to setting up this site.], and because I returned the book months ago back to the library, I can't check if all the claims about the book are accurate.
+After getting a lot of recommendations to read https://en.wikipedia.org/wiki/The_Ministry_for_the_Future[_The Ministry for the Future_], I finally read it late last year.
+However, I haven't gotten around to writing my notesfootnote:[Finding a home for this text was one of the reasons I finally got around to setting up this site.] about the book until now and since I've already returned it to the library, I can't check if all my claims about the book are accurate.
 
 With that grain of salt, I hope I can still contribute a few important points to the discussion surrounding this novel.
 
@@ -18,7 +18,7 @@ Don't continue reading if you haven't finished the novel.
 
 First, I applaud Robinson for writing a utopian, or at least non-dystopian, vision of how humankind can survive Earth breakdown.
 This is a genre of books that is sorely lacking voices and ideas.
-I call on every artist out there to find these kinds of creative ideas that can help defeat doomism that's rampant in especially the Global North.
+I call on every artist out there to find these kinds of creative ideas that can help defeat doomism that's rampant, especially in the Global North.
 
 Robinson writes his vision based on an awe-inspiring breadth of research.
 Reading all those results and discussions from so many fields of science alone makes this novel a remarkable achievement.
@@ -28,12 +28,12 @@ I found especially impressive the parts on macroeconomics.
 The discussions surrounding a "carbon coin" and the role of central banks were eye-opening and insightful.
 Coming from a degrowth background, I also enjoyed Robinson's analysis of capitalism and the story's result of a kind of widespread eco-socialism.
 
-[#highlighted]#All in all, 90% of The Ministry for the Future is solid and makes the novel worth reading. However, the remaining 10% has some serious issues.#
+[#highlighted]#All in all, 90% of the novel is solid and that makes it worth reading. However, the remaining 10% has some serious issues.#
 
 == The Bad
 
-I want to preface this by saying that these problems would not be that important to pick apart had the novel been interpreted only as fiction.
-What makes pointing out the problems of Robinson's work worth it, is that I have seen people advocate using this novel as an actual roadmap for the future.
+I want to preface this by saying that these problems would not be that important to pick apart had _The Ministry for the Future_ been interpreted only as fiction.
+What makes pointing out the problems of Robinson's work worth it, is that I have seen people advocate using it as an actual roadmap for the future.
 That's way too much to ask from a novel.
 For this reason, my criticism isn't so much targeted at Robinson, as it is at the people misunderstanding the role of fiction.
 
@@ -60,14 +60,11 @@ To suggest removing privacy for the greater good is to suggest sacrificing the w
 
 === 3. Disregard for Most Planetary Boundaries
 
-To Robinson's credit, the novel does not address only the climate crisis but also biodiversity loss.
+To Robinson's credit, _The Ministry for the Future_ does not address only the climate crisis but also biodiversity loss.
 This alone makes the novel especially strong compared to many current narratives.
 
-However, the transgression of other https://en.wikipedia.org/wiki/Planetary_boundaries[planetary boundaries] is suggested to be an issue that can be delayed to the latter part of the century.
+However, the transgression of other https://en.wikipedia.org/wiki/Planetary_boundaries[planetary boundaries] is suggested to be an issue that can be addressed in the latter part of the centuryfootnote:[It must be said that some of the boundaries, like chemical pollution, were not established at the time of the writing. But many others were.].
 This is not a future worth rooting for.
-
-It must be said that some of the boundaries, like chemical pollution, were not established at the time of the writing.
-But many others were.
 
 Because of this neglect, many of the solutions offered in the book, like large-scale geoengineering, only try to fix one planetary boundary at the expense of another.
 That's just shifting Earth breakdown, not stopping it.
@@ -84,7 +81,7 @@ The best the Global North can come up with are voluntary clubs of some people li
 The story ends in a grotesque storyline where hundreds of millions of people die but the hyper-privileged protagonists fly around the world in airships.
 The big revelation is that it's possible to work in airships while travelling.
 
-No wonder The Ministry for the Future has been a hit among Western readers.
+No wonder _The Ministry for the Future_ has been a hit among Western readers.
 
 === 5. Bleak Pessimism for a System Change in the Global North
 
@@ -99,22 +96,22 @@ The ecofascist answer the novel offers on how to reduce the consumption habits o
 
 === 6. Climate Delay
 
-Flat-out climate denial is not anymore the main tactic of the people benefiting from Earth breakdown.
+Flat out climate denial is no longer the main tactic of the people benefiting from Earth breakdown.
 https://www.celinekeller.com/discourses-of-climate-delay[Climate delay] is.
 
-The worst part of The Ministry for the Future is that it advocates for climate delay by suggesting that nothing much needs to change in the 20s, and we'll still be fine.
+The worst part of _The Ministry for the Future_ is that it advocates for climate delay by suggesting that nothing much needs to change in the 20s, and we'll still be fine.
 
 I understand that the reason for the timeline in the novel might have been to increase book sales by keeping the novel relevant for longer.
-But still, the "tumultuous 30s" of the novel needed to be "tumultuous 20s".
+But still, the "tumultuous 30s" needed to be the "tumultuous 20s".
 
 == Conclusion
 
-In the end, I'm left with very mixed feelings about The Ministry for the Future.
+In the end, I'm left with very mixed feelings about _The Ministry for the Future_.
 
 Is recommending the novel to people net-positive or net-negative?
-Would reading this cause people to get encouraged to look for solutions and stop doomism?
+Would reading this cause people to get encouraged to look for solutions and snap out of doomism?
 Or will they come back with the ecofascist message that we can wait for one more decade and then use terrorism and a totalitarian economy to fix our problems?
 
 I don't know.
 
-What I do know is that everyone needs to stop misinterpreting this work of fiction as real-world policy suggestions.
+What I do know is that everyone needs to stop misinterpreting this work of fiction as real world policy suggestions.
