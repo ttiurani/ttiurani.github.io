@@ -322,7 +322,7 @@ const sortPartials = (partials) => {
     const geminiBlogIndexTemplate = await fs.readFile(srcDir + '/gemini/blog.gmi.tpl', 'utf8');
     for (const partial of geminiPartialsContents) {
         if (!partial.metadata.preview) {
-            geminiBlogPosts += `=> ${partial.metadata.path} ${partial.metadata.revdate}: ${partial.metadata.doctitle}\n`;
+            geminiBlogPosts += `=> ${partial.metadata.path} ${partial.metadata.revdate} - ${partial.metadata.doctitle}\n`;
         }
     }
     let geminiBlogIndex = geminiBlogIndexTemplate.replace(/__BLOG_POSTS__/g, geminiBlogPosts);
