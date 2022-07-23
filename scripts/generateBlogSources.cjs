@@ -331,6 +331,9 @@ const sortPartials = (partials) => {
     // Move other gemini source files and directories to the right places
     await copyFilesRecursive(srcDir + '/gemini', geminiDistDir, '.gmi');
 
+    // Move images to gemini, only jpg for now.
+    await copyFilesRecursive(staticDir, geminiDistDir, '.jpg');
+
     // Generate cache pre-warm script
     const scriptDistDir = __dirname + '/../dist/scripts';
     if (!fsSync.existsSync(scriptDistDir)) {

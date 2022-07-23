@@ -3,6 +3,8 @@ I'm a husband and father. My craft is programming, and I have a background in ph
 
 I'm currently a full-time activist fighting for the commons, splitting my time between building the digital commons and protecting the environmental commons.
 
+=> /images/profile.jpg Timo Tiuraniemi
+
 Subscribe to the
 => /feed.atom Atom feed
 of
