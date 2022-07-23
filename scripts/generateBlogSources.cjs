@@ -21,8 +21,7 @@ const copyFilesRecursive = async (inputDirectory, outputDirectory, allowedExtens
             if (!fsSync.existsSync(outputDirectory)) {
                 await fs.mkdir(outputDirectory, { recursive: true });
             }
-            const content = await fs.readFile(path, 'utf8');
-            await fs.writeFile(outputDirectory + '/' + fileName, content);
+            await fs.copyFile(path, outputDirectory + '/' + fileName);
         }
     }
 };
