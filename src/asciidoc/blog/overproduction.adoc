@@ -1,0 +1,61 @@
+= Focus Should Be on Overproduction Not Overconsumption
+Timo Tiuraniemi
+1.0, 2022-07-28
+:description: TODO
+:keywords: Earth Overshoot Day, Treadmill of Production, Earth breakdown
+
+https://mashable.com/feature/carbon-footprint-pr-campaign-sham[British Petroleum's PR campaign popularized the carbon footprint] in the early noughts.
+As it turns out, blaming individuals is a great way to divert attention away from fossil fuel corporations' responsibility for destroying our planet.
+
+While the dangers of fixating on carbon footprints are slowly gaining more awareness, I fear a similar problem is appearing in discussions about overshoot.
+
+== Earth Overshoot
+
+Today is https://www.overshootday.org/[Earth Overshoot Day], the dayfootnote:[A one-dimensional metric obviously can't capture all the nuances of Earth breakdown and more detailed metrics are needed for policy suggestions. However, a single day has merit as an intuitive heuristic and a communication tool.] when humanity has used all biological resources that Earth regenerates during the entire year.
+For the rest of the year, human influence simply destroys Earth's biological resources, which means Earth can regenerate less next year.
+We also know this overuse of biological resources is distributed massively unequally, both https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(22)00044-4/fulltext[globally] and https://wir2022.wid.world/chapter-6/[based on income].
+
+The question is, why is overshoot happening and how can we stop it?
+
+Those who are lucid and brave enough to reject the mainstream narrative that "not enough innovation is the root cause" and "more innovation is the answer" have still one hurdle to overcome.
+That's because the easy answer is "overconsumption".
+People buy too much stuff that does not in any way contribute to their well-being and need to stop.
+
+However, I feel this is a mistake because stopping the analysis at overconsumption is not going far enough.
+
+== Treadmill of Production
+
+The https://doi.org/10.1016/S0196-1152(02)80004-7[treadmill of production (TOP)] originally introduced by Allan Schnaiberg in the 80s, is a concept and theory of environmental sociology.
+The simplified version goes as follows:
+
+* Economic expansion is believed to be the core of every viable social, economic or environmental policy. Governments believe that jobs and tax revenues from private sector expansion grow more rapidly than citizen demand. Thus, government officials and agencies increasingly share a stake in the economic expansion of the private sector.
+* Because economic growth is unquestionably positive, consumption needs to grow so that the goods produced can be bought. To make this happen the state, together with private capital, makes sure e.g. that low-interest loans are available and that consumption is not stifled by legislation. Increasingly manipulative ads and production tricks like https://en.wikipedia.org/wiki/Planned_obsolescence[planned obsolescence] make sure consumer desires keep increasing.
+* Social and ecological problems are believed to be best solved by "the market", i.e. by speeding up the treadmill.
+
+To keep this treadmill going nature is increasingly used as a cheap source for raw materials and an almost free "sink" for waste.
+
+The analysis of TOP turns the story that "people want more and more and production is just meeting that demand" on its head.
+The economy isn't demand-driven but supply-driven.
+
+What's actually going on is _overproduction looking for outlets_.
+
+== Stepping Off the Treadmill
+
+If we accept this analysis of the capitalist economy the question becomes, how do we step off the treadmill to stop overshoot?
+I believe there are three strong complementary tactics to focus on, that are possible for manyfootnote:[Many but not all. I recognize that it is a big privilege to have time and resources and a government that allows political participation.] to engage in.
+
+First, as citizens, we can reject the assumption that economic expansion is needed to solve social and environmental problems and challenge the politicians and experts who maintain this narrative.
+This the degrowth movement's focus and its demands are echoed with https://timotheeparrique.com/sufficiency-means-degrowth/[calls for "sufficiency"] in the IPCC Sixth Assessment Report.
+
+Second, as citizens, we can demand legislation that targets unnecessary production.
+These are for example https://www.repair.org/right[the right to repair], longer warranties and https://banfossilfuelads.org/[banning fossil fuel ads].
+
+Third, as activists, we can make a big difference to stifle overproduction by rallying against new mining and extraction projects around the world.
+Materials that are never dug out of the ground are never put into useless gadgets.
+
+== Conclusion
+
+I don't mean to imply that it's not impactful to recognize your overconsumption and stop it.
+It is, especially when you talk about your choices and thus strengthen the common sense of sufficiency.
+
+But I do believe that focusing more on overproduction than overconsumption will be more impactful to stop Earth overshoot in the long term.
