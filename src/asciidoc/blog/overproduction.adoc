@@ -1,4 +1,4 @@
-= Focus Should Be on Overproduction Not Overconsumption
+= Overproduction Should Be Our Focus
 Timo Tiuraniemi
 1.0, 2022-07-28
 :description: TODO
@@ -18,10 +18,9 @@ We also know this overuse of biological resources is distributed massively unequ
 The question is, why is overshoot happening and how can we stop it?
 
 Those who are lucid and brave enough to reject the mainstream narrative that "not enough innovation is the root cause" and "more innovation is the answer" have still one hurdle to overcome.
-That's because the easy answer is "overconsumption".
-People buy too much stuff that does not in any way contribute to their well-being and need to stop.
+That's because the quick answer is "overconsumption": people buy too much stuff that does not contribute to their well-being and they need to stop.
 
-However, I feel this is a mistake because stopping the analysis at overconsumption is not going far enough.
+However, I feel stopping the analysis at overconsumption misses important aspects of the process.
 
 == Treadmill of Production
 
@@ -37,7 +36,7 @@ To keep this treadmill going nature is increasingly used as a cheap source for r
 The analysis of TOP turns the story that "people want more and more and production is just meeting that demand" on its head.
 The economy isn't demand-driven but supply-driven.
 
-What's actually going on is _overproduction looking for outlets_.
+What's actually going on is that _overproduction is looking for outlets_.
 
 == Stepping Off the Treadmill
 
@@ -45,7 +44,7 @@ If we accept this analysis of the capitalist economy the question becomes, how d
 I believe there are three strong complementary tactics to focus on, that are possible for manyfootnote:[Many but not all. I recognize that it is a big privilege to have time and resources and a government that allows political participation.] to engage in.
 
 First, as citizens, we can reject the assumption that economic expansion is needed to solve social and environmental problems and challenge the politicians and experts who maintain this narrative.
-This the degrowth movement's focus and its demands are echoed with https://timotheeparrique.com/sufficiency-means-degrowth/[calls for "sufficiency"] in the IPCC Sixth Assessment Report.
+This is the degrowth movement's focus and its demands are echoed with https://timotheeparrique.com/sufficiency-means-degrowth/[calls for "sufficiency"] in the IPCC Sixth Assessment Report.
 
 Second, as citizens, we can demand legislation that targets unnecessary production.
 These are for example https://www.repair.org/right[the right to repair], longer warranties and https://banfossilfuelads.org/[banning fossil fuel ads].
