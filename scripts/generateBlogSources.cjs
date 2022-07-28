@@ -213,7 +213,10 @@ const sortPartials = (partials) => {
             .replaceAll(/__BLOG_POST_CONTENT__/g, partial.content)
             .replaceAll(/__BLOG_POST_DESCRIPTION__/g, partial.metadata.description)
             .replaceAll(/__BLOG_POST_URL__/g, 'https://tiuraniemi.org' + partial.metadata.path)
-            .replaceAll(/__BLOG_POST_IMAGE__/g, 'https://tiuraniemi.org' + partial.metadata.ogImage);
+            .replaceAll(
+                /__BLOG_POST_IMAGE__/g,
+                'https://tiuraniemi.org' + partial.metadata.ogImage
+            );
 
         const fileContentLines = fileContent.split(/\n/);
         let finalFileContent = '';

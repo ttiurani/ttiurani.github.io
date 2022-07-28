@@ -23,28 +23,28 @@
         <div class="hero-row">
             <div id="hero-text" class="hero-column">
                 <p>
-                    I'm terrified of the accelerating ecocide destroying our planet.
-                    Ecocide that's driven by an obsession for economic growth, which in turn relies on the colonialization of the Global North over the Global South and the continued commodification of our existence.
+                    I'm terrified of the accelerating ecocide destroying our planet. Ecocide that's
+                    driven by an obsession for economic growth, which in turn relies on the
+                    colonialization of the Global North over the Global South and the continued
+                    commodification of our existence.
+                </p>
+                <p>At the same time, I see so much potential in everyday people to stop it.</p>
+                <p>
+                    I recognize that as a Finnish cis white male with marketable skills, I'm one of
+                    the most privileged people in the world. I try to take that into account with
+                    everything I build and write. I hope I'm able to use my privileges to fight for
+                    a world where those privileges don't exist.
                 </p>
                 <p>
-                    At the same time, I see so much potential in everyday people to stop it.
+                    I work full-time as an activist for the commons. I stand for protecting and
+                    expanding that which has no monetary value, that which resists ranking from
+                    better to worse, that which doesn't quite fit into spreadsheets. Clean air,
+                    healthy oceans, unowned forests and land. But also knowledge and the digital
+                    tools we use.
                 </p>
+                <p>My craft is programming, and I have a background in philosophy.</p>
                 <p>
-                    I recognize that as a Finnish cis white male with marketable skills, I'm one of the most privileged people in the world.
-                    I try to take that into account with everything I build and write.
-                    I hope I'm able to use my privileges to fight for a world where those privileges don't exist.
-                </p>
-                <p>
-                    I work full-time as an activist for the commons.
-                    I stand for protecting and expanding that which has no monetary value, that which resists ranking from better to worse, that which doesn't quite fit into spreadsheets.
-                    Clean air, healthy oceans, unowned forests and land.
-                    But also knowledge and the digital tools we use.
-                </p>
-                 <p>
-                     My craft is programming, and I have a background in philosophy.
-                 </p>
-                 <p>
-                     But what I identify with, what I <em>am</em>, is a husband and a father.
+                    But what I identify with, what I <em>am</em>, is a husband and a father.
                 </p>
                 <p>&mdash;</p>
                 <p id="contact">
@@ -57,10 +57,33 @@
             </div>
             <div id="hero-image" class="hero-column">
                 <picture>
-                    <source type="image/avif" srcset="/images/profile.avif" />
-                    <source type="image/webp" srcset="/images/profile.webp" />
-                    <img src="/images/profile.jpg" alt="profile" /></picture
-                >
+                    <source
+                        media="(max-width: 45rem)"
+                        type="image/avif"
+                        srcset="/images/profile_mobile.avif"
+                    />
+                    <source
+                        media="(max-width: 45rem)"
+                        type="image/webp"
+                        srcset="/images/profile_mobile.webp"
+                    />
+                    <source
+                        media="(max-width: 45rem)"
+                        type="image/jpeg"
+                        srcset="/images/profile_mobile.jpg"
+                    />
+                    <source
+                        media="(min-width: 45rem)"
+                        type="image/avif"
+                        srcset="/images/profile.avif"
+                    />
+                    <source
+                        media="(min-width: 45rem)"
+                        type="image/webp"
+                        srcset="/images/profile.webp"
+                    />
+                    <img src="/images/profile.jpg" alt="profile" />
+                </picture>
             </div>
         </div>
     </Hero>
@@ -80,20 +103,22 @@
 </section>
 
 <style>
+    .hero-row {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
     #hero-image {
-        display: none;
+        padding: 0 0 1em 0;
     }
     @media (min-width: 45rem) {
         .hero-row {
-            display: flex;
+            flex-wrap: nowrap;
         }
         .hero-column {
             flex: 50%;
         }
         #hero-image {
-            display: inherit;
-            padding-top: 1em;
-            padding-left: calc(1em + 5vw);
+            padding: 1em 0 0 calc(1em + 5vw);
         }
     }
 </style>
