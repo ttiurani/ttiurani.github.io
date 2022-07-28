@@ -16,15 +16,35 @@
 <section bind:clientWidth={layoutWidth}>
     <Hero>
         <div class="hero-row">
-            <div id="hero-text" class="hero-column">
+            <div class="hero-column">
                 <h1>Timo Tiuraniemi</h1>
+            </div>
+        </div>
+        <div class="hero-row">
+            <div id="hero-text" class="hero-column">
                 <p>
-                    I'm a husband and a father. My craft is programming, and I have a background in
-                    philosophy.
+                    I'm terrified of the accelerating ecocide destroying our planet.
+                    Ecocide that's driven by an obsession for economic growth, which in turn relies on the colonialization of the Global North over the Global South and the continued commodification of our existence.
                 </p>
                 <p>
-                    I work full-time as an activist for the commons, splitting that time between
-                    building the digital commons and protecting the environmental commons.
+                    At the same time, I see so much potential in everyday people to stop it.
+                </p>
+                <p>
+                    I recognize that as a Finnish cis white male with marketable skills, I'm one of the most privileged people in the world.
+                    I try to take that into account with everything I build and write.
+                    I hope I'm able to use my privileges to fight for a world where those privileges don't exist.
+                </p>
+                <p>
+                    I work full-time as an activist for the commons.
+                    I stand for protecting and expanding that which has no monetary value, that which resists ranking from better to worse, that which doesn't quite fit into spreadsheets.
+                    Clean air, healthy oceans, unowned forests and land.
+                    But also knowledge and the digital tools we use.
+                </p>
+                 <p>
+                     My craft is programming, and I have a background in philosophy.
+                 </p>
+                 <p>
+                     But what I identify with, what I <em>am</em>, is a husband and a father.
                 </p>
                 <p>&mdash;</p>
                 <p id="contact">
