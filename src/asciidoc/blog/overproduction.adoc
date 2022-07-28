@@ -44,8 +44,8 @@ What's actually going on is that _overproduction is looking for outlets_.
 If we accept this analysis of the capitalist economy the question becomes, how do we step off the treadmill to stop overshoot?
 I believe there are at least three strong complementary tactics, that are possible for manyfootnote:[Many but not all. I recognize that it is a big privilege to have available time and resources and a government that allows political participation.] to engage in.
 
-First, as citizens, we can reject the assumption that economic expansion is needed to solve social and environmental problems and challenge the politicians and experts who maintain this narrative.
-This is the degrowth movement's focus and its demands are echoed by the IPCC with https://timotheeparrique.com/sufficiency-means-degrowth/[calls for sufficiency].
+[#highlighted]#First, as citizens, we can reject the assumption that economic expansion is needed to solve social and environmental problems and challenge the politicians and experts who maintain this narrative.#
+This is the core of the degrowth movement and its demands are echoed by the IPCC with https://timotheeparrique.com/sufficiency-means-degrowth/[calls for sufficiency].
 
 Second, as citizens, we can demand legislation that targets unnecessary production.
 Examples are https://www.repair.org/right[the right to repair], longer warranties and https://banfossilfuelads.org/[banning fossil fuel ads].
