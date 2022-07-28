@@ -25,7 +25,7 @@
                 <p>
                     I'm terrified of the accelerating ecocide destroying our planet. Ecocide that's
                     driven by an obsession for economic growth, which in turn relies on the
-                    colonialization of the Global North over the Global South and the continued
+                    colonization by the Global North over the Global South and the continued
                     commodification of our existence.
                 </p>
                 <p>At the same time, I see so much potential in everyday people to stop it.</p>
