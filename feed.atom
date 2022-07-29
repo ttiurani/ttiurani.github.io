@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Timo Tiuraniemi</title>
+  <link rel="alternate" type="text/html" hreflang="en" href="https://tiuraniemi.org/"/>
+  <link rel="self" type="application/atom+xml" href="https://tiuraniemi.org/feed.atom"/>
+  <link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
+  <updated>2022-07-28T00:00:00Z</updated>
+  <author>
+    <name>Timo Tiuraniemi</name>
+  </author>
+  <id>https://tiuraniemi.org/</id>
+  
+  <entry>
+    <title>Overproduction Should Be Our Focus</title>
+    <link type="text/html" href="https://tiuraniemi.org/blog/overproduction"/>
+    <link type="text/gemini" href="gemini://tiuraniemi.org/blog/overproduction"/>
+    <id>https://tiuraniemi.org/blog/overproduction</id>
+    <updated>2022-07-28T00:00:00Z</updated>
+    <published>2022-07-28T00:00:00Z</published>
+    <summary>To stop Earth overshoot, we should focus on overproduction not overconsumption.</summary>
+  </entry>
+  
+  <entry>
+    <title>Notes On The Ministry for the Future</title>
+    <link type="text/html" href="https://tiuraniemi.org/blog/ministry-for-the-future"/>
+    <link type="text/gemini" href="gemini://tiuraniemi.org/blog/ministry-for-the-future"/>
+    <id>https://tiuraniemi.org/blog/ministry-for-the-future</id>
+    <updated>2022-07-19T00:00:00Z</updated>
+    <published>2022-07-19T00:00:00Z</published>
+    <summary>The Ministry for the Future by Kim Stanley Robinson is a mixed bag. The positives are fantastic but the negatives crippling.</summary>
+  </entry>
+  
+  <entry>
+    <title>This Site Runs on a Raspberry Pi in My Living Room</title>
+    <link type="text/html" href="https://tiuraniemi.org/blog/site-setup"/>
+    <link type="text/gemini" href="gemini://tiuraniemi.org/blog/site-setup"/>
+    <id>https://tiuraniemi.org/blog/site-setup</id>
+    <updated>2022-07-19T00:00:00Z</updated>
+    <published>2022-07-19T00:00:00Z</published>
+    <summary>This site is built from the ground up based on moral principles to run on a Raspberry Pi. Here I break down how it works.</summary>
+  </entry>
+  
+</feed>
