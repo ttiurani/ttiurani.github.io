@@ -1,0 +1,235 @@
+= One Year After I Quit My Job for Activism
+Timo Tiuraniemi
+1.0, 2022-08-12
+:description: TODO
+:keywords: activism, retrospective, Earth breakdown
+
+It was one year ago when I quit my comfortable consulting job for full-time environmental activism.
+
+When I started, I didn't know anything about activism and what I was getting into.
+All I knew was that I was morally obligated to fight for the future of our planet.
+
+One year later, I'm still a novice, but hopefully a useful one.
+
+This post breaks down my reasons for quitting and my journey so far.
+I'll try not to sugarcoat the process but instead remain true to what has happened and what I've felt, the good and the bad.
+
+*DISCLAIMER*: I recognise that what I write about here is relatable only to a small group of people as privileged as me.
+To be able to be an activist without risking government persecution is not possible in many countries.
+To be able to do activism publicly and not get shunned is not possible for many.
+To be able to save enough money to be able to do activism full-time is a huge privilege.
+To be able to risk a resume that has a multi-year employment gap is not possible for many professionals.
+And to live in a country (or have a family) that provides a safety net in case of a financial disaster is out of reach to many.
+
+== Knowledge
+
+It was 2017 when I started as a consultant in one of the best workplaces in Finland.
+I had no complaints: the client I was consulting for was excellent, my colleagues were super nice, and I could work normal office hours and spend time with my family.
+
+At the same time, I kept paying attention to the worrying news about rising CO₂ levels and the complete political failure to stop it.
+
+I justified not doing anything about it by believing that new technology can fix environmental problems.
+I distinctly remember hoping that widespread cheap fusion power or small-scale fission reactors can fix our environmental problems.
+
+The first crack to those beliefs came when my colleague suggested that unlimited cheap energy could be the worst thing that could happen.
+Unlimited energy means unlimited destruction of nature.
+I tried to brush it off by arguing that we do need the energy to live a decent life, but I had a nagging feeling he was onto something.
+
+Thinking about this some more I found the https://en.wikipedia.org/wiki/Jevons_paradox[Jevons paradox].
+It's an empirical observation that in a capitalist free market almost every time there's a technological invention that reduces the use of a resource, new goods will be produced that take advantage of that resource.
+In the end, the amount of resource use will bounce back to previous levels and above.
+
+Not long after, I found out about the research on https://en.wikipedia.org/wiki/Planetary_boundaries[planetary boundaries].
+Even though I had known about things like biodiversity loss, The Great Pacific Garbage Patch and Overshoot Day for a long time, I never made the mental connection between those and climate change.
+Seeing the nine planetary boundaries in a single figure was eye-opening.
+
+Combining what I learned about the Jevons paradox with the huge transgressions of planetary boundaries, was when the penny dropped.
+
+Humanity is in terrible trouble and technology can't save us.
+
+Being trained to solve problems, I didn't fall for doomism but instead started thinking about this bigger problem instead.
+What is behind the transgression of planetary boundaries and how do we stop it?
+
+That's when I made the connection to degrowth, an idea I had heard about previously, but disregarded as "impossible".
+Reading https://www.jasonhickel.org/less-is-more[Jason Hickel's Less Is More] and participating in the 2020 Degrowth Vienna online conference deepened my understanding and allowed me to imagine a future where we have found peace with nature.
+
+But doing something with this knowledge was still over a year away.
+
+== Obligation
+
+I want to emphasise this part because it's where I feel many get stuck.
+Even though people have all the relevant knowledge, that does not mean they will do anything with that knowledge.
+https://www.youtube.com/watch?v=f51N4-tBvVc[Living in denial] is the default.
+
+It was the same for me.
+
+But slowly I began to seriously consider alternatives.
+I got more and more disillusioned with the work I was doing.
+Yes, life was good, but did my work matter in the end?
+Or was I part of the problem?
+
+After some events that forced me to consider changing my employer, I also started thinking about work in general.
+When the problem is obsessive economic growth, is it moral to spend my best hours trying to create growth and increase shareholder value?
+
+The cognitive dissonance grew bigger by the day.
+It pushed me to first start looking for possibilities to work in non-profits, eco-tech companies and the government.
+Soon that too started to feel like at best a neutral move and not a net positive one.
+
+What I realised was that even though ecological technology is useful, creating those technologies is the easy part.
+Making and selling stuff is what capitalism is all about.
+
+The necessary condition to stop Earth breakdown is creating the political pressure that forces a reduction of excess material and energy use in high-income countries and doing that while paying the climate debt owed by the Global North to the Global South.
+That kind of political pressure can only come from millions of activists who are brave enough to stand up against those benefitting from the status quo.
+
+That's the hard part.
+
+In light of all of this I dared to ask myself, who are the millions of people who I can cheer on from my comfortable life, for whom it's easier to dedicate their lives to fighting for the future of our planet?
+Who else if not me?
+
+Following that thought through I concluded that I have a moral obligation to join the fight.
+
+== Decision
+
+At that point, I had a sufficiently deep analysis of the problem, a positive vision for a future worth fighting for, a decent picture of the necessary actions, and also a deeply felt moral obligation to take action.
+
+But it was still not quite enough.
+
+What I kept on struggling with was that the likelihood of any of that happening seemed hopelessly small.
+Nothing is easier than listing all the problems standing in the way of a system change this big.
+I kept thinking there has to be some way to increase my impact before I can start doing anything.
+
+It took the wonderful Julia Steinberger to wake me up when https://twitter.com/JKSteinberger/status/1377151733957189637[she tweeted]:
+
+> Listen, (mostly) white (mostly) middle-aged (mostly) guys: you don't get to give up on behalf of everyone else. [...] Just because stopping colonial capitalism from destroying the planet is hard doesn't mean it's not worth doing.
+
+The likelihood of success is irrelevant because there is no justification for inaction.
+The whole point of activism is that the odds are stacked up against you.
+That's why it's activism and not parliamentary politics.
+
+Fact is, every big change in history made possible by activism was deemed impossible by non-activists.
+The change happened anyway because the people fighting for the change did not care about the odds, and fought because it was the right thing to do.
+
+Only after internalising that was when I finally decided to stop second-guessing and just join the movement.
+
+== Transition
+
+I had been able to save a decent amount of money from the past years to be able to not worry about income for a while.
+But how many months that was, depended a lot on how much money I was spending.
+
+To increase the length of my runway until I needed to find funding, I dropped all expenses to a minimum.
+I was also very lucky that my company let me buy my old work equipment for a low price.
+
+Currently, my runway for full-time activism should last until early 2024, barring big surprises.footnote:[I don't get any money from the Finnish government because I'm not looking for work.]
+After that, I'll need to find some source of income, but I'll cross that bridge when I get there.
+
+After figuring all that out and after a gruelling last few months at work, I needed a long summer holiday to recover.
+
+In the end, it was in August 2021 when I was mentally able to start thinking about what I'd gotten myself into.
+
+== First 3 Months
+
+What does it mean to be an activist?
+How do I create an impact related to my skills?
+How do I know if I was the one who created the impact?
+
+These were questions I struggled with a lot in the beginning.
+I thought about making websites.
+I thought about creating a non-profit.
+I even thought about forming a political party.
+
+The first big realisation early on was that all of those questions were about me. I was caught up in the same individualistic mindset as most people around me.
+
+Being an activist is not about projecting an image of activism.
+It's not about the impact _I_ make.
+It's about the political change that the thousands or millions of people everywhere around the world bring about _together_.
+
+That revelation hit me hard.
+
+I had built my identity on the belief that I will achieve great things.
+That was reinforced when as a programmer I got surrounded with stories about how it only takes a handful of people to "change the world".
+And suddenly all that is taken away?
+I'm just one person among millions?
+
+It has taken me now a year to try to find peace with this insight, and I'm still not quite there yet.
+But I know slowly letting go of individualism has made me a better activist.
+
+Hence, a much better question is: what can I do to help?
+
+Answering that isn't easy either.
+Doing whatever anyone asks is not wise.
+I have some very specific skills and those skills should match the needs of my fellow activists.
+Also, we as a group should be doing actions that create the most political pressure with the least amount of work.
+
+Initially, this sounded like an optimisation problem I could crack with enough time.
+
+I was wrong.
+
+The second big realisation I made was that activism is about changing society and society is an endlessly complex, nonlinear system of systems.
+Systems theory tells us that there simply are no simple causes and effects in complex systems.
+You can't control them nor break them into clean solvable pieces.
+What you can instead try to do is https://donellameadows.org/dancing-with-systems/[dance with them].
+
+For me, that meant that instead of searching for the optimal actions, I needed to first understand more about the system I was trying to change.
+I decided to not focus on any one thing, but instead do many things at once.
+
+I joined https://elokapina.fi/en/[my local Extinction Rebellion].
+I joined degrowth-related groups in Finland.
+I reached out directly to people working in the field.
+I started following prominent environmentalists.
+I started reading books and articles.
+I started slowly building an audience by https://fosstodon.org/web/@ttiurani[writing on Mastodon].
+And I started to work on my long-term programming project aimed at finding out what degrowth-compatible technology might look like.
+
+This mix of doing both short-term and long-term projects at the same time has in retrospect been a very good decision.
+Not only was I initially completely wrong about what is the best way to help, but I have also found many unexpected ways to make a difference.
+
+== Last 9 Months
+
+After those initial frustrations, I got to work.
+I helped out my fellow activists with different physical actions.
+I read.
+I discussed.
+I programmed.
+
+What I found out quickly was that when you are working outside and against the hegemony, there is so much more work needed to simply make sense of what it is that is happening and what is everyone doing.
+Many of the practices, shared understanding and terminology which are given when working within the current power structures, simply aren't there outside it.
+
+Without going too deep into the sociology of system change, I believe one of the main goals of activism is to create and enforce better common senses.
+In environmentalism, this means finding simple ways to communicate and persuade people of the environmental problems and the hard-to-swallow solutions to them.
+
+However, joining the relevant conversations proved difficult.
+The problem is that the overwhelming majority of activists in Finland work either during the weekends, in the evenings or with quick sprints.
+For me, doing mentally challenging work in the evenings or weekends is extremely stressful and straining, and means stealing time from my family.
+
+Stubbornly I tried to do it anyway.
+It was a mistake.
+I started having nightmares, became moody and harder to be around, and was close to panic attacks.
+Facing ecological destruction all the time was emotionally excruciating.
+I learned that for activists it's not only the long hours that wear them out but also the constant thinking about injustices.
+That's why I'm not at all surprised that so many prominent activists burn out.
+
+Luckily I saw relatively early on that this wasn't going to work, and decided to put a firm limit on my hours.
+I knew I was in this for the long haul, and the worst thing I could have done was to risk damaging my mental health.
+
+After fixing my hours and discovering ways to cope mentally, I got into quite a good rhythm.
+I have been working full weeks since then, but am also able to distance myself to recover during the evenings and weekends.
+
+After coming up with many longer texts I wanted to publish, I spent some time during the past few months link:/blog/site-setup[making this site].
+Like most things I've done this year, I can't be sure the time was well spent and the impact big enough compared to the effort.
+But I hope so.
+
+== Conclusion
+
+It's been a strange, exhausting but rewarding year.
+
+Our climate and ecological breakdown is a massively complicated problem and touches on almost every field of science.
+Spending the best hours of my days trying to understand the problems and working to fix them, has made all the difference.
+I could have never understood it nearly as deeply had I tried to study it after a day job.
+
+I'm even more certain now than a year ago that I made the right choice.
+Our best bet to stop Earth breakdown is a global mass movement of everyday people demanding it.
+
+The reason I wrote this post is to encourage you to join the struggle.
+You don't need to quit your job but I hope you consider giving whatever time and effort are possible for you.
+
+We want you. The planet needs you.

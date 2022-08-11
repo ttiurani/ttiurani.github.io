@@ -75,6 +75,14 @@ small {
     font-size: calc(0.5rem + 0.5vw);
 }
 
+blockquote {
+    padding: 0.2em 0 0.2em 2em;
+    border-left: 2px solid var(--color-text);
+    font-style: italic;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
 #footnotes::before {
     content: 'Notes';
     font-weight: bold;

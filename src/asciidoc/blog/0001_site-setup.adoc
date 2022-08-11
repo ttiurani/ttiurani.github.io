@@ -74,7 +74,7 @@ Finally, I have these resources at my disposal:
 * I have a few weeks.
 * I can program.
 * I have a lot of motivation to learn Rust.
-* I own a Raspberry Pi 3Bfootnote:[Thank you to my wonderful colleagues at Filosofian Akatemia for this thoughtful gift.], that's been sitting on a bookshelf since 2016.
+* I own a Raspberry Pi 3Bfootnote:[Thank you to my wonderful colleagues at Filosofian Akatemia for this thoughtful gift.], that's been sitting on a bookshelf since 2017.
 * Our apartment building has a very good internet connection.
 * I have https://posteo.de[a green email provider] that gives me 2GB of storage.
 
