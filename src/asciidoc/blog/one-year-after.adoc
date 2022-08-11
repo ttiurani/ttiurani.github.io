@@ -36,8 +36,8 @@ Unlimited energy means unlimited destruction of nature.
 I tried to brush it off by arguing that we do need the energy to live a decent life, but I had a nagging feeling he was onto something.
 
 Thinking about this some more I found the https://en.wikipedia.org/wiki/Jevons_paradox[Jevons paradox].
-It's an empirical observation that in a capitalist free market almost every time there's a technological invention that reduces the use of a resource, new goods will be produced that take advantage of that resource.
-In the end, the amount of resource use will bounce back to previous levels and above.
+It's an empirical observation that in a capitalist free market almost every time there's a technological invention that reduces the use of a resource, new goods will be produced that take advantage of the now cheaper resource.
+Typically in just a few years, the amount of resource use will bounce back to previous levels and above.
 
 Not long after, I found out about the research on https://en.wikipedia.org/wiki/Planetary_boundaries[planetary boundaries].
 Even though I had known about things like biodiversity loss, The Great Pacific Garbage Patch and Overshoot Day for a long time, I never made the mental connection between those and climate change.
@@ -47,10 +47,10 @@ Combining what I learned about the Jevons paradox with the huge transgressions o
 
 Humanity is in terrible trouble and technology can't save us.
 
-Being trained to solve problems, I didn't fall for doomism but instead started thinking about this bigger problem instead.
+Being accustomed to solving problems, I didn't fall for doomism but instead started thinking about this bigger problem instead.
 What is behind the transgression of planetary boundaries and how do we stop it?
 
-That's when I made the connection to degrowth, an idea I had heard about previously, but disregarded as "impossible".
+That's when I made the connection to https://www.degrowthstrategy.org/[degrowth], an idea I had heard about previously, but disregarded as "impossible".
 Reading https://www.jasonhickel.org/less-is-more[Jason Hickel's Less Is More] and participating in the 2020 Degrowth Vienna online conference deepened my understanding and allowed me to imagine a future where we have found peace with nature.
 
 But doing something with this knowledge was still over a year away.
@@ -128,6 +128,13 @@ In the end, it was in August 2021 when I was mentally able to start thinking abo
 
 == First 3 Months
 
+The first thing I felt vividly when I started, and have continued to feel the entire year, is a strong sense of meaning.
+It's unlike anything I have previously felt at work.
+There hasn't been a day where I had to question if what I'm doing might be a net negative.
+That alone has been a big source of strength and well-being.
+
+But just knowing that in the big picture my direction is good, does not mean I know what I should do daily.
+
 What does it mean to be an activist?
 How do I create an impact related to my skills?
 How do I know if I was the one who created the impact?
@@ -151,7 +158,7 @@ And suddenly all that is taken away?
 I'm just one person among millions?
 
 It has taken me now a year to try to find peace with this insight, and I'm still not quite there yet.
-But I know slowly letting go of individualism has made me a better activist.
+But I know slowly letting go of individualism has not only made me a better activist but has had a profound positive impact on my life in general.
 
 Hence, a much better question is: what can I do to help?
 
@@ -169,8 +176,8 @@ Systems theory tells us that there simply are no simple causes and effects in co
 You can't control them nor break them into clean solvable pieces.
 What you can instead try to do is https://donellameadows.org/dancing-with-systems/[dance with them].
 
-For me, that meant that instead of searching for the optimal actions, I needed to first understand more about the system I was trying to change.
-I decided to not focus on any one thing, but instead do many things at once.
+For me, that meant that instead of searching for the optimal actions, I needed to first study the system I was trying to change.
+To do that I decided to not focus on any one thing, but instead do many things at once.
 
 I joined https://elokapina.fi/en/[my local Extinction Rebellion].
 I joined degrowth-related groups in Finland.
@@ -186,12 +193,19 @@ Not only was I initially completely wrong about what is the best way to help, bu
 == Last 9 Months
 
 After those initial frustrations, I got to work.
-I helped out my fellow activists with different physical actions.
+I helped out my fellow activists.
+I protested.
 I read.
 I discussed.
 I programmed.
 
-What I found out quickly was that when you are working outside and against the hegemony, there is so much more work needed to simply make sense of what it is that is happening and what is everyone doing.
+Perhaps the best part about my year as an activist has been the people, young and old.
+All of the activists I've gotten to know have been just the most wonderful people imaginable.
+They're brave enough to stand up against the powerful.
+They're selfless, considerate, kind and loving.
+They argue but do it in the most constructive way I've ever seen.
+
+From those conversations, I found out that when you are working outside and against the hegemony, so much more work is needed to simply make sense of what's happening.
 Many of the practices, shared understanding and terminology which are given when working within the current power structures, simply aren't there outside it.
 
 Without going too deep into the sociology of system change, I believe one of the main goals of activism is to create and enforce better common senses.
@@ -213,6 +227,7 @@ I knew I was in this for the long haul, and the worst thing I could have done wa
 
 After fixing my hours and discovering ways to cope mentally, I got into quite a good rhythm.
 I have been working full weeks since then, but am also able to distance myself to recover during the evenings and weekends.
+They have been the best work days of my life.
 
 After coming up with many longer texts I wanted to publish, I spent some time during the past few months link:/blog/site-setup[making this site].
 Like most things I've done this year, I can't be sure the time was well spent and the impact big enough compared to the effort.
@@ -220,7 +235,7 @@ But I hope so.
 
 == Conclusion
 
-It's been a strange, exhausting but rewarding year.
+It's been a strange, tough but very rewarding year.
 
 Our climate and ecological breakdown is a massively complicated problem and touches on almost every field of science.
 Spending the best hours of my days trying to understand the problems and working to fix them, has made all the difference.
