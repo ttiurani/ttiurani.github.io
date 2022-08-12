@@ -1,7 +1,7 @@
 = One Year After I Quit My Job for Activism
 Timo Tiuraniemi
 1.0, 2022-08-12
-:description: TODO
+:description: By understanding the root causes of the ecological and climate breakdown, I found an obligation to act. This was my first year as a full-time activist. I urge you to join the fight!
 :keywords: activism, retrospective, Earth breakdown
 
 It was one year ago when I quit my comfortable consulting job for full-time environmental activism.
@@ -144,7 +144,8 @@ I thought about making websites.
 I thought about creating a non-profit.
 I even thought about forming a political party.
 
-The first big realisation early on was that all of those questions were about me. I was caught up in the same individualistic mindset as most people around me.
+The first big realisation early on was that all of those questions were about me.
+I was caught up in the same individualistic mindset as most people around me.
 
 Being an activist is not about projecting an image of activism.
 It's not about the impact _I_ make.
@@ -242,7 +243,7 @@ Spending the best hours of my days trying to understand the problems and working
 I could have never understood it nearly as deeply had I tried to study it after a day job.
 
 I'm even more certain now than a year ago that I made the right choice.
-Our best bet to stop Earth breakdown is a global mass movement of everyday people demanding it.
+[#highlighted]#Our best bet to stop Earth breakdown is a global mass movement of everyday people demanding it.#
 
 The reason I wrote this post is to encourage you to join the struggle.
 You don't need to quit your job but I hope you consider giving whatever time and effort are possible for you.
