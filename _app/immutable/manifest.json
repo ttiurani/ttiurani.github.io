@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-4d0a2f74.js",
+    "file": "start-95ade119.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -12,8 +12,8 @@
       ".svelte-kit/runtime/components/error.svelte",
       "src/svelte/routes/blog/index.svelte",
       "src/svelte/routes/blog/ministry-for-the-future.svelte",
+      "src/svelte/routes/blog/one-year-after.svelte",
       "src/svelte/routes/blog/overproduction.svelte",
-      "src/svelte/routes/blog/preview-one-year-after.svelte",
       "src/svelte/routes/blog/site-setup.svelte",
       "src/svelte/routes/index.svelte",
       "src/svelte/routes/stats.svelte",
@@ -43,7 +43,7 @@
     ]
   },
   "src/svelte/routes/blog/index.svelte": {
-    "file": "pages/blog/index.svelte-da698100.js",
+    "file": "pages/blog/index.svelte-6e9be3cf.js",
     "src": "src/svelte/routes/blog/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -63,9 +63,9 @@
       "_BlogPost-6c012a9d.js"
     ]
   },
-  "src/svelte/routes/blog/overproduction.svelte": {
-    "file": "pages/blog/overproduction.svelte-6ae533f1.js",
-    "src": "src/svelte/routes/blog/overproduction.svelte",
+  "src/svelte/routes/blog/one-year-after.svelte": {
+    "file": "pages/blog/one-year-after.svelte-82f9e3e1.js",
+    "src": "src/svelte/routes/blog/one-year-after.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -74,9 +74,9 @@
       "_BlogPost-6c012a9d.js"
     ]
   },
-  "src/svelte/routes/blog/preview-one-year-after.svelte": {
-    "file": "pages/blog/preview-one-year-after.svelte-dd07c091.js",
-    "src": "src/svelte/routes/blog/preview-one-year-after.svelte",
+  "src/svelte/routes/blog/overproduction.svelte": {
+    "file": "pages/blog/overproduction.svelte-6ae533f1.js",
+    "src": "src/svelte/routes/blog/overproduction.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
