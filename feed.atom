@@ -5,11 +5,21 @@
   <link rel="alternate" type="text/html" hreflang="en" href="https://tiuraniemi.org/"/>
   <link rel="self" type="application/atom+xml" href="https://tiuraniemi.org/feed.atom"/>
   <link rel="license" type="application/rdf+xml" href="https://creativecommons.org/licenses/by-sa/4.0/rdf" />
-  <updated>2022-08-12T00:00:00Z</updated>
+  <updated>2022-08-22T00:00:00Z</updated>
   <author>
     <name>Timo Tiuraniemi</name>
   </author>
   <id>https://tiuraniemi.org/</id>
+  
+  <entry>
+    <title>Longtermism Is a Coping Strategy</title>
+    <link type="text/html" href="https://tiuraniemi.org/blog/longtermism"/>
+    <link type="text/gemini" href="gemini://tiuraniemi.org/blog/longtermism"/>
+    <id>https://tiuraniemi.org/blog/longtermism</id>
+    <updated>2022-08-22T00:00:00Z</updated>
+    <published>2022-08-22T00:00:00Z</published>
+    <summary>Longtermism can be used to justify horrendous acts.</summary>
+  </entry>
   
   <entry>
     <title>One Year After I Quit My Job for Activism</title>
