@@ -11,6 +11,11 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
             - name: Run ansible
+              env:
+                  # Make Ansible retry SSH connection three times to avoid
+                  # "Failed to connect to the host via ssh: Host key verification failed."
+                  # which happens on reboot.
+                  ANSIBLE_SSH_RETRIES: 3
               uses: dawidd6/action-ansible-playbook@v2
               with:
                   directory: deploy
