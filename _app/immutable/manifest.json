@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-06def3ef.js",
+    "file": "start-481c082c.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -10,6 +10,7 @@
     "dynamicImports": [
       "src/svelte/routes/__layout.svelte",
       ".svelte-kit/runtime/components/error.svelte",
+      "src/svelte/routes/blog/hear-consume-think-ravage.svelte",
       "src/svelte/routes/blog/index.svelte",
       "src/svelte/routes/blog/longtermism.svelte",
       "src/svelte/routes/blog/ministry-for-the-future.svelte",
@@ -22,7 +23,7 @@
     ]
   },
   "src/svelte/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-bbd4b4f5.js",
+    "file": "pages/__layout.svelte-a6681e62.js",
     "src": "src/svelte/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -31,7 +32,7 @@
       "_stores-bf5e93be.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-42db2be8.css"
+      "assets/pages/__layout.svelte-7f0583f1.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -43,8 +44,19 @@
       "_index-79298705.js"
     ]
   },
+  "src/svelte/routes/blog/hear-consume-think-ravage.svelte": {
+    "file": "pages/blog/hear-consume-think-ravage.svelte-c03d3b2e.js",
+    "src": "src/svelte/routes/blog/hear-consume-think-ravage.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-79298705.js",
+      "_Hero-969e66c6.js",
+      "_BlogPost-6c012a9d.js"
+    ]
+  },
   "src/svelte/routes/blog/index.svelte": {
-    "file": "pages/blog/index.svelte-675eab73.js",
+    "file": "pages/blog/index.svelte-4f32eda6.js",
     "src": "src/svelte/routes/blog/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
