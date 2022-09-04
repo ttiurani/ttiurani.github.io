@@ -76,12 +76,16 @@ small {
 }
 
 blockquote {
-    padding: 0.2em 0 0.2em 2em;
-    border-left: 2px solid var(--color-text);
-    font-style: italic;
     margin-inline-start: 0;
     margin-inline-end: 0;
 }
+
+.quoteblock {
+    padding: 0.2em 0 0.2em 2em;
+    border-left: 2px solid var(--color-text);
+    font-style: italic;
+}
+
 
 #footnotes::before {
     content: 'Notes';
