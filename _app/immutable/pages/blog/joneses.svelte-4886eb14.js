@@ -23,7 +23,7 @@ At the same time, the forests on the island have almost been cut down completely
 The island is windy and barren and despite all of the lio, harverst are smaller every year.`),he=b(),N=s("div"),Q=s("p"),ge=f("The council has an emergency meeting."),de=b(),W=s("div"),X=s("p"),Te=f(`Adults of four families are terrified for the future of the island and their children, but the Joneses look happy.
 When the others ask what\u2019s there to be happy about, John Jones breaks out the good news.`),ue=b(),H=s("div"),Y=s("p"),_e=f(`Building the fourth Jones house made the water quality worse, but a little less than building the third house.
 June also believes she can come up with ideas for efficient water cleaning devices.
-To this end, the Joneses have mapped out a plan where everyone trusts in June and new houses can continue to be built at an increasing pace and .
+To this end, the Joneses have mapped out a plan where everyone trusts in June and new houses can continue to be built at an increasing pace.
 Their calculations show that with this plan, in 30 years, there\u2019s a 50% chance the water should still be barely drinkable on most parts of the island.`),fe=b(),F=s("div"),ee=s("p"),Ee=f(`The other four families get angry.
 "Everyone agrees that the water problem is bad, but so is the fact that there are almost no more forests or animals on the island", they say.
 The four families demand an alternative plan that doesn\u2019t involve building every year more unnecessary houses than the previous year.`),pe=b(),O=s("div"),te=s("p"),Je=f(`The Joneses look baffled.
@@ -52,7 +52,7 @@ At the same time, the forests on the island have almost been cut down completely
 The island is windy and barren and despite all of the lio, harverst are smaller every year.`),Ue.forEach(t),Le.forEach(t),he=w(e),N=o(e,"DIV",{class:!0});var Ce=n(N);Q=o(Ce,"P",{});var Ze=n(Q);ge=p(Ze,"The council has an emergency meeting."),Ze.forEach(t),Ce.forEach(t),de=w(e),W=o(e,"DIV",{class:!0});var Ge=n(W);X=o(Ge,"P",{});var Ke=n(X);Te=p(Ke,`Adults of four families are terrified for the future of the island and their children, but the Joneses look happy.
 When the others ask what\u2019s there to be happy about, John Jones breaks out the good news.`),Ke.forEach(t),Ge.forEach(t),ue=w(e),H=o(e,"DIV",{class:!0});var Qe=n(H);Y=o(Qe,"P",{});var Xe=n(Y);_e=p(Xe,`Building the fourth Jones house made the water quality worse, but a little less than building the third house.
 June also believes she can come up with ideas for efficient water cleaning devices.
-To this end, the Joneses have mapped out a plan where everyone trusts in June and new houses can continue to be built at an increasing pace and .
+To this end, the Joneses have mapped out a plan where everyone trusts in June and new houses can continue to be built at an increasing pace.
 Their calculations show that with this plan, in 30 years, there\u2019s a 50% chance the water should still be barely drinkable on most parts of the island.`),Xe.forEach(t),Qe.forEach(t),fe=w(e),F=o(e,"DIV",{class:!0});var Ye=n(F);ee=o(Ye,"P",{});var et=n(ee);Ee=p(et,`The other four families get angry.
 "Everyone agrees that the water problem is bad, but so is the fact that there are almost no more forests or animals on the island", they say.
 The four families demand an alternative plan that doesn\u2019t involve building every year more unnecessary houses than the previous year.`),et.forEach(t),Ye.forEach(t),pe=w(e),O=o(e,"DIV",{class:!0});var tt=n(O);te=o(tt,"P",{});var at=n(te);Je=p(at,`The Joneses look baffled.
