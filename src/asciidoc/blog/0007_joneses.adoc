@@ -2,7 +2,7 @@
 Timo Tiuraniemi
 1.0, 2022-09-23
 :description: A metaphor.
-:keywords: metaphor, Earth breakdown, Carbon tunnel vision, capitalism
+:keywords: metaphor, Earth breakdown, carbon tunnel vision, capitalism
 
 [#highlighted]#Five families live on a lake island unaware of the world beyond the lake.#
 The island is big enough for all of them and the lake has ample fresh drinking water.
@@ -18,7 +18,7 @@ They like to build things and enjoy the good life.
 
 The island is home to a potent mineral called lio.
 The islanders discover a way to use lio as a fertiliser to grow crops much faster.
-Furthermore it turns out that lio can also be used to build things faster.
+Furthermore, it turns out that lio can also be used to build things faster.
 
 Thanks to lio, many nice things are built and some parts of the island can grow so much food some has to be thrown away.
 
@@ -32,14 +32,13 @@ Recently the council has found out that not only are the forests on the island d
 Due to natural currents in the lake, the water is especially bad in the east and south, but still rather good in the northwest.
 
 The council meets to talk about the water.
-Some suspect that the people on the island might have something to do with the water.
+Some suspect that the people on the island might have something to do with the water quality getting worse.
 The Joneses disagree, and besides their water tastes fine.
 After some discussion, the Joneses convince everyone that the change in water quality is because of natural fluctuation and unfortunately there is nothing they can do.
 
 The water quality keeps getting worse.
 
-The council meets again, and this time they have definite proof that the water has been getting worse.
-The reason is the use of lio.
+The council meets again, and this time they have definite proof that the reason for the bad water quality is lio.
 Everyone in the council knows that the vast majority of the lio is being used for the benefit of the Joneses.
 The Joneses have also cut down even more forests and built a second house just for Josie.
 Still, the council makes a decision that every family needs to start making equal efforts to clean the water by reducing their use of lio.
@@ -56,7 +55,7 @@ When the others ask what's there to be happy about, John Jones breaks out the go
 
 Building the fourth Jones house made the water quality worse, but a little less than building the third house.
 June also believes she can come up with ideas for efficient water cleaning devices.
-To this end, the Joneses have mapped out a plan where new houses are built at an increasing pace and everyone trusts in June.
+To this end, the Joneses have mapped out a plan where everyone trusts in June and new houses can continue to be built at an increasing pace and .
 Their calculations show that with this plan, in 30 years, there's a 50% chance the water should still be barely drinkable on most parts of the island.
 
 The other four families get angry.
