@@ -4,7 +4,7 @@ Timo Tiuraniemi
 :description: A metaphor.
 :keywords: metaphor, Earth breakdown, Carbon tunnel vision, capitalism
 
-Five families live on a lake island unaware of the world beyond the lake.
+[#highlighted]#Five families live on a lake island unaware of the world beyond the lake.#
 The island is big enough for all of them and the lake has ample fresh drinking water.
 
 The families have built houses and cleared fields that yield enough crops to feed everyone.
@@ -18,7 +18,7 @@ They like to build things and enjoy the good life.
 
 The island is home to a potent mineral called lio.
 The islanders discover a way to use lio as a fertiliser to grow crops much faster.
-They also find ways to use lio to make building things faster.
+Furthermore it turns out that lio can also be used to build things faster.
 
 Thanks to lio, many nice things are built and some parts of the island can grow so much food some has to be thrown away.
 
@@ -60,7 +60,7 @@ To this end, the Joneses have mapped out a plan where new houses are built at an
 Their calculations show that with this plan, in 30 years, there's a 50% chance the water should still be barely drinkable on most parts of the island.
 
 The other four families get angry.
-"While everyone agrees that the water problem is bad, so is the fact that there are almost no more forests or animals on the island", they say.
+"Everyone agrees that the water problem is bad, but so is the fact that there are almost no more forests or animals on the island", they say.
 The four families demand an alternative plan that doesn't involve building every year more unnecessary houses than the previous year.
 
 The Joneses look baffled.
