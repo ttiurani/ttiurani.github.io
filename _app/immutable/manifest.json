@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-481c082c.js",
+    "file": "start-5fee2247.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -16,6 +16,7 @@
       "src/svelte/routes/blog/ministry-for-the-future.svelte",
       "src/svelte/routes/blog/one-year-after.svelte",
       "src/svelte/routes/blog/overproduction.svelte",
+      "src/svelte/routes/blog/preview-joneses.svelte",
       "src/svelte/routes/blog/site-setup.svelte",
       "src/svelte/routes/index.svelte",
       "src/svelte/routes/stats.svelte",
@@ -101,6 +102,17 @@
   "src/svelte/routes/blog/overproduction.svelte": {
     "file": "pages/blog/overproduction.svelte-6ae533f1.js",
     "src": "src/svelte/routes/blog/overproduction.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-79298705.js",
+      "_Hero-969e66c6.js",
+      "_BlogPost-6c012a9d.js"
+    ]
+  },
+  "src/svelte/routes/blog/preview-joneses.svelte": {
+    "file": "pages/blog/preview-joneses.svelte-4c3103bd.js",
+    "src": "src/svelte/routes/blog/preview-joneses.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
