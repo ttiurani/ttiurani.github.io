@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-3bb30471.js",
+    "file": "start-3952573a.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -12,11 +12,11 @@
       ".svelte-kit/runtime/components/error.svelte",
       "src/svelte/routes/blog/hear-consume-think-ravage.svelte",
       "src/svelte/routes/blog/index.svelte",
+      "src/svelte/routes/blog/joneses.svelte",
       "src/svelte/routes/blog/longtermism.svelte",
       "src/svelte/routes/blog/ministry-for-the-future.svelte",
       "src/svelte/routes/blog/one-year-after.svelte",
       "src/svelte/routes/blog/overproduction.svelte",
-      "src/svelte/routes/blog/preview-joneses.svelte",
       "src/svelte/routes/blog/site-setup.svelte",
       "src/svelte/routes/index.svelte",
       "src/svelte/routes/stats.svelte",
@@ -57,13 +57,24 @@
     ]
   },
   "src/svelte/routes/blog/index.svelte": {
-    "file": "pages/blog/index.svelte-4f32eda6.js",
+    "file": "pages/blog/index.svelte-8fc3dcce.js",
     "src": "src/svelte/routes/blog/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-79298705.js",
       "_Hero-969e66c6.js"
+    ]
+  },
+  "src/svelte/routes/blog/joneses.svelte": {
+    "file": "pages/blog/joneses.svelte-2db4c124.js",
+    "src": "src/svelte/routes/blog/joneses.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-79298705.js",
+      "_Hero-969e66c6.js",
+      "_BlogPost-6c012a9d.js"
     ]
   },
   "src/svelte/routes/blog/longtermism.svelte": {
@@ -102,17 +113,6 @@
   "src/svelte/routes/blog/overproduction.svelte": {
     "file": "pages/blog/overproduction.svelte-6ae533f1.js",
     "src": "src/svelte/routes/blog/overproduction.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-79298705.js",
-      "_Hero-969e66c6.js",
-      "_BlogPost-6c012a9d.js"
-    ]
-  },
-  "src/svelte/routes/blog/preview-joneses.svelte": {
-    "file": "pages/blog/preview-joneses.svelte-3b1837f8.js",
-    "src": "src/svelte/routes/blog/preview-joneses.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
