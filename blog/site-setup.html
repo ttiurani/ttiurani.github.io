@@ -117,7 +117,7 @@ I had my reasons.</p></div>
 <div class="paragraph"><p>First, I have many other plans for the server than just serving static files (stay tuned for details in future posts).
 Second, I wanted an in-memory cache which is smart enough to inline CSS for cold loads, but not internal navigation (this has to do with how SvelteKit works).
 Third, I wanted to get better at Rust.</p></div>
-<div class="paragraph"><p>Because tide is rather bare-bones, I had to write <a href="https://github.com/extendedmind/extendedmind/blob/main/hub/src/http/html.rs">my own static file serving</a> to be able to serve Svelte files, return the appropriate headers and inline CSS for blog posts.</p></div>
+<div class="paragraph"><p>Because tide is rather bare-bones, I had to write <a href="https://github.com/extendedmind/extendedmind/blob/main/server/src/http/html.rs">my own static file serving</a> to be able to serve Svelte files, return the appropriate headers and inline CSS for blog posts.</p></div>
 <div class="paragraph"><p>ACME support came out of the box with <a href="https://github.com/http-rs/tide-acme">tide-acme</a> and compression from <a href="https://github.com/Fishrock123/tide-compress">tide-compress</a>.
 Finally, I made my own small HTTP to HTTPs redirect endpoint and implemented support for HSTS.</p></div>
 <div class="paragraph"><p>For Gemini, I chose the <a href="https://github.com/mbrubeck/agate">Agate server</a>.
@@ -135,10 +135,10 @@ I’m not going to host a time series database.
 I’ll never need any fancy visualizations.
 I’m never going to analyze the data.</p></div>
 <div class="paragraph"><p>Because I also don’t want to depend on too many external libraries, I just decided to do it myself.
-First, I do <a href="https://github.com/extendedmind/extendedmind/blob/main/hub/src/logging.rs">async access logging in a low priority thread</a> into UTC date formatted log files, which is also good for performance.
+First, I do <a href="https://github.com/extendedmind/extendedmind/blob/main/server/src/logging.rs">async access logging in a low priority thread</a> into UTC date formatted log files, which is also good for performance.
 The log files have space delimited lines, one per <code>GET</code> request, that contain just the path and the status code.
 I don’t need log rotation, but I’ll probably need to implement deleting old log files later.</p></div>
-<div class="paragraph"><p>From this access log, I then <a href="https://github.com/extendedmind/extendedmind/blob/main/hub/src/metrics.rs">update every minute a UTC daily metric file</a>.
+<div class="paragraph"><p>From this access log, I then <a href="https://github.com/extendedmind/extendedmind/blob/main/server/src/metrics.rs">update every minute a UTC daily metric file</a>.
 The metric files are then served as JSON from an HTTP endpoint and rendered in a Svelte page.</p></div>
 <div class="paragraph"><p>If you want you can <a href="/stats">visit the live statistics page yourself</a>.</p></div>
 <div class="paragraph"><p>As for traffic sources, I was initially planning on adding them, but after a little research, I realized that it’s easy to leak unwanted data in the <code>Referer</code> header.
@@ -185,9 +185,9 @@ Given that I had no previous experience with a Pi, and because I’m an idiot, I
 File IO is always the bottleneck, right?
 Wrong.</p></div>
 <div class="paragraph"><p>Turns out brotli compression on the Pi takes over half a second per request.
-For this reason, I changed the file system cache to a <a href="https://github.com/extendedmind/extendedmind/blob/main/hub/src/http/cache.rs">cache middleware for tide</a>, so that I cache the entire compressed HTTP response.</p></div>
+For this reason, I changed the file system cache to a <a href="https://github.com/extendedmind/extendedmind/blob/main/server/src/http/cache.rs">cache middleware for tide</a>, so that I cache the entire compressed HTTP response.</p></div>
 <div class="paragraph"><p>Because that compression penalty was so high, I felt it had a significant negative impact on the site, which meant I didn’t want to cache only based on time-to-live, e.g. for five minutes.
-That’s why I now cache permanently and implemented a <a href="https://github.com/extendedmind/extendedmind/blob/main/hub/src/admin.rs">listener for a unix socket that does cache busting on demand</a>, which I call with Ansible when the site updates.
+That’s why I now cache permanently and implemented a <a href="https://github.com/extendedmind/extendedmind/blob/main/server/src/admin.rs">listener for a unix socket that does cache busting on demand</a>, which I call with Ansible when the site updates.
 To add insult to injury, I whipped up a hacky brotli cache warm-up bash script that runs curl after cache busting.
 Now, most of the time no real visitor has to wait.</p></div>
 <div class="paragraph"><p>With all that in place, this page (including the image) is <strong>48kb</strong> brotli-compressed, and when I’m physically near the Pi loads in <strong>50ms</strong>.</p></div>
