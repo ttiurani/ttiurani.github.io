@@ -4,6 +4,8 @@ on:
         branches:
             - main
         paths-ignore:
+            - '.github/workflows/setupServices.yml'
+            - '.github/workflows/upgrade.yml'
             - 'deploy/hosts.yml'
             - 'deploy/upgrade.yml'
             - 'deploy/initialize.yml'

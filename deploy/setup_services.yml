@@ -75,45 +75,45 @@
             name: cloudflare-ddns.timer
         when: cloudflare_ddns.changed or cloudflare_ddns_service.changed
 
-      # EXTENDEDMIND HUB
-      - name: Download extendedmind_hub
-        local_action: 'get_url url="https://github.com/extendedmind/extendedmind/releases/download/{{ extendedmind_hub_version }}/extendedmind_hub" dest="{{ playbook_dir }}/.output/extendedmind_hub-{{ extendedmind_hub_version }}" checksum="sha256:{{ extendedmind_hub_checksum }}"'
+      # EXTENDEDMIND SERVER
+      - name: Download extendedmind_server
+        local_action: 'get_url url="https://github.com/extendedmind/extendedmind/releases/download/{{ extendedmind_server_version }}/extendedmind_server" dest="{{ playbook_dir }}/.output/extendedmind_server-{{ extendedmind_server_version }}" checksum="sha256:{{ extendedmind_server_checksum }}"'
         become: false
-      - name: Copy extendedmind_hub
+      - name: Copy extendedmind_server
         ansible.builtin.copy:
-            src: '{{ playbook_dir }}/.output/extendedmind_hub-{{ extendedmind_hub_version }}'
-            dest: '/opt/extendedmind_hub-{{ extendedmind_hub_version }}'
+            src: '{{ playbook_dir }}/.output/extendedmind_server-{{ extendedmind_server_version }}'
+            dest: '/opt/extendedmind_server-{{ extendedmind_server_version }}'
             owner: root
             group: root
             mode: '0744'
-        register: extendedmind_hub
-      - name: Create symbolic link for extendedmind_hub
+        register: extendedmind_server
+      - name: Create symbolic link for extendedmind_server
         file:
-            src: '/opt/extendedmind_hub-{{ extendedmind_hub_version }}'
-            dest: '/opt/extendedmind_hub'
+            src: '/opt/extendedmind_server-{{ extendedmind_server_version }}'
+            dest: '/opt/extendedmind_server'
             owner: root
             group: root
             state: link
-        when: extendedmind_hub.changed
-      - name: Copy extendedmind_hub service file
+        when: extendedmind_server.changed
+      - name: Copy extendedmind_server service file
         ansible.builtin.template:
-            src: '{{ playbook_dir }}/services/extendedmind_hub.service.j2'
-            dest: '/etc/systemd/system/extendedmind_hub.service'
+            src: '{{ playbook_dir }}/services/extendedmind_server.service.j2'
+            dest: '/etc/systemd/system/extendedmind_server.service'
             owner: root
             group: root
             mode: '0644'
-        register: extendedmind_hub_service
-      - name: Enable extendedmind_hub
+        register: extendedmind_server_service
+      - name: Enable extendedmind_server
         ansible.builtin.systemd:
-            name: extendedmind_hub
+            name: extendedmind_server
             enabled: yes
-        when: extendedmind_hub_service.changed
-      - name: Restart extendedmind_hub
+        when: extendedmind_server_service.changed
+      - name: Restart extendedmind_server
         ansible.builtin.systemd:
             state: restarted
             daemon_reload: yes
-            name: extendedmind_hub.service
-        when: extendedmind_hub.changed or extendedmind_hub_service.changed
+            name: extendedmind_server.service
+        when: extendedmind_server.changed or extendedmind_server_service.changed
 
       # AGATE GEMINI SERVER
       - name: Download Agate

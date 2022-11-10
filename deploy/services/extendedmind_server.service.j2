@@ -1,10 +1,10 @@
 [Unit]
-Description=Extendedmind Hub Server
+Description=Extendedmind Server
 After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/opt/extendedmind_hub \
+ExecStart=/opt/extendedmind_server \
 --data-root-dir /srv/hyper/content \
 --static-root-dir /srv/www/content \
 --http-port 80 \
@@ -12,7 +12,7 @@ ExecStart=/opt/extendedmind_hub \
 --log-dir /srv/www/logs \
 --metrics-dir /srv/www/metrics \
 --metrics-endpoint /api/metrics \
---metrics-secret {{ extendedmind_hub_metrics_secret }} \
+--metrics-secret {{ extendedmind_server_metrics_secret }} \
 --metrics-skip-compress true \
 --domain tiuraniemi.org \
 --acme-email timo.tiuraniemi@iki.fi \
@@ -38,7 +38,7 @@ ExecStart=/opt/extendedmind_hub \
 Restart=always
 RestartSec=1
 
-SyslogIdentifier=extendedmind_hub
+SyslogIdentifier=extendedmind_server
 
 [Install]
 WantedBy=multi-user.target
