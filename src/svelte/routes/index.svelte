@@ -51,7 +51,7 @@
                     Subscribe to the <a href="/feed.atom">RSS feed</a> of
                     <a href="/blog">the blog</a>
                     to get notified of new posts. You're also welcome to
-                    <a href="https://fosstodon.org/web/@ttiurani">follow me on Mastodon</a>
+                    <a href="https://fosstodon.org/web/@ttiurani" rel="me">follow me on Mastodon</a>
                     or reach me <a href="mailto:timo.tiuraniemi@iki.fi">by email</a>.
                 </p>
             </div>
