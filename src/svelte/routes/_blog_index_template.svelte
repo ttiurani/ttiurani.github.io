@@ -25,7 +25,7 @@
         __BLOG_POST_START__
         <div class="blog-posts-item">
             <p>
-                <a href="__BLOG_POST_PATH__"> __BLOG_POST_TITLE__ </a><br />
+                <a href="__BLOG_POST_PATH__"> __BLOG_POST_FULL_TITLE__ </a><br />
                 <span class="entry-meta"> __BLOG_POST_TIME_META__ </span><br />
                 <span class="entry-meta"> Under: __BLOG_POST_KEYWORDS__ </span>
             </p>

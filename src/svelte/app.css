@@ -70,6 +70,11 @@ h5 {
 h6 {
     font-size: 1em;
 }
+p.subtitle {
+    margin-top: 0em;
+    padding-top: 0em;
+    font-size: 1.5em;
+}
 
 small {
     font-size: calc(0.5rem + 0.5vw);

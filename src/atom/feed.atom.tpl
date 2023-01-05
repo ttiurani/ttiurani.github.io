@@ -12,7 +12,7 @@
   <id>https://tiuraniemi.org/</id>
   __BLOG_POST_START__
   <entry>
-    <title>__BLOG_POST_TITLE__</title>
+    <title>__BLOG_POST_FULL_TITLE__</title>
     <link type="text/html" href="https://tiuraniemi.org__BLOG_POST_PATH__"/>
     <link type="text/gemini" href="gemini://tiuraniemi.org__BLOG_POST_PATH__"/>
     <id>https://tiuraniemi.org__BLOG_POST_PATH__</id>

@@ -39,6 +39,15 @@ const sortPartials = (partials) => {
     });
 };
 
+const getFullTitle = (metadata) => {
+    let subtitle = metadata.docsubtitle;
+    if (subtitle) {
+        return metadata.doctitle + ' (' + subtitle + ')';
+    } else {
+        return metadata.doctitle;
+    }
+}
+
 (async () => {
     // Read all of the blog metadata files, they are in order by name
     const metadataDir = __dirname + '/../.svelte-kit/blog/metadata/';
@@ -206,8 +215,16 @@ const sortPartials = (partials) => {
     }
     const svelteBlogPostPromises = htmlPartialsContents.map(async (partial) => {
         let fileContent = svelteBlogPostTemplate;
+
+        let subtitleHtml = '';
+        if (partial.metadata.docsubtitle) {
+           subtitleHtml =
+            `<p class="subtitle" aria-roledescription="subtitle">${partial.metadata.docsubtitle}</p>`
+        }
         fileContent = fileContent
             .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+            .replaceAll(/__BLOG_POST_SUBTITLE_HTML_/g, subtitleHtml)
+            .replaceAll(/__BLOG_POST_FULL_TITLE__/g, getFullTitle(partial.metadata))
             .replaceAll(/__BLOG_POST_TIME_META__/g, partial.metadata.timeMeta)
             .replaceAll(/__BLOG_POST_KEYWORDS__/g, partial.metadata.keywords)
             .replaceAll(/__BLOG_POST_CONTENT__/g, partial.content)
@@ -251,7 +268,7 @@ const sortPartials = (partials) => {
         if (!partial.metadata.preview) {
             svelteBlogIndexPost = svelteBlogIndexPostTemplate;
             svelteBlogIndex += svelteBlogIndexPost
-                .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+                .replaceAll(/__BLOG_POST_FULL_TITLE__/g, getFullTitle(partial.metadata))
                 .replaceAll(/__BLOG_POST_TIME_META__/g, partial.metadata.timeMeta)
                 .replaceAll(/__BLOG_POST_KEYWORDS__/g, partial.metadata.keywords)
                 .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path);
@@ -282,7 +299,7 @@ const sortPartials = (partials) => {
                 latestUpdated = partial.metadata.updated;
             }
             atomFeed += atomFeedEntryTemplate
-                .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
+                .replaceAll(/__BLOG_POST_FULL_TITLE__/g, getFullTitle(partial.metadata))
                 .replaceAll(/__BLOG_POST_UPDATED_DATE_TIME__/g, partial.metadata.updated)
                 .replaceAll(/__BLOG_POST_PUBLISHED_DATE_TIME__/g, partial.metadata.published)
                 .replaceAll(/__BLOG_POST_PATH__/g, partial.metadata.path)
