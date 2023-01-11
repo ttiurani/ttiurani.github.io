@@ -10,7 +10,7 @@ _See also: link:/blog/preview-imperial-mode-of-living[Imperial Mode of Living (O
 Many conversations I've had as an activist over the last few years have led to debates about the fundamental values of our societies.
 The challenges we face, both with the climate and ecological breakdown and global inequality, are too massive to be addressed without also thinking about what is the primary goal of our societies.
 
-My answer, borrowed from https://doughnuteconomics.org/about-doughnut-economics[doughnut economics] and a https://goodlife.leeds.ac.uk/[fantastic University of Leeds website] with the same name:
+I believe the primary goal of our societies should be (aligned with https://doughnuteconomics.org/about-doughnut-economics[doughnut economics] and a https://goodlife.leeds.ac.uk/[fantastic University of Leeds website] with the same name)
 
 *to enable a good life for all within planetary boundaries*.
 
@@ -67,7 +67,7 @@ I'll address next the most common ones.
 Now to admit the obvious: fighting for a world like this is utopian.
 But that does not mean it's not effective for activism.
 
-First, when you are clear on what kind of utopia you are seeking, it makes it easy to see what the clear failures are:
+First, when you are clear on what kind of utopia you are seeking, it makes it easy to identify obvious failures:
 
 * If a society increases its environmental stress but does not also increase the well-being of its members, it has clearly failed in its main task to stop the collapse of life-supporting processes.
 * If a society creates well-being but does it with many times more environmental stress than nature can sustain, it's disregarding the rights of future generations.
