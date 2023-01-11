@@ -1,0 +1,90 @@
+[separator=::]
+= Imperial Mode of Living:: Or: What I'm Fighting Against
+Timo Tiuraniemi
+1.0, 2023-01-XX
+:description: TODO
+:keywords: Earth breakdown, activism, imperial mode of living, degrowth, bell hooks
+
+_See also: link:/blog/preview-good-life-for-all-within-planetary-boundaries[A Good Life for All (Or: What I'm Fighting For)]._
+
+I used to believe that it's always more effective to fight for a better future rather than against what currently is.
+As Buckminster Fuller said:
+
+> You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete.
+
+I agree with Fuller that re-modelling existing reality is a requirement for change.
+I also believe that https://typeshare.co/tegantallullah/posts/try-this-4-step-narrative-for-climate-communications[effective activist communication] should try to start with a cause worth fighting for, instead of problems to fight against.
+
+However, I've since found this idea of avoiding positioning against anything to be woefully naive.
+When fighting in an arena that is (more or less) a zero-sum game, something that is very typical for politics, ignoring the powers that oppose you can be disastrous.
+Even more so for counter-hegemonic activism where the opposition has the power to forcefully silence you.
+
+== Imperialist White-Supremacist Capitalist Patriarchy
+
+So what and who is the opposition to the fight for link:/blog/preview-good-life-for-all-within-planetary-boundaries[a good life for all within planetary boundaries]?
+I don't think there is a definite answer, but instead different answers for different situations.
+
+I've long liked bell hooks's formulation of https://imaginenoborders.org/pdf/zines/UnderstandingPatriarchy.pdf["imperialist white-supremacist capitalist patriarchy"].
+It highlights the interconnectedness of the different systems of power and makes it easy to build bridges and solidarity between different struggles for justice.
+
+However, it's not exactly easy to use nor explain and tie to everyday life because every term in it points to an abstract concept.
+Also lacking is an ecological element.
+
+== Imperial Mode of Living
+
+https://www.researchgate.net/publication/316717147_The_Imperial_Mode_of_Living["The Imperial Mode of Living" (IML)] is a recent formulation by Ulrich Brand and Markus Wissen.
+It highlights a "global consensus about the attractiveness of modern capitalist everyday practices".
+These practices are behind the vast global inequalities and the ecological and climate breakdown.
+
+Brand and Wissen define IML as the globally desirable practices and identities that rely heavily on:
+
+> (i) the unlimited appropriation of resources; (ii) a disproportionate claim to global and local ecosystems and sinks; and (iii) cheap labour from elsewhere.
+
+This definition, I feel, is an excellent tool to orient both everyday actions and larger political goals.
+IML is both a rich political concept and at the same time recognizable all around us.
+Whether already benefitting from IML or desiring to get it, its appeal is universal.
+
+=== Unlimited Appropriation of Resources
+
+The first aspect targets capitalism.
+Unlimited accumulation of wealth, services and things, without regard to if one already has enough for a good life, is destructivefootnote:[A corollary is that if a solution includes accumulating significant wealth for a few people, it is enforcing the IML. This goes for most "ethical" start-ups. The purpose of a start-up is to further accumulate the investors' extreme wealth and make a few new millionaires out of some founders on the way. Trying to do good using such a broken device, can rarely be net-positive.].
+
+The direct counter to this mindset is https://timotheeparrique.com/sufficiency-means-degrowth/[sufficiency (also echoed by the latest IPCC report)].
+There is a rooted common sense of sufficiency in most cultures, exemplified by idioms like "enough is enough".
+The task thus is to re-awaken that which we already know.
+
+=== Disproportionate Claim to Global and Local Ecosystems and Sinks
+
+The second aspect points to the excess direct and indirect ecological stress we affluent people of the world cause.
+In a https://steadystate.org/wp-content/uploads/Daly_SciAmerican_FullWorldEconomics%281%29.pdf[full world] taking too much from nature means there is not enough for others.
+
+These practices and identities are all around us.
+The climate crisis has emphasized the role of the "sinks", especially the atmosphere that absorbs greenhouse gases.
+But as important as sinks is to identify our claims to ecosystems, either from resources consumed or land repurposed.
+
+A good heuristic is to regularly ask yourself if the environmental stress you or your society causes, is generalisable to everyone.
+Or would you have to say to people in poor countries: "I can continue living like this, but you can never hope to do the same"?
+
+=== Cheap Labour From Elsewhere
+
+https://www.sciencedirect.com/science/article/pii/S095937802200005X[Continued imperialist appropriation of labour and resources with unequal exchange] is a staggering reality of the global economy.
+There is no excuse for this injustice.
+
+The third aspect of the IML points to this form of exploitation that is interconnected with the other two aspects. 
+By striving to reduce and eventually stop the reliance on cheap labour, we will also lower environmental stress and the appropriation of resources.
+
+== Conclusion
+
+Claiming you don't need to oppose anything, most likely means you are working in support of those in power.
+For counter-hegemonic struggles knowing your enemy is critical.
+
+The imperial mode of living must be rejected.
+
+The amount of resources and wealth a single person can hoard for themselves must have a limit.
+Taking more from nature than nature can regenerate can't continue.
+There is no justification for continued reliance on the exploitation of people, no matter how far away they are.
+
+I'm not saying fighting against the IML is easy.
+I'm as guilty as any for relying on and benefiting from the IML.
+
+But just because ending this destructive mode of living is hard, doesn't mean it's not worth doing.

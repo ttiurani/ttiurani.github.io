@@ -1,0 +1,119 @@
+[separator=::]
+= A Good Life For All Within Planetary Boundaries:: Or: What I'm Fighting For
+Timo Tiuraniemi
+1.0, 2023-01-XX
+:description: TODO
+:keywords: Earth breakdown, activism, doughnut economics, planetary boundaries, good life
+
+_See also: link:/blog/preview-imperial-mode-of-living[Imperial Mode of Living (Or: What I'm Fighting Against)]._
+
+Many conversations I've had as an activist over the last few years have led to debates about the fundamental values of our societies.
+The challenges we face, both with the climate and ecological breakdown and global inequality, are too massive to be addressed without also thinking about what is the primary goal of our societies.
+
+My answer, borrowed from https://doughnuteconomics.org/about-doughnut-economics[doughnut economics] and a https://goodlife.leeds.ac.uk/[fantastic University of Leeds website] with the same name:
+
+*to enable a good life for all within planetary boundaries*.
+
+== Breakdown
+
+A slogan, however, is only as good as the intended meaning of the terms used in it.
+In order to know what exactly the target is, the terms need to be fleshed out.
+
+=== Planetary Boundaries
+
+Starting from the end, by https://en.wikipedia.org/wiki/Planetary_boundaries["planetary boundaries"] I mean the https://www.stockholmresilience.org/research/planetary-boundaries.html["processes that regulate the stability and resilience of Earth systems"].
+Researchers have identified nine planetary boundaries, and as of 2023, five of them have been transgressed.
+
+It's to me self-evident that our societies must prioritize preventing the collapse of these life-supporting processes.
+
+=== All
+
+By "all" I mean:
+
+* currently living humans,
+* future generations of humans, and
+* nonhuman animals
+* anywhere on Earth.
+
+This broad definition is crucial to avoid common pitfalls with a narrower scope.
+
+First, current parliamentary politics in most countries either ignores completely the rights of future generations or overestimates how easy solving ecological problems will be in the future.
+Our societies must not continue destroying the living conditions of future generations.
+
+Second, the rights of nonhuman animals must be respected.
+Not only are the ecosystems humans rely on dependent on the complex biodiversity within them, but all life has intrinsic value.
+
+Third, in our globalized economy, no nation is an island.
+The effects of our actions are deeply interconnected, and can't be solved by ignoring what happens outside your country's borders.
+
+=== Good Life
+
+The main goal of a democratic society needs to be the well-being of its members.
+A good life requires not only physical but also psychological well-being.
+
+https://link.springer.com/article/10.1007/s11205-017-1650-0[Decent living standards] require a set of material conditions needed for achieving basic human well-being.
+Meeting these needs for everyone must be a priority for society.
+
+In addition to material conditions, the fulfilment of https://en.wikipedia.org/wiki/Self-determination_theory[innate psychological needs] – autonomy, competence and relatedness – must be facilitated for a good life.
+For non-human animals, the possibility of species-typical behaviour must not be denied.
+
+== Common Criticism
+
+Saying out loud that I fight for a good life for all within planetary boundaries is a great way to draw out criticism.
+I'll address next the most common ones.
+
+=== "Utopian"
+
+Now to admit the obvious: fighting for a world like this is utopian.
+But that does not mean it's not effective for activism.
+
+First, when you are clear on what kind of utopia you are seeking, it makes it easy to see what the clear failures are:
+
+* If a society increases its environmental stress but does not also increase the well-being of its members, it has clearly failed in its main task to stop the collapse of life-supporting processes.
+* If a society creates well-being but does it with many times more environmental stress than nature can sustain, it's disregarding the rights of future generations.
+* If a society drives a species to extinction, it has unequivocally failed in even a rudimentary respect for nonhuman animals.
+* If a society creates well-being but does it by exploiting far away people, it has failed at respecting universal human rights.
+
+Second, https://journals.sagepub.com/doi/full/10.1177/0146167217748604[utopian thinking motivates societal engagement].
+This is not universal as there certainly are people who are put off by any signs of utopianism.
+However, I argue that for most of the people who are likely to join the fight, a utopian goal is a strength, not a weakness.
+
+=== "Impossible"
+
+Another common criticism I've heard is that the goal is physically impossible.
+There aren't enough sustainable resources to provide a good life for all and still remain within planetary boundaries, or so the argument goes.
+
+While the challenge is big, current research, however, suggests it is, in fact, possible.
+
+First, the https://doi.org/10.1016/S0140-6736(20)30677-2[currently projected population] of about 10 billion https://www.unep.org/news-and-stories/story/how-feed-10-billion-people[can be fed sustainably].
+
+Second, https://www.sciencedirect.com/science/article/pii/S0959378020307512[providing decent living standards] for all is possible with https://iopscience.iop.org/article/10.1088/1748-9326/ac1c27[energy use low enough to not pose a threat to mitigating climate change].
+
+This does mean that the current level of inequality, which https://www.nature.com/articles/s41467-022-32729-8[can double the energy required to secure universal decent living], is incompatible with the goal.
+A significant reduction of inequality is needed.
+
+=== "Politically Unrealistic"
+
+Lastly, the most common complaint I keep hearing, is that this goal is politically unrealistic.
+This criticism is understandable because many equate the scope of politics with what they have heard an existing party is willing to change if they win the next elections.
+
+This, I feel, is a fundamental misunderstanding of democracy.
+Being a politically active citizen in a democracy does not mean one should only rally for what is compatible with current party politics.
+
+It's the democratic deliberative _process_ that creates compromises.
+Citizens must not self-censor their imagination already before the deliberation starts.
+On the contrary, only after you know what you stand for can you even evaluate how big the compromise was.
+
+I find it deeply frustrating that so many smart people even in private conversations are unable to break free of party politics and stand up for universal values.
+I feel this internalisation of party politics is one of the main reasons why "There Is No Alternative" is so strong.
+We need to break free of these self-imposed limits on political imagination.
+
+== Conclusion
+
+A good life for all within planetary boundaries is what I fight for.
+
+I do so even though I know the goal is utopian.
+
+I'm link:/blog/preview-imperial-mode-of-living[fully aware of the opposition].
+
+I fight because it's the right thing to do.
