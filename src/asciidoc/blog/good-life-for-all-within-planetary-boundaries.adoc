@@ -10,7 +10,7 @@ _See also: link:/blog/preview-imperial-mode-of-living[Imperial Mode of Living (O
 Many conversations I've had as an link:/blog/one-year-after[activist over the last few years] have led to debates about the fundamental values of our societies.
 The challenges we face, both with the climate and ecological breakdown and global inequality, are too massive to be addressed without also thinking about what is the primary goal of our societies.
 
-I believe the primary goal of our societies should be (aligned with https://doughnuteconomics.org/about-doughnut-economics[doughnut economics] and a https://goodlife.leeds.ac.uk/[fantastic University of Leeds website] with the same name)
+I believe the primaryfootnote:[For sake of brevity, I don't address here the role of the state nor the other fundamental values of a society. I hope it is implicitly clear that I fully support democracy and universal human rights.] goal of our societies should be (aligned with https://doughnuteconomics.org/about-doughnut-economics[doughnut economics] and a https://goodlife.leeds.ac.uk/[fantastic University of Leeds website] with the same name)
 
 *to enable a good life for all within planetary boundaries*.
 
@@ -48,13 +48,13 @@ The effects of our actions are deeply interconnected, and can't be solved by ign
 
 === Good Life
 
-The main goal of a democratic society needs to be the well-being of its members.
+A democratic society should provide the necessary conditions for a good life to all of its members.
 A good life requires not only physical but also psychological well-being.
 
 https://link.springer.com/article/10.1007/s11205-017-1650-0[Decent living standards] require a set of material conditions needed for achieving basic human well-being.
-Meeting these needs for everyone must be a priority for society.
+Meeting these needs for everyone must be a priority.
 
-In addition to material conditions, the fulfilment of https://en.wikipedia.org/wiki/Self-determination_theory[innate psychological needs] – autonomy, competence and relatedness – must be facilitated for a good life.
+In addition to material conditions, the possibility to meet https://en.wikipedia.org/wiki/Self-determination_theory[innate psychological needs] – autonomy, competence and relatedness – should be provided.
 For non-human animals, the possibility of species-typical behaviour must not be denied.
 
 == Common Criticism
@@ -67,12 +67,14 @@ I'll address next the most common ones.
 Now to admit the obvious: fighting for a world like this is utopian.
 But that does not mean it's not effective for activism.
 
-First, when you are clear on what kind of utopia you are seeking, it makes it easy to identify obvious failures:
+First, when you are clear on what kind of utopia you are seeking, it makes it easy to identify obvious failures.
 
-* If a society increases its environmental stress but does not also increase the well-being of its members, it has clearly failed in its main task to stop the collapse of life-supporting processes.
-* If a society creates well-being but does it with many times more environmental stress than nature can sustain, it's disregarding the rights of future generations.
-* If a society drives a species to extinction, it has unequivocally failed in even a rudimentary respect for nonhuman animals.
-* If a society creates well-being but does it by exploiting far away people, it has failed at respecting basic human rights.
+If a society:
+
+* increases its environmental stress but does not also increase the well-being of its members, it has clearly failed in its main task to stop the collapse of life-supporting processes.
+* creates well-being but does it with many times more environmental stress than nature can sustain, it's disregarding the rights of future generations.
+* drives a species to extinction, it has unequivocally failed in even a rudimentary respect for nonhuman animals.
+* creates well-being but does it by exploiting far away people, it has failed at respecting basic human rights.
 
 Second, https://journals.sagepub.com/doi/full/10.1177/0146167217748604[utopian thinking motivates societal engagement].
 This is not universal as there certainly are people who are put off by utopianism.
