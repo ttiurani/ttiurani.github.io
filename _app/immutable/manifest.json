@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-9d49e766.js",
+    "file": "start-c044bddb.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -124,7 +124,7 @@
     ]
   },
   "src/svelte/routes/blog/preview-good-life-for-all-within-planetary-boundaries.svelte": {
-    "file": "pages/blog/preview-good-life-for-all-within-planetary-boundaries.svelte-6be5d46c.js",
+    "file": "pages/blog/preview-good-life-for-all-within-planetary-boundaries.svelte-b7aa5f5d.js",
     "src": "src/svelte/routes/blog/preview-good-life-for-all-within-planetary-boundaries.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -135,7 +135,7 @@
     ]
   },
   "src/svelte/routes/blog/preview-imperial-mode-of-living.svelte": {
-    "file": "pages/blog/preview-imperial-mode-of-living.svelte-21acc8d3.js",
+    "file": "pages/blog/preview-imperial-mode-of-living.svelte-60a68e97.js",
     "src": "src/svelte/routes/blog/preview-imperial-mode-of-living.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
