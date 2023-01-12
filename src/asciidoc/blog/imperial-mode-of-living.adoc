@@ -5,7 +5,7 @@ Timo Tiuraniemi
 :description: As an activist, I fight against the imperial mode of living.
 :keywords: Earth breakdown, activism, imperial mode of living, degrowth, bell hooks
 
-_See also: link:/blog/preview-good-life-for-all-within-planetary-boundaries[A Good Life for All (Or: What I'm Fighting For)]._
+_See also: link:/blog/preview-good-life-for-all-within-planetary-boundaries[A Good Life for All Within Planetary Boundaries (Or: What I'm Fighting For)]._
 
 I used to believe that it's always more effective to fight for a better future rather than against what currently is.
 As Buckminster Fuller said:
