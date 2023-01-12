@@ -2,12 +2,12 @@
 = A Good Life For All Within Planetary Boundaries:: Or: What I'm Fighting For
 Timo Tiuraniemi
 1.0, 2023-01-XX
-:description: TODO
+:description: As a activist, I fight for a good life for all within planetary boundaries.
 :keywords: Earth breakdown, activism, doughnut economics, planetary boundaries, good life
 
 _See also: link:/blog/preview-imperial-mode-of-living[Imperial Mode of Living (Or: What I'm Fighting Against)]._
 
-Many conversations I've had as an activist over the last few years have led to debates about the fundamental values of our societies.
+Many conversations I've had as an link:/blog/one-year-after[activist over the last few years] have led to debates about the fundamental values of our societies.
 The challenges we face, both with the climate and ecological breakdown and global inequality, are too massive to be addressed without also thinking about what is the primary goal of our societies.
 
 I believe the primary goal of our societies should be (aligned with https://doughnuteconomics.org/about-doughnut-economics[doughnut economics] and a https://goodlife.leeds.ac.uk/[fantastic University of Leeds website] with the same name)
@@ -72,10 +72,10 @@ First, when you are clear on what kind of utopia you are seeking, it makes it ea
 * If a society increases its environmental stress but does not also increase the well-being of its members, it has clearly failed in its main task to stop the collapse of life-supporting processes.
 * If a society creates well-being but does it with many times more environmental stress than nature can sustain, it's disregarding the rights of future generations.
 * If a society drives a species to extinction, it has unequivocally failed in even a rudimentary respect for nonhuman animals.
-* If a society creates well-being but does it by exploiting far away people, it has failed at respecting universal human rights.
+* If a society creates well-being but does it by exploiting far away people, it has failed at respecting basic human rights.
 
 Second, https://journals.sagepub.com/doi/full/10.1177/0146167217748604[utopian thinking motivates societal engagement].
-This is not universal as there certainly are people who are put off by any signs of utopianism.
+This is not universal as there certainly are people who are put off by utopianism.
 However, I argue that for most of the people who are likely to join the fight, a utopian goal is a strength, not a weakness.
 
 === "Impossible"
@@ -104,9 +104,10 @@ It's the democratic deliberative _process_ that creates compromises.
 Citizens must not self-censor their imagination already before the deliberation starts.
 On the contrary, only after you know what you stand for can you even evaluate how big the compromise was.
 
-I find it deeply frustrating that so many smart people even in private conversations are unable to break free of party politics and stand up for universal values.
+It's deeply frustrating that so many smart people lack the courage, even in private conversations, to think beyond party politics.
 I feel this internalisation of party politics is one of the main reasons why "There Is No Alternative" is so strong.
-We need to break free of these self-imposed limits on political imagination.
+
+[#highlighted]#Now is the time to break free of self-imposed limits on political imagination.#
 
 == Conclusion
 

@@ -2,7 +2,7 @@
 = Imperial Mode of Living:: Or: What I'm Fighting Against
 Timo Tiuraniemi
 1.0, 2023-01-XX
-:description: TODO
+:description: As an activist, I fight against the imperial mode of living.
 :keywords: Earth breakdown, activism, imperial mode of living, degrowth, bell hooks
 
 _See also: link:/blog/preview-good-life-for-all-within-planetary-boundaries[A Good Life for All (Or: What I'm Fighting For)]._
@@ -75,7 +75,7 @@ By striving to reduce and eventually stop the reliance on cheap labour, we will 
 
 == Conclusion
 
-Claiming you don't need to oppose anything, most likely means you are working in support of those in power.
+[#highlighted]#Claiming you don't need to oppose anything, likely means you are working in support of those in power.#
 For counter-hegemonic struggles knowing your enemy is critical.
 
 The imperial mode of living must be rejected.
