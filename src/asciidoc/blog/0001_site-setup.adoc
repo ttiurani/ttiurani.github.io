@@ -37,7 +37,7 @@ This is my site and it reflects what I think is important.
 
 Borrowing and extending from the excellent https://small-tech.org/about/#small-technology[small technology principles], the principles relevant for this site are:
 
-* *Share alike*. All source code is licensed with AGPLv3 and all text content with CC BY-SA 4.0.
+* *Share alike*. All source code is licensed with AGPLv3 and all text content with CC BY-NC-SA 4.0.
 * *Private by default*. No tracking and no storing nor logging of any personally identifiable information.
 * *Non-commercial*. There is no ulterior motive to make a profit. What you see is all there is.
 * *Inclusive*. Accessibility is not an afterthoughtfootnote:[I am not proficient at accessibility, but I've tried my best. Please let me know of any accessibility issues on this site, and I'll make time to fix them!]. Low-power devices need to be supported.

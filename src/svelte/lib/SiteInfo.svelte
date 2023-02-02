@@ -4,8 +4,8 @@
             >Timo Tiuraniemi</a
         >
         is licensed under a
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US"
-            >Creative Commons Attribution-ShareAlike 4.0 International License</a
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            >Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a
         >.</small
     >
 </div>
