@@ -9,11 +9,6 @@
       - name: Upgrade all debian packages
         apt: upgrade=dist force_apt_get=yes
 
-      - name: Upgrade virtualenv
-        pip:
-            name: virtualenv
-            extra_args: --upgrade
-
       - name: Check if a reboot is needed
         register: reboot_required_file
         stat: path=/var/run/reboot-required get_md5=no
