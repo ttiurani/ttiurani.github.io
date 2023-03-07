@@ -18,7 +18,7 @@
             rsync_opts:
                 - '--chown=root:root'
       - name: Bust extendedmind server cache
-        ansible.builtin.command: /opt/extendedmind_server-{{ extendedmind_server_version }} bust-cache
+        ansible.builtin.command: /opt/extendedmind_server-{{ extendedmind_server_version }} --admin-socket-file /var/run/extendedmind_server.sock bust-cache
       - name: Copy cache warm script
         ansible.builtin.copy:
             src: ../dist/scripts/warm-cache.sh
