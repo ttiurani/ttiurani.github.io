@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 ExecStart=/opt/extendedmind_server \
 --admin-socket-file /var/run/extendedmind_server.sock \
-start
+start \
 --data-root-dir /srv/peermerge/content \
 --static-root-dir /srv/www/content \
 --http-port 80 \
