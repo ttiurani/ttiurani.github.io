@@ -5,7 +5,9 @@ Wants=network-online.target
 
 [Service]
 ExecStart=/opt/extendedmind_server \
---data-root-dir /srv/hyper/content \
+--admin-socket-file /var/run/extendedmind_server.sock \
+start
+--data-root-dir /srv/peermerge/content \
 --static-root-dir /srv/www/content \
 --http-port 80 \
 --https-port 443 \
@@ -23,6 +25,7 @@ ExecStart=/opt/extendedmind_server \
 --hsts-preload true \
 --cache-ttl-sec 31556952 \
 --cache-tti-sec 31556952 \
+--cache-max-size 10000000 \
 --inline-css-path /blog/* \
 --inline-css-skip-referer https://tiuraniemi.org* \
 --immutable-path /_app/immutable/*.css \

@@ -29,9 +29,9 @@
         file:
             path: /srv/gemini/content
             state: directory
-      - name: Create hypercore-protocol directory
+      - name: Create peermerge directory
         file:
-            path: /srv/hyper/content
+            path: /srv/peermerge/content
             state: directory
       - name: Create backup directory
         file:
