@@ -8,6 +8,8 @@ Timo Tiuraniemi
 .I should probably make a case for the board. My son chose the Lego figure.
 image::/images/raspberry_pi.jpg[The Raspberry Pi board behind a router, next to a lot of chords. Sitting on top of it a Lego mini figure.]
 
+_UPDATE 2023-03-07: I switched the Rust web framework from tide to axum_.
+
 Running a website on a Raspberry Pi isn't anything new.
 There are dozens of tutorials on how to do it, and thousands of sites exactly like this.
 
@@ -126,7 +128,7 @@ Unfortunately, I didn't yet figure out a way to wire up Asciidoctor.js to Svelte
 
 === HTTP and Gemini Servers
 
-For HTTP I decided to go with the https://github.com/http-rs/tide[tide web framework for Rust].
+For HTTP I decided to go with the https://github.com/tokio-rs/axum[axum web framework for Rust].
 Now I can almost hear some of you thinking I should have just installed nginx/acme.sh or [insert your favourite web server here] and be done with it, but bear with me.
 I had my reasons.
 
@@ -134,9 +136,9 @@ First, I have many other plans for the server than just serving static files (st
 Second, I wanted an in-memory cache which is smart enough to inline CSS for cold loads, but not internal navigation (this has to do with how SvelteKit works).
 Third, I wanted to get better at Rust.
 
-Because tide is rather bare-bones, I had to write https://github.com/extendedmind/extendedmind/blob/main/server/src/http/html.rs[my own static file serving] to be able to serve Svelte files, return the appropriate headers and inline CSS for blog posts.
+Because of my non-standard needs I had to write https://github.com/extendedmind/extendedmind/blob/main/server/src/http/html.rs[my own static file serving] to be able to serve Svelte files, return the appropriate headers and inline CSS for blog posts.
 
-ACME support came out of the box with https://github.com/http-rs/tide-acme[tide-acme] and compression from https://github.com/Fishrock123/tide-compress[tide-compress].
+ACME support came out of the box with https://github.com/FlorianUekermann/rustls-acme[rustls-acme] and compression from https://github.com/tower-rs/tower-http[tower-http].
 Finally, I made my own small HTTP to HTTPs redirect endpoint and implemented support for HSTS.
 
 For Gemini, I chose the https://github.com/mbrubeck/agate[Agate server].
@@ -220,7 +222,7 @@ Javascript bundles are huge, there's unnecessary CSS, custom fonts, videos and u
 That's why I decided that reading my blog post must be possible with just a TLS handshake followed by one HTTP/1.1 GET request.
 
 Svelte is great in that if I don't use javascript in some paths, there is also no javascript in the generated static files for those paths.
-Because I'm expecting almost all of the visits to be to a single blog post, inlining CSS makes sense, especially given that tide doesn't support HTTP/2.
+Because I'm expecting almost all of the visits to be to a single blog post, inlining CSS makes sense.
 I don't plan on making it a habit of using images in my blog posts, but decided to inline `avif` files as Base64 if they are small enough.
 As a finishing touch, I use an empty image as a faviconfootnote:[I spent a few hours in Inkscape making a logo from my initials, and as I was showing it to my friends, I noticed the logo was WAY too close to a swastika. Oops.].
 
@@ -230,7 +232,7 @@ File IO is always the bottleneck, right?
 Wrong.
 
 Turns out brotli compression on the Pi takes over half a second per request.
-For this reason, I changed the file system cache to a https://github.com/extendedmind/extendedmind/blob/main/server/src/http/cache.rs[cache middleware for tide], so that I cache the entire compressed HTTP response.
+For this reason, I changed the file system cache to a https://github.com/extendedmind/extendedmind/blob/main/server/src/http/cache.rs[cache middleware for axum], so that I cache the entire compressed HTTP response.
 
 Because that compression penalty was so high, I felt it had a significant negative impact on the site, which meant I didn't want to cache only based on time-to-live, e.g. for five minutes.
 That's why I now cache permanently and implemented a https://github.com/extendedmind/extendedmind/blob/main/server/src/admin.rs[listener for a unix socket that does cache busting on demand], which I call with Ansible when the site updates.
