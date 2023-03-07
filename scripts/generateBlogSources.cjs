@@ -376,7 +376,7 @@ const getFullTitle = (metadata) => {
     let warmCacheScriptContent = '#!/bin/bash\n';
     warmCacheScriptContent += 'set -euo pipefail\n';
     const curlCommandPrefix =
-        "curl --fail-with-body -H 'Accept-Encoding: br' --output /dev/null --silent --show-error https://tiuraniemi.org";
+        "curl --fail-with-body -H 'Accept-Encoding: gzip, deflate, br' --output /dev/null --silent --show-error https://tiuraniemi.org";
     warmCacheScriptContent += `${curlCommandPrefix}\n`;
     warmCacheScriptContent += `${curlCommandPrefix}/work\n`;
     warmCacheScriptContent += `${curlCommandPrefix}/stats\n`;
