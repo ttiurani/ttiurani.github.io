@@ -192,8 +192,16 @@ const getFullTitle = (metadata) => {
         srcDir + '/svelte/routes/_blog_post_template.svelte',
         'utf8'
     );
+    const svelteBlogPostTsTemplate = await fs.readFile(
+        srcDir + '/svelte/routes/_blog_post_template.ts',
+        'utf8'
+    );
     const svelteBlogIndexTemplate = await fs.readFile(
         srcDir + '/svelte/routes/_blog_index_template.svelte',
+        'utf8'
+    );
+    const svelteBlogIndexTsTemplate = await fs.readFile(
+        srcDir + '/svelte/routes/_blog_index_template.ts',
         'utf8'
     );
 
@@ -210,18 +218,20 @@ const getFullTitle = (metadata) => {
 
     // Generate svelte blog posts
     const svelteRoutesDir = srcDir + '/svelte/routes';
-    if (!fsSync.existsSync(svelteRoutesDir + '/blog')) {
-        await fs.mkdir(svelteRoutesDir + '/blog', { recursive: true });
+    for (const partial of htmlPartialsContents)  {
+        if (!fsSync.existsSync(svelteRoutesDir + partial.metadata.path)) {
+            await fs.mkdir(svelteRoutesDir + partial.metadata.path, { recursive: true });
+        }
     }
     const svelteBlogPostPromises = htmlPartialsContents.map(async (partial) => {
-        let fileContent = svelteBlogPostTemplate;
+        let svelteFileContent = svelteBlogPostTemplate;
 
         let subtitleHtml = '';
         if (partial.metadata.docsubtitle) {
            subtitleHtml =
             `<p class="subtitle" aria-roledescription="subtitle">${partial.metadata.docsubtitle}</p>`
         }
-        fileContent = fileContent
+        svelteFileContent = svelteFileContent
             .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
             .replaceAll(/__BLOG_POST_SUBTITLE_HTML_/g, subtitleHtml)
             .replaceAll(/__BLOG_POST_FULL_TITLE__/g, getFullTitle(partial.metadata))
@@ -235,19 +245,23 @@ const getFullTitle = (metadata) => {
                 'https://tiuraniemi.org' + partial.metadata.ogImage
             );
 
-        const fileContentLines = fileContent.split(/\n/);
-        let finalFileContent = '';
-        for (const fileContentLine of fileContentLines) {
-            if (fileContentLine.trim().startsWith('<img')) {
-                finalFileContent +=
-                    (await createPictureTagFromImageTag(fileContentLine, partial.metadata.images)) +
+        const svelteFileContentLines = svelteFileContent.split(/\n/);
+        let finalSvelteFileContent = '';
+        for (const svelteFileContentLine of svelteFileContentLines) {
+            if (svelteFileContentLine.trim().startsWith('<img')) {
+                finalSvelteFileContent +=
+                    (await createPictureTagFromImageTag(svelteFileContentLine, partial.metadata.images)) +
                     '\n';
             } else {
-                finalFileContent += fileContentLine + '\n';
+                finalSvelteFileContent += svelteFileContentLine + '\n';
             }
         }
-        const filePath = svelteRoutesDir + partial.metadata.path + '.svelte';
-        return await fs.writeFile(filePath, finalFileContent);
+        const svelteFilePath = svelteRoutesDir + partial.metadata.path + '/+page.svelte';
+        const tsFilePath = svelteRoutesDir + partial.metadata.path + '/+page.ts';
+        return await Promise.all([
+            fs.writeFile(svelteFilePath, finalSvelteFileContent),
+            fs.writeFile(tsFilePath, svelteBlogPostTsTemplate),
+        ]);
     });
     const svelteBlogPostResults = await Promise.all(svelteBlogPostPromises);
 
@@ -275,7 +289,8 @@ const getFullTitle = (metadata) => {
         }
     }
     svelteBlogIndex += svelteBlogIndexPostfix;
-    await fs.writeFile(svelteRoutesDir + '/blog/index.svelte', svelteBlogIndex);
+    await fs.writeFile(svelteRoutesDir + '/blog/+page.svelte', svelteBlogIndex);
+    await fs.writeFile(svelteRoutesDir + '/blog/+page.ts', svelteBlogIndexTsTemplate);
 
     // Generate Atom feed
     const atomFeedTemplate = await fs.readFile(srcDir + '/atom/feed.atom.tpl', 'utf8');

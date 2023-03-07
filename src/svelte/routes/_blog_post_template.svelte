@@ -1,9 +1,8 @@
 <script context="module" lang="ts">
     import BlogPost from '$lib/BlogPost.svelte';
-    import { browser, dev } from '$app/env';
+    import { browser, dev } from '$app/environment';
     export const hydrate = dev;
     export const router = browser;
-    export const prerender = true;
 </script>
 
 <svelte:head>

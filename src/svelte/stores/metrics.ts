@@ -1,5 +1,5 @@
 import type { Readable } from 'svelte/store';
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import { page } from '$app/stores';
 import { get, readable } from 'svelte/store';
 
@@ -69,7 +69,7 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
             return () => clearInterval(metricsApiInterval);
         } else {
             set([]);
-            return () => {};
+            return () => { };
         }
     }
 );

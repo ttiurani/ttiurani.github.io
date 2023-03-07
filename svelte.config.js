@@ -1,37 +1,31 @@
 import adapter from '@sveltejs/adapter-static';
-import preprocess from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    preprocess: preprocess(),
+	preprocess: vitePreprocess(),
 
     kit: {
         files: {
             assets: 'static',
-            hooks: 'src/svelte/hooks',
+            hooks:  {
+                client: 'src/svelte/hooks.client',
+                server: 'src/svelte/hooks.server'
+            },
             lib: 'src/svelte/lib',
             params: 'src/svelte/params',
             routes: 'src/svelte/routes',
             serviceWorker: 'src/svelte/service-worker',
-            template: 'src/svelte/app.html',
+            appTemplate: 'src/svelte/app.html',
+            errorTemplate: 'src/svelte/error.html',
         },
         adapter: adapter({
             pages: 'dist/html',
             assets: 'dist/html',
             fallback: null,
             precompress: false,
+            strict: true,
         }),
-        prerender: {
-            default: true,
-        },
-        vite: {
-            server: {
-                fs: {
-                    // Allow serving files from one level up to the project root
-                    allow: ['..'],
-                },
-            },
-        },
     },
 };
 

@@ -1,7 +1,7 @@
 <script lang="ts">
     import Hero from '$lib/Hero.svelte';
     import Content from '$lib/Content.svelte';
-    import { browser, dev } from '$app/env';
+    import { browser, dev } from '$app/environment';
     export const hydrate = dev;
     export const router = browser;
 
