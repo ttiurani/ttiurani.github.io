@@ -11,17 +11,20 @@
         <meta name="color-scheme" content="light dark" />
         <meta property="og:site_name" content="tiuraniemi.org" />
         <meta property="og:locale" content="en_GB" />
-        <meta http-equiv="content-security-policy" content=""><title>Timo Tiuraniemi</title><meta name="description" content="Personal home page of Timo Tiuraniemi" data-svelte="svelte-fe0h3k">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-60cdd946.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/index.svelte-44052048.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/Hero-017aaf67.css">
-	<link rel="modulepreload" href="/_app/immutable/start-b3bfc3f9.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-79298705.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-bc90cce2.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-c079a815.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/stores-bf5e93be.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/index.svelte-e9d8c7c0.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/Hero-969e66c6.js">
+        <meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout.3ffac6ac.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page.cac71847.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/Content.fae460e4.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.d67c6c4f.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.7f717b3c.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d0dcf706.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.838c7dcc.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.svelte.900dc207.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.568552a9.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.c7b8b950.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Content.4adadccf.js"><title>Timo Tiuraniemi</title><!-- HEAD_svelte-fe0h3k_START --><meta name="description" content="Personal home page of Timo Tiuraniemi"><!-- HEAD_svelte-fe0h3k_END -->
     </head>
     <body>
         <div id="svelte">
@@ -82,23 +85,30 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="1m9m32k">
-		import { start } from "/_app/immutable/start-b3bfc3f9.js";
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1m9m32k"]').parentNode,
-			paths: {"base":"","assets":""},
-			session: {},
-			route: true,
-			spa: false,
-			trailing_slash: "never",
-			hydrate: {
-				status: 200,
-				error: null,
-				nodes: [0, 12],
-				params: {},
-				routeId: ""
-			}
-		});
-	</script></div>
+			
+			<script>
+				{
+					__sveltekit_14h6tln = {
+						env: {},
+						base: new URL(".", location).pathname.slice(0, -1),
+						element: document.currentScript.parentElement
+					};
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.d67c6c4f.js"),
+						import("./_app/immutable/entry/app.838c7dcc.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_14h6tln.element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
     </body>
 </html>
