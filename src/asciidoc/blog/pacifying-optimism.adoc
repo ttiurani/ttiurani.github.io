@@ -1,0 +1,117 @@
+= Beware of Pacifying Optimism
+Timo Tiuraniemi
+1.0, 2023-04-XX
+:description: TODO
+:keywords: Earth breakdown, optimism
+
+I started thinking about the different ways optimism is used in the climate change discussion after reading the excellent https://aeon.co/essays/in-these-dark-times-the-virtue-we-need-is-hopeful-pessimism[essay by Mara van der Lugt advocating for hopeful pessimism].
+I believe the problems with (climate) optimism run deeper than https://bigthink.com/progress/pessimism-is-a-barrier-to-progress/[that people mistake optimism with brute optimism].
+
+In this post I will first introduce two dimensions of optimism and then apply them to the discussion about Earth breakdown.
+
+*NB*: I mean here _optimism about something_ rather than optimism as a general approach on life.
+
+## Conviction Required
+
+We should first distinguish between dogmatic or *brute optimism* and evidence-based or *grounded optimism*.
+The difference is about the conviction that's required for a good outcome.
+
+Brute optimism is the view that things are going work out almost no matter what.
+This view requires strong conviction to be able to stand against evidence pointing otherwise.
+
+In contrast grounded optimism relies on weaker conviction or no conviction at all.
+Grounded optimism takes into account the reality of the situation, and suggests a positive outcome will likely happen because that's what the relevant evidence suggests.
+This is a similar view to https://en.wikipedia.org/wiki/Meliorism[meliorism].
+
+## Effort Required
+
+I suggest that the second dimension to optimism should be the effort that's required of the audience for a positive outcome.
+Whenever we read an optimistic text or hear an optimistic address, it should also be recognized as https://en.wikipedia.org/wiki/Speech_act[speech act].
+To be optimistic about an outcome is not just about passing information, but always (intentionally or not) affects the audience.
+
+When the optimism of the speaker demands that the listener begins to act, I call it *empowering optimism*.
+When the effect on the hearer is subduing or to calming, I call it *pacifying optimism*.
+
+## Case: Earth Breakdown
+
+Consider now optimism about humanity's ability to stop and reverse the climate and ecological breakdown, as discussed in the Global North.
+
+ifeval::["{backend}" == "html5"]
+
++++
+<span>TODO: Picture</span>
++++
+endif::[]
+ifeval::["{backend}" == "gemini"]
+....
+     Conviction
+     required
+         ^  
+Brute    |  Climate              Activist
+optimism |  denial               burnout
+         |
+         |  Climate
+         |  delay
+         |
+         |
+         |
+Grounded |                   Climate
+optimism |                   justice
+         ---------------------------------> Effort
+            Pacifying        Empowering     required
+            optimism         optimism
+....
+endif::[]
+
+First, brute empowering optimism about stopping Earth breakdown leads very easily to *activist burnout*.
+This is common especially with new activists who give everything to the fight and believe in fast and big changes.
+When these changes fail to happen, it can be very hard to recover from emotionally.
+
+Second, grounded empowering optimism about stopping Earth breakdown is what *climate justice* can communicate.
+It is grounded in the sense of both taking into account the scale of the systemic changes needed, and the history of successful political movements.
+It is empowering because based on this evidence, a positive outcome requires significant efforts from the audience.
+Optimism in climate justice relies on mass movements of ordinary people demanding changes.
+
+Third, based on the evidence we have in 2023, there is no grounded pacifying optimism about stopping Earth breakdown.
+Unlike in the 1990s, if you take into account the current evidence, you can't communicate a "vote green and wait" message and claim to be grounded.
+That ship has sailed, there are only drastic changes ahead.
+
+Lastly, and most importantly, the majority of the hopeful discussion on stopping Earth breakdown is varying degrees of brute pacifying optimism.
+
+*Climate denial* is brute pacifying optimism in the purest form.
+Denialists communicate a "don't worry, things are going to work out" message ignoring all of the evidence.
+Their optimism rests on pure conviction.
+It can for example be conviction that they smarter than all the experts, that it's impossible for humans to harm Earth, or that because experts were wrong before about something and they are wrong now.
+
+Because are getting better at recognizing flat out denialism, many of the same people have switched to *climate delay*.
+Climate delay changes tactics in that they recognize the severity of the climate crisis, but then pick evidence that supports a pacifying message.
+The evidence can be evidence about good progress in only loosely related areas, or weak evidence of slow progress.
+Because of this kind of partial evidence, this is optimism that requires less pure conviction, but still can not work without it.
+Compared to denialism, climate delay still requires for example conviction on "the invisible hand of the market", "Progress-with-a-capital-P", or the resourcefulness of engineers.
+
+Both climate denial and climate delay messaging is pacifying because it demands (almost) nothing from the audience.
+The underlying assumption is that (we) smart people can fix this, and all you need to do is vote for less restrictions on smart people.
+
+Brute pacifying optimism about stopping Earth Breakdown is also profoundly insulting and paternalistic.
+It is taking the position of the adult in the conversation and giving the listener a figurative pacifier so that they stop talking.
+
+It's no wonder climate delay is most common with politicians, the super rich, or people in organisations funded by the previous two.
+It's almost always about people benefiting from the destruction of the status quo trying to maintain their power.
+
+## Conclusion
+
+Pacifying optimism isn't always unfounded.
+If a house is on fire but everyone is safe and the fire brigade is on their way, you should communicate grounded pacifying optimism.
+I also understand a parent who resorts to brute pacifying optimism to calm their child in a disaster.
+
+However, for a crisis like climate change, where there is overwhelming evidence that status quo is going to lead to a disaster, pacifying optimism is extremely dangerous.
+
+This can not only come out very unemphatetic to the suffering of of others.
+Believing that things are going to work out can also lead to terrible mistakes, when stopping is not considered.
+
+I don't believe it's a coindicence that these kinds of optimistic speech acts come from people wielding a lot of power or from organizations getting funded by the same poople.
+
+The effect of optimism is as important as its strength.
+[#highlighted]#The effect of optimism is as important to pay attention to as its strength.#
+The effect of an optimistic speech act is as important as the strength of the optimism.
+The effect of an optimistic speech act is as important to pay attention to as the strength of the optimism.
