@@ -76,6 +76,10 @@ p.subtitle {
     font-size: 1.5em;
 }
 
+.smallish {
+    font-size: calc(0.7rem + 0.5vw);
+}
+
 small {
     font-size: calc(0.5rem + 0.5vw);
 }
@@ -115,6 +119,9 @@ hr {
     body {
         font-size: 1.6rem;
     }
+    .smallish {
+        font-size: 1.2rem;
+    }
     small {
         font-size: 1rem;
     }
@@ -124,6 +131,9 @@ hr {
 @media (max-width: 400px) {
     body {
         font-size: 1rem;
+    }
+    .smallish {
+        font-size: 0.8rem;
     }
     small {
         font-size: 0.625rem;
