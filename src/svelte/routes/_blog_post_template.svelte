@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
     import BlogPost from '$lib/BlogPost.svelte';
     import { browser, dev } from '$app/environment';
+    import QuadrantChart from '$lib/QuadrantChart.svelte';
     export const hydrate = dev;
     export const router = browser;
 </script>
