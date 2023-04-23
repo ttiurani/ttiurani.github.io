@@ -37,8 +37,8 @@ This is why I suggest that the second dimension of optimism is the effort that's
 Whenever we read or hear an optimistic statement, it should also be recognized as https://en.wikipedia.org/wiki/Speech_act[speech act].
 Saying you're optimistic about an outcome is not just about passing information, but the act itself always (intentionally or not) affects the audience.
 
-When the optimism of the speaker demands that the listener begins to act, I call it *empowering optimism*.
-When the effect on the hearer is subduing or calming, I call it *pacifying optimism*.
+When the optimism of the speaker demands that the audience begins to act, I call it *empowering optimism*.
+When the effect on the audience is subduing or calming, I call it *pacifying optimism*.
 
 ## Four Quadrants of Optimism
 
