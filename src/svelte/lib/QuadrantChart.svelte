@@ -241,25 +241,4 @@
   width: 100%;
   font-size: var(--content-point-font-size);
 }
-
-.quadrant-chart__point--3-3 {
-  grid-column: 3 / span 1;
-  grid-row: 3 / span 1;
-}
-
-.quadrant-chart__point--3-6 {
-  grid-column: 3 / span 1;
-  grid-row: 6 / span 1;
-}
-
-.quadrant-chart__point--13-3 {
-  grid-column: 13 / span 1;
-  grid-row: 3 / span 1;
-}
-
-.quadrant-chart__point--13-15 {
-  grid-column: 13 / span 1;
-  grid-row: 14 / span 1;
-}
-
 </style>

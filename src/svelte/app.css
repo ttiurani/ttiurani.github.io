@@ -109,6 +109,10 @@ hr {
     display: none;
 }
 
+.footnote {
+    padding-bottom: 0.5em;
+}
+
 .footnote,
 .entry-meta {
     font-size: 75%;
