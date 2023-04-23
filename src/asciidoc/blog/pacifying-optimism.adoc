@@ -6,9 +6,9 @@ Timo Tiuraniemi
 
 :fn-hopeful-pessimism: pass:c,q[footnote:hopeful-pessimism[Mara van der Lugt makes an excellent case for https://aeon.co/essays/in-these-dark-times-the-virtue-we-need-is-hopeful-pessimism[hopeful pessimism as an alternative to optimism].]]
 I have always considered myself a careful optimist.
-I believe emphasizing the positive aspects is one, but not only{fn-hopeful-pessimism}, way to cope with adversities and increase your chances to make a difference.
+I believe emphasizing the positive aspects is a good, but not only{fn-hopeful-pessimism}, way to cope with adversities and increase your chances to make a difference.
 
-However, the more I've been involved with environmental activism the more uneasy I've become about many common optimist statements.
+However, the more I've been involved with environmental activism the more uneasy I've become about many common optimistic statements.
 I began thinking about this uneasiness a year ago, but even after a lot of effort, I couldn't quite make sense of it.
 Then recently I decided to come back to this problem, and suddenly it all made sense.
 
@@ -76,11 +76,10 @@ Conviction
 endif::[]
 
 Depending on what the optimism is about, each of the quadrants will have different characteristics.
-To evaluate the usefulness of this double-dichotomy, let's try it on a concrete case.
 
 ## Case: Earth Breakdown
 
-Consider optimism about humanity's ability to stop and reverse the climate and ecological breakdown, as it is being discussed especially in the Global North.
+Consider now optimism about humanity's ability to stop and reverse the climate and ecological breakdown, as it is being discussed especially in the Global North.
 
 ifeval::["{backend}" == "html5"]
 
@@ -121,7 +120,7 @@ endif::[]
 
 Starting from the top right quadrant, brute empowering optimism about stopping Earth breakdown leads very easily to *activist burnout*.
 This is common especially with new activists who give everything to the fight and believe in fast and big changes.
-When these changes fail to happen, it can be very hard to recover from emotionally.
+When these changes fail to happen, it can be very hard to recover emotionally.
 
 :fn-ipcc-system-change: pass:c,q[footnote:ipcc-system-change[Or as https://www.ipcc.ch/report/ar6/wg2/about/frequently-asked-questions/keyfaq6/[IPCC 6th Assessment Report FAQ] puts it: "Targeting a climate resilient, sustainable world involves fundamental changes to how society functions, including changes to underlying values, worldviews, ideologies, social structures, political and economic systems, and power relationships."]]
 In the bottom right quadrant, grounded empowering optimism about stopping Earth breakdown is what *climate justice* can communicate.
@@ -130,7 +129,7 @@ It is empowering because based on this evidence, a positive outcome requires sig
 Optimism in climate justice relies on mass movements of everyday people demanding changes.
 
 :fn-ipcc-brief-window: pass:c,q[footnote:ipcc-brief-window["Any further delay in concerted global action will miss a brief and rapidly closing window to secure a liveable future." – https://www.ipcc.ch/report/ar6/wg2/resources/press/press-release/[IPCC 6th Assessment Report press release]]]
-Based on the evidence we have in 2023, the bottom right quadrant is empty.
+Based on the evidence we have in 2023, the bottom left quadrant is empty.
 There is no grounded pacifying optimism about stopping Earth breakdown.
 Unlike in the 1990s, if you take into account the current evidence, you can't communicate a "vote green and wait" message and claim to be grounded.{fn-ipcc-brief-window}
 That ship has sailed, there are only drastic changes ahead.
@@ -150,7 +149,7 @@ Because some evidence is given, this is optimism that requires less conviction, 
 Compared to climate denial, climate delay requires conviction on for example "the invisible hand of the market", "progress with a capital P", or the https://www.leolinne.com/wp-content/uploads/2020/12/20200812_DiscoursesClimateDelay_004_EN.jpg[omnipotency of engineers].
 
 Both climate denial and climate delay messaging is pacifying because it demands (almost) nothing from the audience.
-The underlying message often reveals as "we smart people can fix this, and all you need to do is vote for less restrictions on us".
+The underlying message often can be described as "we smart people can fix this, and all you need to do is vote for less restrictions on us".
 
 Brute pacifying optimism about stopping Earth breakdown is also profoundly insulting and paternalistic.
 It is taking the position of the adult in the conversation and giving the listener a figurative pacifier so that they stop shouting.
@@ -163,7 +162,7 @@ It's essentially used by people who benefit from the status quo to try to mainta
 Next time you hear or read someone saying they're optimistic, make sure they aren't actually trying to give you a pacifier to lull you back to sleep when the house is on fire.
 
 That's not to say pacifying optimism is always unfounded.
-If a person is suffering from severe stomach pain but the parademics are on their way, you should communicate grounded pacifying optimism instead of trying to empower bystanders.
+If for example a person is suffering from severe stomach pain but the parademics are on their way, you should communicate grounded pacifying optimism instead of trying to empower bystanders.
 As a parent, I also understand resorting to brute pacifying optimism to calm a child.
 
 But for a crisis like the climate and ecological breakdown, where there is overwhelming evidence that status quo is going to lead to a disaster, pacifying optimism is life-threatening.
