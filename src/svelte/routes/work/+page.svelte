@@ -43,8 +43,10 @@
                     </div>
                 </div>
                 <div class="quadrant-chart__content">
-                    <div class="quadrant-chart__point quadrant-chart__point--5-3"><span>Climate denial</span></div>
-                    <div class="quadrant-chart__point quadrant-chart__point--5-6"><span>Climate delay</span></div>
+                    <div class="quadrant-chart__vertical-divider"/>
+                    <div class="quadrant-chart__horizontal-divider"/>
+                    <div class="quadrant-chart__point quadrant-chart__point--3-3"><span>Climate denial</span></div>
+                    <div class="quadrant-chart__point quadrant-chart__point--3-6"><span>Climate delay</span></div>
                     <div class="quadrant-chart__point quadrant-chart__point--13-3"><span>Activist burnout</span></div>
                     <div class="quadrant-chart__point quadrant-chart__point--13-15"><span>Climate justice</span></div>
                 </div>
@@ -53,10 +55,10 @@
                     <span class="smallish">Effort required</span>
                 </div>
                 <div class="quadrant-chart__content-footer">
-                    <div class="quadrant-chart__content-footer--5">
+                    <div class="quadrant-chart__content-footer-label quadrant-chart__content-footer-label--4">
                         <span class="smallish">Pacifying optimism</span>
                     </div>
-                    <div class="quadrant-chart__content-footer--13">
+                    <div class="quadrant-chart__content-footer-label quadrant-chart__content-footer-label--12">
                         <span class="smallish">Empowering optimism</span>
                     </div>
                 </div>
@@ -70,7 +72,8 @@
 :root {
     --left-sidebar-column: minmax(4%, 1em);
     --container-content-cell: minmax(4%, 0.85em);
-    --content-cell: minmax(5%, 0.85em);
+    --content-cell: minmax(6,2%, 0.85em);
+    --footer-column: minmax(6%, 0.85em);
     --footer-row: minmax(4%, 1em);
     --right-label: minmax(4%, 1em);
     --x-label-padding-right: 0.7em;
@@ -79,7 +82,8 @@
 @media (min-width: 35rem) {
     :root {
         --container-content-cell: minmax(5%, 1em);
-        --content-cell: minmax(6%, 1em);
+        --content-cell: minmax(6,2%, 1em);
+        --footer-column: minmax(6,2%, 1em);
         --x-label-padding-right: 0.5em;
         --content-point-font-size: inherit;
     }
@@ -102,6 +106,8 @@
 .quadrant-chart__y-label {
   grid-column: 2 / span 3;
   grid-row: 1 / span 1;
+  line-height: 80%;
+  padding-bottom: 0.5em;
 }
 
 .quadrant-chart__y-arrow {
@@ -198,6 +204,7 @@
 .quadrant-chart__x-label {
   grid-column: 20 / span 1;
   grid-row: 18 / span 2;
+  line-height: 80%;
   padding-left: var(--x-label-padding-right)
 }
 
@@ -207,20 +214,25 @@
   grid-column: 3 / span 16;
   grid-row: 19 / span 1;
   display: grid;
-  grid-template-columns: repeat(16, var(--content-cell));
+  grid-template-columns: repeat(16, var(--footer-column));
   grid-template-rows: var(--footer-row);
+  position: relative;
 }
 
-.quadrant-chart__content-footer--5 {
-  grid-column: 5 / span 2;
+.quadrant-chart__content-footer-label:before {
+  content: '';
+  display: block;
+}
+
+.quadrant-chart__content-footer-label--4 {
+  grid-column: 4 / span 1;
   grid-row: 1 / span 1;
 }
 
-.quadrant-chart__content-footer--13 {
-  grid-column: 13 / span 2;
+.quadrant-chart__content-footer-label--12 {
+  grid-column: 12 / span 1;
   grid-row: 1 / span 1;
 }
- 
  
 .quadrant-chart__content {
   grid-column: 3 / span 16;
@@ -232,6 +244,18 @@
   display: grid;
   grid-template-columns: repeat(16, var(--content-cell));
   grid-template-rows: repeat(16, var(--content-cell));
+}
+
+.quadrant-chart__vertical-divider {
+  grid-column: 8 / span 1;
+  grid-row: 1 / span 16;
+  border-right: 1px dashed;
+}
+
+.quadrant-chart__horizontal-divider {
+  grid-column: 1 / span 16;
+  grid-row: 8 / span 1;
+  border-bottom: 1px dashed;
 }
 
 .quadrant-chart__point {
@@ -252,13 +276,13 @@
   font-size: var(--content-point-font-size);
 }
 
-.quadrant-chart__point--5-3 {
-  grid-column: 5 / span 1;
+.quadrant-chart__point--3-3 {
+  grid-column: 3 / span 1;
   grid-row: 3 / span 1;
 }
 
-.quadrant-chart__point--5-6 {
-  grid-column: 5 / span 1;
+.quadrant-chart__point--3-6 {
+  grid-column: 3 / span 1;
   grid-row: 6 / span 1;
 }
 
