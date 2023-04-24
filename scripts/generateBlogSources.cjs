@@ -46,7 +46,7 @@ const getFullTitle = (metadata) => {
     } else {
         return metadata.doctitle;
     }
-}
+};
 
 (async () => {
     // Read all of the blog metadata files, they are in order by name
@@ -218,7 +218,7 @@ const getFullTitle = (metadata) => {
 
     // Generate svelte blog posts
     const svelteRoutesDir = srcDir + '/svelte/routes';
-    for (const partial of htmlPartialsContents)  {
+    for (const partial of htmlPartialsContents) {
         if (!fsSync.existsSync(svelteRoutesDir + partial.metadata.path)) {
             await fs.mkdir(svelteRoutesDir + partial.metadata.path, { recursive: true });
         }
@@ -228,8 +228,7 @@ const getFullTitle = (metadata) => {
 
         let subtitleHtml = '';
         if (partial.metadata.docsubtitle) {
-           subtitleHtml =
-            `<p class="subtitle" aria-roledescription="subtitle">${partial.metadata.docsubtitle}</p>`
+            subtitleHtml = `<p class="subtitle" aria-roledescription="subtitle">${partial.metadata.docsubtitle}</p>`;
         }
         svelteFileContent = svelteFileContent
             .replaceAll(/__BLOG_POST_TITLE__/g, partial.metadata.doctitle)
@@ -250,8 +249,10 @@ const getFullTitle = (metadata) => {
         for (const svelteFileContentLine of svelteFileContentLines) {
             if (svelteFileContentLine.trim().startsWith('<img')) {
                 finalSvelteFileContent +=
-                    (await createPictureTagFromImageTag(svelteFileContentLine, partial.metadata.images)) +
-                    '\n';
+                    (await createPictureTagFromImageTag(
+                        svelteFileContentLine,
+                        partial.metadata.images
+                    )) + '\n';
             } else {
                 finalSvelteFileContent += svelteFileContentLine + '\n';
             }

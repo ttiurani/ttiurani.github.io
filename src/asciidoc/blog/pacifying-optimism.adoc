@@ -51,10 +51,10 @@ ifeval::["{backend}" == "html5"]
     yAxisLabel={"Conviction required"}
     xAxisLabel={"Effort required"}
     points={[
-        {text: "Brute pacifying", xIndex: 4, yIndex: 4},
-        {text: "Brute empowering", xIndex: 12, yIndex: 4},
-        {text: "Grounded pacifying", xIndex: 4, yIndex: 12},
-        {text: "Grounded empowering", xIndex: 12, yIndex: 12},
+        {text: "Brute pacifying", xIndex: 3, yIndex: 4},
+        {text: "Brute empowering", xIndex: 11, yIndex: 4},
+        {text: "Grounded pacifying", xIndex: 3, yIndex: 12},
+        {text: "Grounded empowering", xIndex: 11, yIndex: 12},
     ]}
 />
 +++
@@ -85,15 +85,21 @@ ifeval::["{backend}" == "html5"]
 
 +++
 <QuadrantChart
-    yAxisLabel={"Conviction required"}
-    yAxisDescriptions={[{text: "Brute optimism", index: 4}, {text: "Grounded optimism", index: 12}]}
-    xAxisLabel={"Effort required"}
-    xAxisDescriptions={[{text: "Pacifying optimism", index: 4}, {text: "Empowering optimism", index: 12}]}
+    yAxisLabel={'Conviction required'}
+    yAxisDescriptions={[
+        { text: 'Brute\noptimism', index: 4 },
+        { text: 'Grounded\noptimism', index: 12 },
+    ]}
+    xAxisLabel={'Effort required'}
+    xAxisDescriptions={[
+        { text: 'Pacifying optimism', index: 4 },
+        { text: 'Empowering optimism', index: 13 },
+    ]}
     points={[
-        {text: "Climate denial", xIndex: 3, yIndex: 3},
-        {text: "Climate delay", xIndex: 3, yIndex: 6},
-        {text: "Activist burnout", xIndex: 13, yIndex: 3},
-        {text: "Climate justice", xIndex: 13, yIndex: 15},
+        { text: 'Climate denial', xIndex: 3, yIndex: 3 },
+        { text: 'Climate delay', xIndex: 3, yIndex: 6 },
+        { text: 'Activist burnout', xIndex: 13, yIndex: 3 },
+        { text: 'Climate justice', xIndex: 13, yIndex: 14 },
     ]}
 />
 +++

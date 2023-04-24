@@ -3,14 +3,14 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
+    preprocess: vitePreprocess(),
 
     kit: {
         files: {
             assets: 'static',
-            hooks:  {
+            hooks: {
                 client: 'src/svelte/hooks.client',
-                server: 'src/svelte/hooks.server'
+                server: 'src/svelte/hooks.server',
             },
             lib: 'src/svelte/lib',
             params: 'src/svelte/params',

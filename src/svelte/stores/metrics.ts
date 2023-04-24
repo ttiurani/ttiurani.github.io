@@ -69,7 +69,7 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
             return () => clearInterval(metricsApiInterval);
         } else {
             set([]);
-            return () => { };
+            return () => {};
         }
     }
 );
