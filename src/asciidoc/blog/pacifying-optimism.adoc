@@ -1,6 +1,6 @@
 = Beware of Pacifying Optimism
 Timo Tiuraniemi
-1.0, 2023-04-XX
+1.0, 2023-04-25
 :description: TODO
 :keywords: Earth breakdown, optimism
 
