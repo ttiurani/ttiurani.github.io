@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 WorkingDirectory=/srv/gemini/
-ExecStart=/opt/agate-{{ agate_version }} --hostname tiuraniemi.org --lang en --content content
+ExecStart=/opt/agate-{{ agate_version }} --addr 0.0.0.0:1965 --hostname tiuraniemi.org --lang en --content content
 
 Restart=always
 RestartSec=1
