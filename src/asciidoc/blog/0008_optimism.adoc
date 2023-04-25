@@ -1,7 +1,7 @@
-= Beware of Pacifying Optimism
+= Optimism in a Climate Crisis
 Timo Tiuraniemi
 1.0, 2023-04-25
-:description: TODO
+:description: In this post, I will first introduce two dimensions of optimism and then apply them to the discussion about Earth breakdown.
 :keywords: Earth breakdown, optimism
 
 :fn-hopeful-pessimism: pass:c,q[footnote:hopeful-pessimism[Mara van der Lugt makes an excellent case for https://aeon.co/essays/in-these-dark-times-the-virtue-we-need-is-hopeful-pessimism[hopeful pessimism as an alternative to optimism].]]
@@ -34,7 +34,7 @@ This is, when applied to the general case, a similar view to https://en.wikipedi
 Conviction alone, however, doesn't capture many of the different ways optimism is _used_.
 This is why I suggest that the second dimension of optimism is the effort that's required of the audience for a positive outcome.
 
-Whenever we read or hear an optimistic statement, it should also be recognized as https://en.wikipedia.org/wiki/Speech_act[speech act].
+Whenever we read or hear an optimistic statement, it should also be recognized as a https://en.wikipedia.org/wiki/Speech_act[speech act].
 Saying you're optimistic about an outcome is not just about passing information, but the act itself always (intentionally or not) affects the audience.
 
 When the optimism of the speaker demands that the audience begins to act, I call it *empowering optimism*.
@@ -76,10 +76,11 @@ Conviction
 endif::[]
 
 Depending on what the optimism is about, each of the quadrants will have different characteristics.
+Let's now apply this framework to the topic which prompted this analysis.
 
 ## Case: Earth Breakdown
 
-Consider now optimism about humanity's ability to stop and reverse the climate and ecological breakdown, as it is being discussed especially in the Global North.
+Consider optimism about humanity's ability to stop and reverse the climate and ecological breakdown, as it is being discussed especially in the Global North.
 
 ifeval::["{backend}" == "html5"]
 
@@ -154,8 +155,8 @@ The cherry-picked evidence may be about good progress in only marginally related
 Because some evidence is given, this is optimism that requires less conviction but can't still hold without it.
 Compared to climate denial, climate delay requires conviction on for example "the invisible hand of the market", "progress with a capital P", or the https://www.leolinne.com/wp-content/uploads/2020/12/20200812_DiscoursesClimateDelay_004_EN.jpg[omnipotency of engineers].
 
-Both climate denial and climate delay messaging is pacifying because it demands (almost) nothing from the audience.
-The underlying message often can be described as "We smart people can fix this, and all you need to do is vote for fewer restrictions on us".
+Both climate denial and climate delay are pacifying because they demand (almost) nothing from the audience.
+The underlying message can often be described as "We smart people can fix this, and all you need to do is vote for fewer restrictions on us".
 
 Brute pacifying optimism about stopping Earth breakdown also very easily comes across as paternalistic.
 When this happens, the optimist takes the position of the adult in the conversation and gives the listener a figurative pacifier so that they stop shouting.
