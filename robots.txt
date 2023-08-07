@@ -2,3 +2,6 @@ User-agent: *
 Disallow: /_app/*
 Disallow: /stats
 Disallow: /blog/preview-*
+
+User-agent: GPTBot
+Disallow: /
