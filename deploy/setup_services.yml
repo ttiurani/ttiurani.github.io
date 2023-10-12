@@ -77,7 +77,7 @@
 
       # EXTENDEDMIND SERVER
       - name: Download extendedmind_server
-        local_action: 'get_url url="https://github.com/extendedmind/extendedmind/releases/download/{{ extendedmind_server_version }}/extendedmind_server" dest="{{ playbook_dir }}/.output/extendedmind_server-{{ extendedmind_server_version }}" checksum="sha256:{{ extendedmind_server_checksum }}"'
+        local_action: 'get_url url="https://codeberg.org/convivial.software/extendedmind/releases/download/{{ extendedmind_server_version }}/extendedmind_server" dest="{{ playbook_dir }}/.output/extendedmind_server-{{ extendedmind_server_version }}" checksum="sha256:{{ extendedmind_server_checksum }}"'
         become: false
       - name: Copy extendedmind_server
         ansible.builtin.copy:
