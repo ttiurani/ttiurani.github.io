@@ -17,6 +17,8 @@ jobs:
         name: Build and deploy site
         runs-on: ubuntu-latest
         steps:
+            - name: Update apt cache
+              run: sudo apt-get update
             - name: Remove nginx for libgd problems
               run: sudo apt-get remove nginx
             - name: Remove too new libgd
