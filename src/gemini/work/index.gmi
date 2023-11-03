@@ -1,9 +1,39 @@
 # Work
-## Current
-Building the digital commons. Protecting the environmental commons. Volunteering full-time to fight for the health our planet and for global social justice.
+## Employment
+I work at Greenpeace International as a software engineer. I use my skills as a programmer and activist to increase the impact of Greenpeace.
 
-## Past
-20 years of programming.
+## Open Source
+
+### Peermerge
+Description: Peermerge is a set of rust crates for managing peer-to-peer, multi-writer, JSON-like documents.
+
+Role: author and maintainer
+
+Status: alpha
+
+### Hypercore
+Description: hypercore and hypercore-protocol are rust crates that implement a secure, distributed append-only feed, and a peer-to-peer protocol, respectively.
+Role: co-author and maintainer
+Status: beta
+
+=> https://github.com/datrs/hypercore hypercore
+=> https://github.com/datrs/hypercore-protocol-rs hypercore-protocol
+
+### Random Access Storage
+Description: random-access-storage, random-access-disk and random-access-memory are rust crates that implement reading and writing at random offsets to a disk or memory storage.
+Role: co-author and maintainer
+Status: released
+
+=> https://github.com/datrs/random-access-storage random-access-storage
+=> https://github.com/datrs/random-access-disk random-access-disk
+=> https://github.com/datrs/random-access-memory random-access-memory
+
+### Compact Encoding
+Description: compact-encoding is a rust crate for building small and fast parsers and serializers.
+Role: author and maintainer
+Status: released
+
+=> https://github.com/datrs/compact-encoding compact-encoding
 
 ## Navigation
 => / About

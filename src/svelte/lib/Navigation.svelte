@@ -9,12 +9,12 @@
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
         <ul class="main-nav__list">
-            <li id="about" class="main-nav__item" class:active={$page.url.pathname === '/'}>
+            <!--li id="about" class="main-nav__item" class:active={$page.url.pathname === '/'}>
                 <a href="/">About</a>
-            </li>
-            <!--li id="work" class="main-nav__item" class:active={$page.url.pathname === '/work'}>
-                <a href="/work">Work</a>
             </li-->
+            <li id="work" class="main-nav__item" class:active={$page.url.pathname === '/work'}>
+                <a href="/work">Work</a>
+            </li>
             <li class="main-nav__item" class:active={$page.url.pathname.startsWith('/blog')}>
                 <a href="/blog">Blog</a>
             </li>

@@ -23,10 +23,11 @@
         <div class="hero-row">
             <div id="hero-text" class="hero-column">
                 <p>
-                    I'm terrified of the accelerating ecocide destroying our planet. Ecocide that's
-                    driven by an obsession for economic growth, which in turn relies on the
-                    colonization by the Global North over the Global South and the continued
-                    commodification of our existence.
+                    I'm terrified of the ongoing deliberate destruction of our planet. Destruction
+                    that's constantly increasing in speed and breadth. Destruction that's driven by
+                    an obsession for economic growth, which in turn relies on the colonization by
+                    the Global North over the Global South and the continued commodification of our
+                    existence.
                 </p>
                 <p>At the same time, I see so much potential in everyday people to stop it.</p>
                 <p>
@@ -36,11 +37,11 @@
                     a world where those privileges don't exist.
                 </p>
                 <p>
-                    I work full-time as an activist for the commons. I stand for protecting and
-                    expanding that which has no monetary value, that which resists ranking from
-                    better to worse, that which doesn't quite fit into spreadsheets. Clean air,
-                    healthy oceans, unowned forests and land. But also knowledge and the digital
-                    tools we use.
+                    I'm an activist for the commons, currently working for Greenpeace. I stand for
+                    protecting and expanding that which has no monetary value, that which resists
+                    ranking from better to worse, that which doesn't quite fit into spreadsheets.
+                    Clean air, healthy oceans, unowned forests and land. But also knowledge and the
+                    digital tools we use.
                 </p>
                 <p>My craft is programming, and I have a background in philosophy.</p>
                 <p>

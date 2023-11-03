@@ -8,3 +8,4 @@ __BLOG_POSTS__
 
 ## Navigation
 => / About
+=> /work Work
