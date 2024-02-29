@@ -37,11 +37,11 @@
                     a world where those privileges don't exist.
                 </p>
                 <p>
-                    I'm an activist for the commons, currently working for Greenpeace. I stand for
-                    protecting and expanding that which has no monetary value, that which resists
-                    ranking from better to worse, that which doesn't quite fit into spreadsheets.
-                    Clean air, healthy oceans, unowned forests and land. But also knowledge and the
-                    digital tools we use.
+                    I'm an activist for the commons, currently working for Greenpeace International.
+                    I stand for protecting and expanding that which has no monetary value, that
+                    which resists ranking from better to worse, that which doesn't quite fit into
+                    spreadsheets. Clean air, healthy oceans, unowned forests and land. But also
+                    knowledge and the digital tools we use.
                 </p>
                 <p>My craft is programming, and I have a background in philosophy.</p>
                 <p>
