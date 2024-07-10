@@ -1,5 +1,6 @@
 name: Upgrade
 on:
+    workflow_dispatch:
     # Run the upgrade at night UTC
     schedule:
         - cron: '00 04 * * *'
