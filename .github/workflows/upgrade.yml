@@ -9,6 +9,10 @@ jobs:
         name: Upgrade the server with Ansible
         runs-on: ubuntu-latest
         steps:
+            - name: Host - update
+              run: sudo apt-get update
+            - name: Host - upgrade
+              run: sudo apt-get -y upgrade
             - name: Checkout
               uses: actions/checkout@v3
             - name: Run ansible
