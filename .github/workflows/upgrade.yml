@@ -7,7 +7,7 @@ on:
 jobs:
     upgrade:
         name: Upgrade the server with Ansible
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v3
@@ -17,7 +17,7 @@ jobs:
                   # "Failed to connect to the host via ssh: Host key verification failed."
                   # which happens on reboot.
                   ANSIBLE_SSH_RETRIES: 3
-              uses: dawidd6/action-ansible-playbook@v2
+              uses: dawidd6/action-ansible-playbook@v2.8.0
               with:
                   directory: deploy
                   playbook: upgrade.yml
