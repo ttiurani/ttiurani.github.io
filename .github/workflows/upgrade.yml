@@ -17,7 +17,7 @@ jobs:
                   # "Failed to connect to the host via ssh: Host key verification failed."
                   # which happens on reboot.
                   ANSIBLE_SSH_RETRIES: 3
-              uses: dawidd6/action-ansible-playbook@v2.8.0
+              uses: dawidd6/action-ansible-playbook@v2
               with:
                   directory: deploy
                   playbook: upgrade.yml
