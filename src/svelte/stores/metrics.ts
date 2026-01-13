@@ -1,7 +1,7 @@
-import type { Readable } from 'svelte/store';
-import { browser } from '$app/environment';
-import { page } from '$app/stores';
-import { get, readable } from 'svelte/store';
+import type { Readable } from "svelte/store";
+import { get, readable } from "svelte/store";
+import { browser } from "$app/environment";
+import { page } from "$app/stores";
 
 export type MetricsResponse = {
     start: string;
@@ -27,13 +27,13 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
     (set: (metrics: MetricsRange[]) => void) => {
         if (browser) {
             const fetchMetrics = (url: URL) => {
-                const metricsUrl = new URL('/api/metrics', url.origin);
-                const limit = url.searchParams.get('limit');
-                const secret = url.searchParams.get('secret');
+                const metricsUrl = new URL("/api/metrics", url.origin);
+                const limit = url.searchParams.get("limit");
+                const secret = url.searchParams.get("secret");
                 if (secret) {
-                    metricsUrl.searchParams.append('secret', secret);
+                    metricsUrl.searchParams.append("secret", secret);
                     if (limit) {
-                        metricsUrl.searchParams.append('limit', limit);
+                        metricsUrl.searchParams.append("limit", limit);
                     }
                 }
                 fetch(metricsUrl)
@@ -69,7 +69,7 @@ export const dayRanges: Readable<MetricsRange[]> = readable(
             return () => clearInterval(metricsApiInterval);
         } else {
             set([]);
-            return () => {};
+            return () => undefined;
         }
-    }
+    },
 );
