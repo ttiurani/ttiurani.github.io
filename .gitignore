@@ -3,6 +3,7 @@
 #static/images/generated/
 static/feed.atom
 src/svelte/routes/blog
+.venv
 
 .DS_Store
 node_modules

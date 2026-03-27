@@ -385,6 +385,6 @@ const getFullTitle = (metadata) => {
 
     // Print results
     console.info(
-        `Generated:\n* ${generatedOgImages.length} OpenGraphImages\n* ${generatedTranscodedImages.length} transcoded images\n* from ${svelteBlogPostResults.length} blog posts`,
+        `Generated:\n* ${generatedOgImages.length} OpenGraphImages\n* ${generatedTranscodedImages.filter((f) => !!f).length} transcoded images\n* from ${svelteBlogPostResults.length} blog posts`,
     );
 })();

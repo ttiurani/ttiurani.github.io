@@ -1,6 +1,5 @@
 const fs = require("fs").promises;
 const fsSync = require("fs");
-const gd = require("node-gd");
 const sharp = require("sharp");
 
 const generateOgImageFromText = (
@@ -22,6 +21,7 @@ const generateOgImageFromText = (
                 metadata["ogImage"] = urlPathPrefix + fileName;
                 resolve();
             } else {
+                const gd = require("node-gd");
                 const SIZE_HORIZONTAL = 1200;
                 const SIZE_VERTICAL = 600;
                 const SIZE_PADDING = 100;
@@ -158,11 +158,16 @@ const transcodeImage = async (
     const outputFile = imageMetadata.target
         .substring(imageMetadata.target.lastIndexOf("/") + 1)
         .replace(".jpg", "." + format);
-    await sharp(inputDirectory + imageMetadata.target)
-        .toFormat(format)
-        .toFile(outputDirectory + outputFile);
     imageMetadata[format] = urlPathPrefix + outputFile;
-    return outputFile;
+    try {
+        await fs.access(outputDirectory + outputFile);
+    } catch {
+        await sharp(inputDirectory + imageMetadata.target)
+            .toFormat(format)
+            .toFile(outputDirectory + outputFile);
+        return outputFile;
+    }
+    return;
 };
 
 const createPictureTagFromImageTag = async (imageTag, imagesMetadata) => {
