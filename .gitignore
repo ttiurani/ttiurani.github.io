@@ -1,5 +1,6 @@
 # Generated
-static/images/generated/
+# TODO: For now, Github runner can't generate the images, so just store them to git
+#static/images/generated/
 static/feed.atom
 src/svelte/routes/blog
 

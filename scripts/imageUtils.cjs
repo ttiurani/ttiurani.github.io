@@ -31,7 +31,6 @@ const generateOgImageFromText = (
                 const FONT_PIXEL_COEFFICIENT = 1.3;
 
                 // Create blank new image in memory
-                console.log("####", gd);
                 gd.default.create(SIZE_HORIZONTAL, SIZE_VERTICAL).then((img) => {
                     // Set background color
                     if (darkTheme) {
