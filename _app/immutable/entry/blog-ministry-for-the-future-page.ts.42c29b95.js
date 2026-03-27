@@ -1,1 +1,1 @@
-import{c as p,p as s}from"../chunks/_page.ee2ef05e.js";export{p as csr,s as prerender};
+import{c as p,p as s}from"../chunks/_page.2f8d31e9.js";export{p as csr,s as prerender};
