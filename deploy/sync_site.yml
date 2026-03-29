@@ -6,19 +6,21 @@
       - name: Synchronize HTML files
         ansible.posix.synchronize:
             src: ../dist/html/
-            dest: /srv/www/content/
+            dest: /var/opt/extendedmind/www/
             delete: yes
             rsync_opts:
-                - '--chown=root:root'
+                - '--chown=extendedmind:extendedmind'
+                - '--chmod=D700,F600'
       - name: Synchronize Gemini files
         ansible.posix.synchronize:
             src: ../dist/gemini/
-            dest: /srv/gemini/content/
+            dest: /var/opt/agate/content/
             delete: yes
             rsync_opts:
-                - '--chown=root:root'
+                - '--chown=agate:agate'
+                - '--chmod=D700,F600'
       - name: Bust extendedmind server cache
-        ansible.builtin.command: /opt/extendedmind_server-{{ extendedmind_server_version }} --admin-socket-file /var/run/extendedmind_server.sock bust-cache
+        ansible.builtin.command: /opt/extendedmind/{{ extendedmind_server_version }}/extendedmind_server --admin-socket-file /var/opt/extendedmind/extendedmind_server.sock bust-cache
       - name: Copy cache warm script
         ansible.builtin.copy:
             src: ../dist/scripts/warm-cache.sh

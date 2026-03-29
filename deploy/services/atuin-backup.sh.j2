@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Create atuin sqlite backup"
+rm -f /var/opt/atuin/atuin-server.sq3
+sqlite3 /var/opt/atuin/atuin-server.db ".backup '/var/opt/atuin/atuin-server.sq3'"

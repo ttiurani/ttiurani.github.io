@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer for Atuin Backup
+Requires=atuin-backup.service
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+
+[Install]
+WantedBy=timers.target

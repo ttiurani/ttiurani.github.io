@@ -1,13 +1,13 @@
 [Unit]
 Description=Cloudflare DDNS
-After=network-online.target
+ConditionPathExists=/etc/cloudflare-ddns/config.json
 Wants=network-online.target
-Wants=cloudflare-ddns.timer
+After=network-online.target
 
 [Service]
 Type=oneshot
-WorkingDirectory=/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}
-ExecStart=/usr/bin/python3 cloudflare-ddns.py
+Environment=CONFIG_PATH=/etc/cloudflare-ddns
+ExecStart=/opt/cloudflare-ddns/{{ cloudflare_ddns_version }}/cloudflare-ddns
 
 [Install]
 WantedBy=multi-user.target

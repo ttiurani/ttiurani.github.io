@@ -1,0 +1,33 @@
+[Unit]
+Description=Atuin Server
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+WorkingDirectory=/var/opt/atuin/
+ExecStart=/opt/atuin/{{ atuin_version }}/atuin-server-aarch64-unknown-linux-gnu/atuin-server start
+User=atuin
+Group=atuin
+
+Environment=ATUIN_CONFIG_DIR=/etc/atuin
+
+Restart=always
+RestartSec=1
+
+# Hardening options
+CapabilityBoundingSet=
+AmbientCapabilities=
+NoNewPrivileges=true
+ProtectHome=true
+# NB: Can't set this with sqlite3, it can't create the file to /var/opt/atuin!
+# https://sqlite.org/forum/info/d232fad1b056780ade29cf612e1ac3ff55f1d9270f3ae06a89590d9a5a34e958
+# ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+PrivateTmp=true
+PrivateDevices=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

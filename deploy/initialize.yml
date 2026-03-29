@@ -3,37 +3,196 @@
   become: true
   become_user: root
   tasks:
-      - name: Install pip3
+      - name: Install sqlite3
         apt:
-            name: python3-pip
-      - name: Install virtualenv
-        pip:
-            name: virtualenv
-      - name: Create HTML directory
-        file:
-            path: /srv/www/content
+            name: sqlite3
+      - name: Ensure /etc/sysctl.d exists
+        ansible.builtin.file:
+            path: /etc/sysctl.d
             state: directory
-      - name: Create HTML logs directory
-        file:
-            path: /srv/www/logs
+      - name: Persist priviliged ports start from 80
+        ansible.builtin.copy:
+            dest: /etc/sysctl.d/99-privileged-ports.conf
+            content: |
+                net.ipv4.ip_unprivileged_port_start=80
+      - name: Ensure /etc/sysusers.d exists
+        ansible.builtin.file:
+            path: /etc/sysusers.d
             state: directory
-      - name: Create HTML metrics directory
+      - name: Create agate user
+        ansible.builtin.copy:
+            dest: /etc/sysusers.d/agate.conf
+            content: |
+                # Type Name ID GECOS
+                u agate - "Agate"
+        register: agate_user
+      - name: Create cloudflare_ddns user
+        ansible.builtin.copy:
+            dest: /etc/sysusers.d/cloudflare_ddns.conf
+            content: |
+                # Type Name ID GECOS
+                u cloudflare_ddns - "Cloudflare DDNS"
+        register: cloudflare_ddns_user
+      - name: Create atuin user
+        ansible.builtin.copy:
+            dest: /etc/sysusers.d/atuin.conf
+            content: |
+                # Type Name ID GECOS
+                u atuin - "Atuin"
+        register: atuin_user
+      - name: Create extendedmind user
+        ansible.builtin.copy:
+            dest: /etc/sysusers.d/extendedmind.conf
+            content: |
+                # Type Name ID GECOS
+                u extendedmind - "Extended Mind"
+        register: extendedmind_user
+      - name: Create syncthing user
+        ansible.builtin.copy:
+            dest: /etc/sysusers.d/syncthing.conf
+            content: |
+                # Type Name ID GECOS
+                u syncthing - "Syncthing"
+        register: syncthing_user
+      - name: Restart systemd-sysusers
+        ansible.builtin.systemd:
+            state: restarted
+            daemon_reload: yes
+            name: systemd-sysusers.service
+        when: agate_user.changed or cloudflare_ddns_user.changed or atuin_user.changed or  extendedmind_user.changed or syncthing_user.changed
+      - name: Create restic user
+        ansible.builtin.copy:
+            dest: /etc/sysusers.d/restic.conf
+            content: |
+                # Type Name ID GECOS
+                u restic - "Restic"
+                m restic agate
+                m restic atuin
+                m restic extendedmind
+                m restic syncthing
+        register: restic_user
+      - name: Restart systemd-sysusers for restic
+        ansible.builtin.systemd:
+            state: restarted
+            daemon_reload: yes
+            name: systemd-sysusers.service
+        when: restic_user.changed
+      - name: Create Agate executable directory
         file:
-            path: /srv/www/metrics
+            path: /opt/agate
             state: directory
-      - name: Create directory for ACME certificates
+            owner: agate
+            group: agate
+            mode: '0700'
+      - name: Create Agate data directory
         file:
-            path: /srv/www/.certificates
+            path: /var/opt/agate
             state: directory
-      - name: Create Gemini directory
+            owner: agate
+            group: agate
+            mode: '0750'
+      - name: Create Agate data content directory
         file:
-            path: /srv/gemini/content
+            path: /var/opt/agate/content
             state: directory
-      - name: Create peermerge directory
+            owner: agate
+            group: agate
+            mode: '0750'
+      - name: Create Cloudflare DDNS executable directory
         file:
-            path: /srv/peermerge/content
+            path: /opt/cloudflare-ddns
             state: directory
-      - name: Create backup directory
+            owner: cloudflare_ddns
+            group: cloudflare_ddns
+            mode: '0700'
+      - name: Create Cloudflare DDNS config directory
         file:
-            path: /srv/backup
+            path: /etc/cloudflare-ddns
             state: directory
+            owner: cloudflare_ddns
+            group: cloudflare_ddns
+            mode: '0700'
+      - name: Create Atuin executable directory
+        file:
+            path: /opt/atuin
+            state: directory
+            owner: atuin
+            group: atuin
+            mode: '0700'
+      - name: Create Atuin config directory
+        file:
+            path: /etc/atuin
+            state: directory
+            owner: atuin
+            group: atuin
+            mode: '0700'
+      - name: Create Atuin data directory
+        file:
+            path: /var/opt/atuin
+            state: directory
+            owner: atuin
+            group: atuin
+            mode: '0740'
+      - name: Create Extended Mind executable directory
+        file:
+            path: /opt/extendedmind
+            state: directory
+            owner: extendedmind
+            group: extendedmind
+            mode: '0700'
+      - name: Create Extended Mind data directory
+        file:
+            path: /var/opt/extendedmind
+            state: directory
+            owner: extendedmind
+            group: extendedmind
+            mode: '0740'
+      - name: Create Extended Mind data www directory
+        file:
+            path: /var/opt/extendedmind/www
+            state: directory
+            owner: extendedmind
+            group: extendedmind
+            mode: '0740'
+      - name: Create Extended Mind data logs directory
+        file:
+            path: /var/opt/extendedmind/logs
+            state: directory
+            owner: extendedmind
+            group: extendedmind
+            mode: '0740'
+      - name: Create Extended Mind data metrics directory
+        file:
+            path: /var/opt/extendedmind/metrics
+            state: directory
+            owner: extendedmind
+            group: extendedmind
+            mode: '0740'
+      - name: Create Extended Mind data certificates directory
+        file:
+            path: /var/opt/extendedmind/.certificates
+            state: directory
+            owner: extendedmind
+            group: extendedmind
+            mode: '0740'
+      - name: Create Restic executable directory
+        file:
+            path: /opt/restic
+            state: directory
+            owner: restic
+            group: restic
+            mode: '0700'
+      - name: Create Restic config directory
+        file:
+            path: /etc/restic
+            state: directory
+            owner: restic
+            group: restic
+            mode: '0700'
+      - name: Create Restic data directory
+        file:
+            path: /var/opt/restic
+            state: directory
+            owner: restic
+            group: restic
+            mode: '0700'

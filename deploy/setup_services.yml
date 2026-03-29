@@ -13,34 +13,39 @@
 
       # CLOUDFLARE DDNS
       - name: Download Cloudflare DDNS
-        local_action: 'get_url url="https://github.com/timothymiller/cloudflare-ddns/archive/{{ cloudflare_ddns_commit }}.tar.gz" dest="{{ playbook_dir }}/.output/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz" checksum="sha256:{{ cloudflare_ddns_checksum }}"'
+        local_action: 'get_url url="https://github.com/ttiurani/cloudflare-ddns/releases/download/{{ cloudflare_ddns_version }}/cloudflare-ddns.aarch64-unknown-linux-gnu.tar.gz" dest="{{ playbook_dir }}/.output/cloudflare-ddns.aarch64-unknown-linux-gnu.tar.gz" checksum="sha256:{{ cloudflare_ddns_checksum }}"'
         become: false
+      - name: Create Cloudflare DDNS executable version directory
+        file:
+            path: /opt/cloudflare-ddns/{{ cloudflare_ddns_version }}
+            state: directory
+            owner: cloudflare_ddns
+            group: cloudflare_ddns
+            mode: '0700'
       - name: Copy Cloudflare DDNS
         ansible.builtin.copy:
-            src: '{{ playbook_dir }}/.output/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
-            dest: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
-            owner: root
-            group: root
-            mode: '0644'
+            src: '{{ playbook_dir }}/.output/cloudflare-ddns.aarch64-unknown-linux-gnu.tar.gz'
+            dest: '/opt/cloudflare-ddns/{{ cloudflare_ddns_version }}/cloudflare-ddns.tar.gz'
+            owner: cloudflare_ddns
+            group: cloudflare_ddns
+            mode: '0600'
         register: cloudflare_ddns
       - name: Unpack Cloudflare DDNS
         ansible.builtin.unarchive:
-            src: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}.tar.gz'
-            dest: '/opt'
+            src: '/opt/cloudflare-ddns/{{ cloudflare_ddns_version }}/cloudflare-ddns.tar.gz'
+            dest: '/opt/cloudflare-ddns/{{ cloudflare_ddns_version }}'
             remote_src: yes
-        when: cloudflare_ddns.changed
-      - name: Install Cloudflare DDNS Python requirements in virtualenv
-        pip:
-            requirements: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/requirements.txt'
-            virtualenv: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/venv'
+            owner: cloudflare_ddns
+            group: cloudflare_ddns
+            mode: '0700'
         when: cloudflare_ddns.changed
       - name: Copy Cloudflare DDNS config file
         ansible.builtin.template:
             src: '{{ playbook_dir }}/services/cloudflare-ddns.json.j2'
-            dest: '/opt/cloudflare-ddns-{{ cloudflare_ddns_commit }}/config.json'
-            owner: root
-            group: root
-            mode: '0644'
+            dest: '/etc/cloudflare-ddns/config.json'
+            owner: cloudflare_ddns
+            group: cloudflare_ddns
+            mode: '0600'
         register: cloudflare_ddns_config
       - name: Copy Cloudflare DDNS service file
         ansible.builtin.template:
@@ -73,29 +78,129 @@
             state: restarted
             daemon_reload: yes
             name: cloudflare-ddns.timer
-        when: cloudflare_ddns.changed or cloudflare_ddns_service.changed
+        when: cloudflare_ddns.changed or cloudflare_ddns_config.changed or cloudflare_ddns_service.changed
+
+      # ATUIN SERVER
+      - name: Download Atuin Server
+        local_action: 'get_url url="https://github.com/atuinsh/atuin/releases/download/{{ atuin_version }}/atuin-server-aarch64-unknown-linux-gnu.tar.gz" dest="{{ playbook_dir }}/.output/atuin-server-aarch64-unknown-linux-gnu.tar.gz" checksum="sha256:{{ atuin_checksum }}"'
+        become: false
+      - name: Create Atuin Server executable version directory
+        file:
+            path: /opt/atuin/{{ atuin_version }}
+            state: directory
+            owner: atuin
+            group: atuin
+            mode: '0700'
+      - name: Copy Atuin Server
+        ansible.builtin.copy:
+            src: '{{ playbook_dir }}/.output/atuin-server-aarch64-unknown-linux-gnu.tar.gz'
+            dest: '/opt/atuin/{{ atuin_version }}/atuin-server-aarch64-unknown-linux-gnu.tar.gz'
+            owner: atuin
+            group: atuin
+            mode: '0600'
+        register: atuin_server
+      - name: Unpack Atuin Server
+        ansible.builtin.unarchive:
+            src: '/opt/atuin/{{ atuin_version }}/atuin-server-aarch64-unknown-linux-gnu.tar.gz'
+            dest: '/opt/atuin/{{ atuin_version }}'
+            remote_src: yes
+            owner: atuin
+            group: atuin
+            mode: '0700'
+        when: atuin_server.changed
+      - name: Copy Atuin Server config file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/atuin.toml.j2'
+            dest: '/etc/atuin/server.toml'
+            owner: atuin
+            group: atuin
+            mode: '0600'
+        register: atuin_server_config
+      - name: Copy Atuin Server service file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/atuin-server.service.j2'
+            dest: '/etc/systemd/system/atuin-server.service'
+            owner: root
+            group: root
+            mode: '0644'
+        register: atuin_server_service
+      - name: Make sure Atuin Server is running
+        ansible.builtin.systemd:
+            state: started
+            name: atuin-server
+        when: atuin_server_service.changed
+      - name: Enable Atuin Server
+        ansible.builtin.systemd:
+            name: atuin-server
+            enabled: yes
+        when: atuin_server_service.changed
+      - name: Restart Atuin Server when configs change
+        ansible.builtin.systemd:
+            state: restarted
+            daemon_reload: yes
+            name: atuin-server.service
+        when: atuin_server.changed or atuin_server_config.changed or atuin_server_service.changed
+      - name: Copy Atuin backup script
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/atuin-backup.sh.j2'
+            dest: '/etc/atuin/atuin-backup.sh'
+            owner: atuin
+            group: atuin
+            mode: '0700'
+        register: atuin_backup_script
+      - name: Copy Atuin Backup service file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/atuin-backup.service.j2'
+            dest: '/etc/systemd/system/atuin-backup.service'
+            owner: root
+            group: root
+            mode: '0644'
+        register: atuin_backup_service
+      - name: Copy Atuin Backup timer file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/atuin-backup.timer.j2'
+            dest: '/etc/systemd/system/atuin-backup.timer'
+            owner: root
+            group: root
+            mode: '0644'
+        register: atuin_backup_timer
+      - name: Make sure Atuin Backup timer is running
+        ansible.builtin.systemd:
+            state: started
+            name: atuin-backup.timer
+        when: atuin_backup_timer.changed
+      - name: Enable Atuin Backup timer
+        ansible.builtin.systemd:
+            name: atuin-backup.timer
+            enabled: yes
+        when: atuin_backup_timer.changed
+      - name: Restart Atuin Backup timer when configs change, and also issue daemon-reload to pick up config changes
+        ansible.builtin.systemd:
+            state: restarted
+            daemon_reload: yes
+            name: atuin-backup.timer
+        when: atuin_backup_script.changed or atuin_backup_timer.changed or atuin_backup_service.changed
 
       # EXTENDEDMIND SERVER
-      - name: Download extendedmind_server
-        local_action: 'get_url url="https://codeberg.org/convivial.software/extendedmind/releases/download/{{ extendedmind_server_version }}/extendedmind_server" dest="{{ playbook_dir }}/.output/extendedmind_server-{{ extendedmind_server_version }}" checksum="sha256:{{ extendedmind_server_checksum }}"'
+      - name: Download Extended Mind Server
+        local_action: 'get_url url="https://codeberg.org/convivial.software/extendedmind/releases/download/{{ extendedmind_server_version }}/extendedmind_server" dest="{{ playbook_dir }}/.output/extendedmind_server" checksum="sha256:{{ extendedmind_server_checksum }}"'
         become: false
-      - name: Copy extendedmind_server
-        ansible.builtin.copy:
-            src: '{{ playbook_dir }}/.output/extendedmind_server-{{ extendedmind_server_version }}'
-            dest: '/opt/extendedmind_server-{{ extendedmind_server_version }}'
-            owner: root
-            group: root
-            mode: '0744'
-        register: extendedmind_server
-      - name: Create symbolic link for extendedmind_server
+      - name: Create Extended Mind Server executable version directory
         file:
-            src: '/opt/extendedmind_server-{{ extendedmind_server_version }}'
-            dest: '/opt/extendedmind_server'
-            owner: root
-            group: root
-            state: link
-        when: extendedmind_server.changed
-      - name: Copy extendedmind_server service file
+            path: /opt/extendedmind/{{ extendedmind_server_version }}
+            state: directory
+            owner: extendedmind
+            group: extendedmind
+            mode: '0700'
+      - name: Copy Extended Mind Server
+        ansible.builtin.copy:
+            src: '{{ playbook_dir }}/.output/extendedmind_server'
+            dest: '/opt/extendedmind/{{ extendedmind_server_version }}/extendedmind_server'
+            owner: extendedmind
+            group: extendedmind
+            mode: '0700'
+        register: extendedmind_server
+      - name: Copy Extended Mind service file
         ansible.builtin.template:
             src: '{{ playbook_dir }}/services/extendedmind_server.service.j2'
             dest: '/etc/systemd/system/extendedmind_server.service'
@@ -115,25 +220,25 @@
             name: extendedmind_server.service
         when: extendedmind_server.changed or extendedmind_server_service.changed
 
-      # AGATE GEMINI SERVER
+      # AGATE SERVER
       - name: Download Agate
         local_action: 'get_url url="https://github.com/mbrubeck/agate/releases/download/{{ agate_version }}/agate.aarch64-unknown-linux-gnu.gz" dest="{{ playbook_dir }}/.output/agate-{{ agate_version }}.gz" checksum="sha256:{{ agate_checksum }}"'
         become: false
       - name: Copy Agate
         ansible.builtin.copy:
             src: '{{ playbook_dir }}/.output/agate-{{ agate_version }}.gz'
-            dest: '/opt/agate-{{ agate_version }}.gz'
-            owner: root
-            group: root
-            mode: '0644'
+            dest: '/opt/agate/agate-{{ agate_version }}.gz'
+            owner: agate
+            group: agate
+            mode: '0600'
         register: agate
       - name: Unpack Agate
-        command: 'gunzip -k /opt/agate-{{ agate_version }}.gz'
+        command: 'gunzip -k /opt/agate/agate-{{ agate_version }}.gz'
         when: agate.changed
       - name: Set Agate executable
         ansible.builtin.file:
-            path: /opt/agate-{{ agate_version }}
-            mode: '0744'
+            path: /opt/agate/agate-{{ agate_version }}
+            mode: '0700'
         when: agate.changed
       - name: Copy Agate service file
         ansible.builtin.template:
@@ -159,3 +264,82 @@
             daemon_reload: yes
             name: agate.service
         when: agate.changed or agate_service.changed
+
+      # RESTIC
+      - name: Download Restic
+        local_action: 'get_url url="https://github.com/restic/restic/releases/download/v{{ restic_version }}/restic_{{ restic_version }}_linux_arm64.bz2" dest="{{ playbook_dir }}/.output/restic_{{ restic_version }}_linux_arm64.bz2" checksum="sha256:{{ restic_checksum }}"'
+        become: false
+      - name: Copy Restic
+        ansible.builtin.copy:
+            src: '{{ playbook_dir }}/.output/restic_{{ restic_version }}_linux_arm64.bz2'
+            dest: '/opt/restic/restic_{{ restic_version }}_linux_arm64.bz2'
+            owner: restic
+            group: restic
+            mode: '0600'
+        register: restic
+      - name: Unpack Restic
+        command: 'bzip2 -k -d /opt/restic/restic_{{ restic_version }}_linux_arm64.bz2'
+        when: restic.changed
+      - name: Set Restic owner and make it executable
+        ansible.builtin.file:
+            path: '/opt/restic/restic_{{ restic_version }}_linux_arm64'
+            owner: restic
+            group: restic
+            mode: '0700'
+        when: restic.changed
+      - name: Copy Restic environment file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/restic.env.j2'
+            dest: '/etc/restic/restic.env'
+            owner: restic
+            group: restic
+            mode: '0600'
+        register: restic_env
+      - name: Copy Restic script
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/restic-backup.sh.j2'
+            dest: '/etc/restic/restic-backup.sh'
+            owner: restic
+            group: restic
+            mode: '0700'
+        register: restic_script
+      - name: Copy Restic files
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/restic.files.j2'
+            dest: '/etc/restic/restic.files'
+            owner: restic
+            group: restic
+            mode: '0600'
+        register: restic_files
+      - name: Copy Restic Backup service file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/restic-backup.service.j2'
+            dest: '/etc/systemd/system/restic-backup.service'
+            owner: root
+            group: root
+            mode: '0644'
+        register: restic_backup_service
+      - name: Copy Restic Backup timer file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/restic-backup.timer.j2'
+            dest: '/etc/systemd/system/restic-backup.timer'
+            owner: root
+            group: root
+            mode: '0644'
+        register: restic_backup_timer
+      - name: Make sure Restic Backup timer is running
+        ansible.builtin.systemd:
+            state: started
+            name: restic-backup.timer
+        when: restic_backup_timer.changed
+      - name: Enable Restic Backup timer
+        ansible.builtin.systemd:
+            name: restic-backup.timer
+            enabled: yes
+        when: restic_backup_timer.changed
+      - name: Restart Restic Backup timer when configs change, and also issue daemon-reload to pick up config changes
+        ansible.builtin.systemd:
+            state: restarted
+            daemon_reload: yes
+            name: restic-backup.timer
+        when: restic_backup_timer.changed or restic_backup_service.changed

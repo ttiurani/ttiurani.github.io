@@ -1,0 +1,28 @@
+[Unit]
+Description=Restic Backup
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/var/opt/restic
+User=restic
+Group=restic
+ExecStart=/etc/restic/restic-backup.sh
+
+EnvironmentFile=/etc/restic/restic.env
+PassEnvironment=RESTIC_REPOSITORY RESTIC_PASSWORD RESTIC_CACHE_DIR AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+
+# Hardening options
+CapabilityBoundingSet=
+AmbientCapabilities=
+NoNewPrivileges=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+PrivateTmp=true
+PrivateDevices=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

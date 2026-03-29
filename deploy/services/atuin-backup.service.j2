@@ -1,0 +1,25 @@
+[Unit]
+Description=Atuin Backup
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/var/opt/atuin
+User=atuin
+Group=atuin
+ExecStart=/etc/atuin/atuin-backup.sh
+
+# Hardening options
+CapabilityBoundingSet=
+AmbientCapabilities=
+NoNewPrivileges=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+PrivateTmp=true
+PrivateDevices=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

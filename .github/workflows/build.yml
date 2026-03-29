@@ -42,7 +42,7 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist/html
             - name: Deploy site to live
-              uses: dawidd6/action-ansible-playbook@v2
+              uses: dawidd6/action-ansible-playbook@v9
               with:
                   directory: deploy
                   playbook: sync_site.yml

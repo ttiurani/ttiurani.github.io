@@ -1,8 +1,10 @@
 [tools]
 node="24.14.0"
-python="3.11.14"
+python="3.12"
+pipx = "latest"
 "npm:node-gd" = "3.0.0"
 "npm:node-gyp" = "9.3.1"
+"pipx:ansible" = { version = "latest", pipx_args = "--include-deps" }
 
 [env]
 NODE_GYP_FORCE_PYTHON="{{config_root}}/.venv/bin/python"
@@ -11,3 +13,12 @@ _.python.venv = { path = ".venv", create = true, uv_create_args = ['--seed'] }
 [tasks.generate-blog-sources]
 env.NODE_PATH = '{{ exec(command="mise where npm:node-gd") }}/lib/node_modules:{{ exec(command="mise where npm:node-gyp") }}/lib/node_modules'
 run = "npm run generate-blog-sources"
+
+[tasks.ansible-initialize]
+run = "ansible-playbook -i deploy/hosts.yml deploy/initialize.yml"
+
+[tasks.ansible-sync-site]
+run = "ansible-playbook -i deploy/hosts.yml deploy/sync_site.yml"
+
+[tasks.ansible-setup-services]
+run = "ansible-playbook -i deploy/hosts.yml -e @.env.yml deploy/setup_services.yml"

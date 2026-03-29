@@ -1,16 +1,28 @@
 [Unit]
 Description=Agate gemini server
 After=network-online.target
-Wants=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
-WorkingDirectory=/srv/gemini/
-ExecStart=/opt/agate-{{ agate_version }} --addr 0.0.0.0:1965 --hostname tiuraniemi.org --lang en --content content
+WorkingDirectory=/var/opt/agate/
+ExecStart=/opt/agate/agate-{{ agate_version }} --addr 0.0.0.0:1965 --hostname tiuraniemi.org --lang en --content content
+User=agate
+Group=agate
 
 Restart=always
 RestartSec=1
 
-SyslogIdentifier=gemini
+# Hardening options
+CapabilityBoundingSet=
+AmbientCapabilities=
+NoNewPrivileges=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+PrivateTmp=true
+PrivateDevices=true
+LockPersonality=true
 
 [Install]
 WantedBy=multi-user.target

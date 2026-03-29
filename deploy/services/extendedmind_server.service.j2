@@ -4,20 +4,24 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/opt/extendedmind_server \
---admin-socket-file /var/run/extendedmind_server.sock \
+WorkingDirectory=/var/opt/extendedmind/
+User=extendedmind
+Group=extendedmind
+
+ExecStart=/opt/extendedmind/{{ extendedmind_server_version }}/extendedmind_server \
+--admin-socket-file /var/opt/extendedmind/extendedmind_server.sock \
 start \
---static-root-dir /srv/www/content \
+--static-root-dir /var/opt/extendedmind/www \
 --http-port 80 \
 --https-port 443 \
---log-dir /srv/www/logs \
---metrics-dir /srv/www/metrics \
+--log-dir /var/opt/extendedmind/logs \
+--metrics-dir /var/opt/extendedmind/metrics \
 --metrics-endpoint /api/metrics \
 --metrics-secret {{ extendedmind_server_metrics_secret }} \
 --metrics-skip-compress true \
 --domain tiuraniemi.org \
 --acme-email timo.tiuraniemi@iki.fi \
---acme-dir /srv/www/.certificates \
+--acme-dir /var/opt/extendedmind/.certificates \
 --acme-production true \
 --hsts-max-age 31536000 \
 --hsts-permanent-redirect true \
@@ -29,19 +33,25 @@ start \
 --inline-css-skip-referer https://tiuraniemi.org* \
 --immutable-path /_app/immutable/*.css \
 --immutable-path /_app/immutable/*.js \
---backup-dir /srv/backup \
---backup-ssh-recipients-file /home/pi/.ssh/authorized_keys \
---backup-email-from {{ backup_email_to }} \
---backup-email-to {{ backup_email_from }} \
---backup-email-smtp-host {{ backup_email_smtp_host }} \
---backup-email-smtp-username {{ backup_email_smtp_username }} \
---backup-email-smtp-password {{ backup_email_smtp_password }}
+--proxy /atuin|http://localhost:8888/atuin
 
 Restart=always
 RestartSec=1
 LimitNOFILE=65536
 
 SyslogIdentifier=extendedmind_server
+
+# Hardening options
+CapabilityBoundingSet=
+AmbientCapabilities=
+NoNewPrivileges=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+PrivateTmp=true
+PrivateDevices=true
+LockPersonality=true
 
 [Install]
 WantedBy=multi-user.target
