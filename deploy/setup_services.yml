@@ -290,6 +290,46 @@
             daemon_reload: yes
             name: syncthing.service
         when: syncthing_service.changed
+      - name: Copy Syncthing Prepare script
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/syncthing-prepare.sh.j2'
+            dest: '/opt/syncthing-prepare.sh'
+            owner: root
+            group: root
+            mode: '0700'
+        register: syncthing_prepare_script
+      - name: Copy Syncthing Prepare service file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/syncthing-prepare.service.j2'
+            dest: '/etc/systemd/system/syncthing-prepare.service'
+            owner: root
+            group: root
+            mode: '0644'
+        register: syncthing_prepare_service
+      - name: Copy Syncthing Prepare timer file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/syncthing-prepare.timer.j2'
+            dest: '/etc/systemd/system/syncthing-prepare.timer'
+            owner: root
+            group: root
+            mode: '0644'
+        register: syncthing_prepare_timer
+      - name: Make sure Syncthing Prepare timer is running
+        ansible.builtin.systemd:
+            state: started
+            name: syncthing-prepare.timer
+        when: syncthing_prepare_timer.changed
+      - name: Enable Syncthing Prepare timer
+        ansible.builtin.systemd:
+            name: syncthing-prepare.timer
+            enabled: yes
+        when: syncthing_prepare_timer.changed
+      - name: Restart Syncthing Prepare timer when configs change, and also issue daemon-reload to pick up config changes
+        ansible.builtin.systemd:
+            state: restarted
+            daemon_reload: yes
+            name: syncthing-prepare.timer
+        when: syncthing_prepare_script.changed or syncthing_prepare_timer.changed or syncthing_prepare_service.changed
 
       # RESTIC
       - name: Download Restic

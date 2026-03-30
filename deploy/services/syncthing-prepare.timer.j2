@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer for Syncthing prepare
+Requires=syncthing-prepare.service
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+
+[Install]
+WantedBy=timers.target

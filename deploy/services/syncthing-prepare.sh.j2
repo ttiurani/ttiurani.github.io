@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Make sure syncthing is readable by group"
+
+find /etc/syncthing -type d -exec chmod g+rx {} \;
+find /etc/syncthing -type f -exec chmod g+r {} \;

@@ -1,0 +1,11 @@
+[Unit]
+Description=Syncthing Prepare
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/opt/syncthing-prepare.sh
+
+[Install]
+WantedBy=multi-user.target
