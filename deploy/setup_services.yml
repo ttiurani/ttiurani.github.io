@@ -265,6 +265,32 @@
             name: agate.service
         when: agate.changed or agate_service.changed
 
+      # SYNCTHING
+      - name: Copy Syncthing service file
+        ansible.builtin.template:
+            src: '{{ playbook_dir }}/services/syncthing.service.j2'
+            dest: '/etc/systemd/system/syncthing.service'
+            owner: root
+            group: root
+            mode: '0644'
+        register: syncthing_service
+      - name: Make sure Syncthing is running
+        ansible.builtin.systemd:
+            state: started
+            name: syncthing
+        when: syncthing_service.changed
+      - name: Enable Syncthing
+        ansible.builtin.systemd:
+            name: syncthing
+            enabled: yes
+        when: syncthing_service.changed
+      - name: Restart Syncthing when configs change
+        ansible.builtin.systemd:
+            state: restarted
+            daemon_reload: yes
+            name: syncthing.service
+        when: syncthing_service.changed
+
       # RESTIC
       - name: Download Restic
         local_action: 'get_url url="https://github.com/restic/restic/releases/download/v{{ restic_version }}/restic_{{ restic_version }}_linux_arm64.bz2" dest="{{ playbook_dir }}/.output/restic_{{ restic_version }}_linux_arm64.bz2" checksum="sha256:{{ restic_checksum }}"'

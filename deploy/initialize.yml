@@ -6,6 +6,9 @@
       - name: Install sqlite3
         apt:
             name: sqlite3
+      - name: Install syncthing
+        apt:
+            name: syncthing
       - name: Ensure /etc/sysctl.d exists
         ansible.builtin.file:
             path: /etc/sysctl.d
@@ -146,35 +149,42 @@
             state: directory
             owner: extendedmind
             group: extendedmind
-            mode: '0740'
+            mode: '0750'
       - name: Create Extended Mind data www directory
         file:
             path: /var/opt/extendedmind/www
             state: directory
             owner: extendedmind
             group: extendedmind
-            mode: '0740'
+            mode: '0700'
       - name: Create Extended Mind data logs directory
         file:
             path: /var/opt/extendedmind/logs
             state: directory
             owner: extendedmind
             group: extendedmind
-            mode: '0740'
+            mode: '0700'
       - name: Create Extended Mind data metrics directory
         file:
             path: /var/opt/extendedmind/metrics
             state: directory
             owner: extendedmind
             group: extendedmind
-            mode: '0740'
+            mode: '0750'
       - name: Create Extended Mind data certificates directory
         file:
             path: /var/opt/extendedmind/.certificates
             state: directory
             owner: extendedmind
             group: extendedmind
-            mode: '0740'
+            mode: '0700'
+      - name: Create Syncthing directory
+        file:
+            path: /etc/syncthing
+            state: directory
+            owner: syncthing
+            group: syncthing
+            mode: '0750'
       - name: Create Restic executable directory
         file:
             path: /opt/restic

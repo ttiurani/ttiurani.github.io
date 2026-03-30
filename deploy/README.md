@@ -127,6 +127,19 @@ and reboot after which the command should succeed with `Powering off HDMI`. To m
 
 there before `exit 0`.
 
+### 10. Add Syncthing APT repository
+
+[Following Syncthing APT repository instructions](https://apt.syncthing.net/) run:
+
+```bash
+sudo mkdir -p /etc/apt/keyrings
+sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable-v2" | sudo tee /etc/apt/sources.list.d/syncthing.list
+sudo apt-get update
+```
+
+to setup the Syncthing repository ready for installation in the Initialize step.
+
 ## Ansible Setup
 
 Once there is a way to access the Raspberry Pi with SSH keys from the internet, and glibc version is new enough, use the following playbooks to configure it.
