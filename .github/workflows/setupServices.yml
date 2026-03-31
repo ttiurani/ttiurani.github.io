@@ -25,6 +25,7 @@ jobs:
                       --inventory hosts.yml
                       --extra-vars cloudflare_api_token=${{ secrets.CLOUDFLARE_API_TOKEN }}
                       --extra-vars cloudflare_zone_id=${{ secrets.CLOUDFLARE_ZONE_ID }}
+                      --extra-vars restic_password=${{ secrets.RESTIC_PASSWORD }}
                       --extra-vars restic_s3_endpoint=${{ secrets.RESTIC_S3_ENDPOINT }}
                       --extra-vars restic_s3_bucket_name=${{ secrets.RESTIC_S3_BUCKET_NAME }}
                       --extra-vars restic_s3_access_key_id=${{ secrets.RESTIC_S3_ACCESS_KEY_ID }}

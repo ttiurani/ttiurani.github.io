@@ -5,6 +5,8 @@ pipx = "latest"
 "npm:node-gd" = "3.0.0"
 "npm:node-gyp" = "9.3.1"
 "pipx:ansible" = { version = "latest", pipx_args = "--include-deps" }
+yq = "latest"
+restic = "latest"
 
 [env]
 NODE_GYP_FORCE_PYTHON="{{config_root}}/.venv/bin/python"
@@ -13,6 +15,24 @@ _.python.venv = { path = ".venv", create = true, uv_create_args = ['--seed'] }
 [tasks.generate-blog-sources]
 env.NODE_PATH = '{{ exec(command="mise where npm:node-gd") }}/lib/node_modules:{{ exec(command="mise where npm:node-gyp") }}/lib/node_modules'
 run = "npm run generate-blog-sources"
+
+[tasks.restic-list]
+env.RESTIC_REPOSITORY = 's3:{{ exec(command="yq .restic_s3_endpoint .env.yml") }}/{{exec(command="yq .restic_s3_bucket_name .env.yml") }}'
+env.RESTIC_PASSWORD = '{{ exec(command="yq .restic_password .env.yml") }}'
+env.AWS_ACCESS_KEY_ID = '{{ exec(command="yq .restic_s3_access_key_id .env.yml") }}'
+env.AWS_SECRET_ACCESS_KEY = '{{ exec(command="yq .restic_s3_secret_key .env.yml") }}'
+run = "restic list snapshots"
+
+[tasks.restic-restore]
+env.RESTIC_REPOSITORY = 's3:{{ exec(command="yq .restic_s3_endpoint .env.yml") }}/{{exec(command="yq .restic_s3_bucket_name .env.yml") }}'
+env.RESTIC_PASSWORD = '{{ exec(command="yq .restic_password .env.yml") }}'
+env.AWS_ACCESS_KEY_ID = '{{ exec(command="yq .restic_s3_access_key_id .env.yml") }}'
+env.AWS_SECRET_ACCESS_KEY = '{{ exec(command="yq .restic_s3_secret_key .env.yml") }}'
+usage = '''
+arg "<snapshot>" help="Snapshot ID"
+arg "<output_path>" help="Output path"
+'''
+run = "restic restore ${usage_snapshot} --target ${usage_output_path}"
 
 [tasks.ansible-initialize]
 run = "ansible-playbook -i deploy/hosts.yml deploy/initialize.yml"

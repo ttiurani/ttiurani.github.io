@@ -135,7 +135,7 @@
             state: directory
             owner: atuin
             group: atuin
-            mode: '0740'
+            mode: '0750'
       - name: Create Extended Mind executable directory
         file:
             path: /opt/extendedmind
